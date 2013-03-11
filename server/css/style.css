@@ -1,0 +1,19 @@
+body {
+	font-family: "Lato";
+	font-size: 112.5%;
+	font-weight: 300;
+}
+
+p {
+	line-height: 1.6;
+}
+
+h1 {
+	font-weight: 300;
+}
+
+header, footer, section {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+

@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<section class="main">
+	<article class="blog-post">
+		<header class="blog-title">
+			<h6 class="post-date">{{ page.date | date: "%d<br /> %m<br /> %y"}}</h6>
+			<h1 class="post-title">{{page.title}}</h1>
+		</header>
+		<div class="blog-content">
+		{{ content }} 
+		</div>
+	</article>
+</section>

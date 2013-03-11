@@ -1,0 +1,99 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: 	border-box;
+	box-sizing: 		border-box;
+}
+
+// ==================================================================
+// TYPOGRAPHY
+// ==================================================================
+
+body {
+	font-family: "Lato";
+	font-size: 112.5%;
+	font-weight: 300;
+}
+
+// ------------------------------------------------------------------
+// Paragraphs
+// ------------------------------------------------------------------
+p {
+	line-height: 1.6;
+	margin: 0 0 1.5em;
+}
+
+// ------------------------------------------------------------------
+// Headings
+// ------------------------------------------------------------------
+h1, h2, h3, h4, h5 {
+	font-weight: 300;
+}
+
+h1 {
+	line-height: 1.2;
+	margin: 0 0 0.8em;
+}
+
+h2 {
+	margin: 0 0 0.8em;
+}
+
+h6 {
+	font-size: (16/18*1em);
+	font-weight: 500;
+}
+
+@media only screen and (min-width: 40em) {
+	h1 {
+		font-size: 3em;
+	}
+
+	h2 {
+		font-size: 2em;
+	}
+}
+
+// ------------------------------------------------------------------
+// Lists
+// ------------------------------------------------------------------
+ol, ul {
+	margin: 0 0 1.5em;
+}
+
+
+li {
+	margin: 0.5em 0;
+}
+
+// ------------------------------------------------------------------
+// Links
+// ------------------------------------------------------------------
+a {
+	text-decoration: none;
+	color: $linkColor;
+
+	&:hover,
+	&:active,
+	&:focus {
+
+		//set hoverColor variable to null only if it hasn't been defined yet
+		$hoverColor: null !default; 
+
+		@if $hoverColor {
+			color: $hoverColor;
+		} @else {
+			// if hoverColour not set, lighten link colour by 10%
+			color: lighten($linkColor, 10);
+		}
+	}
+}
+
+
+// ==================================================================
+// MEDIA
+// ==================================================================
+
+img {
+	max-width: 100%;
+	height: auto;
+}

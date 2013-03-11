@@ -1,0 +1,20 @@
+---
+layout: default
+title: Blog
+---
+
+<section class="blog-entries">
+	{% for post in site.categories['blog'] %}
+	<article>
+		<header class="blog-title">
+			<h6 class="post-date">{{ post.date | date: "%d<br /> %m<br /> %y"}}</h6>
+			<h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+		</header>
+		<div class="blog-content">
+		{% if post.excerpt %}
+    		{{ post.excerpt | markdownify }}
+    	{% endif%}
+    	</div>
+	</article>
+	{% endfor %}
+</section>
