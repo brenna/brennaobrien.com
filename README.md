@@ -1,4 +1,8 @@
 brennaobrien.com
 ================
+Personal blog &amp; portfolio site, built with [Jekyll](https://github.com/mojombo/jekyll). 
 
-Personal Blog &amp; Portfolio site
+A work in progress.
+
+
+
