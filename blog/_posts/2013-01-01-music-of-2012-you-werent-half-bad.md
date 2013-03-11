@@ -32,23 +32,34 @@ When I finally took stock and attempted Ye Olde Top 10 List, I once again came o
 19. CATL - *Soon This Will All Be Gone*
 20. Purity Ring - *Shrines*
 
-As tradition dictates, some choice nuggets are included after the jump.
+As tradition dictates, some choice nuggets are included below.
 
-
+<iframe src="http://www.youtube.com/embed/JtH68PJIQLE?rel=0" width="441" height="248" scrolling="no" frameborder="0"><!-- --></iframe>
 
 **Fun fact**: I first listened to this album while reading William Gibson’s *Neuromancer*. When I hear this song, I’m jacked in to the matrix, triumphantly punching through ICE. (If you don’t know, read it.)
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+<iframe src="http://www.youtube.com/embed/SBAEuNvIt_I?rel=0" width="440" height="248" scrolling="no" class="iframe-class" frameborder="0"><!-- --></iframe>
 
+<iframe src="http://www.youtube.com/embed/pNBD4OFF8cc?rel=0" width="440" height="248" scrolling="no" class="iframe-class" frameborder="0"><!-- --></iframe>
+
+<iframe src="http://www.youtube.com/embed/AuG9i5cwGW0?rel=0" width="440" height="248" scrolling="no" class="iframe-class" frameborder="0"><!-- --></iframe>
+
+<iframe src="http://www.youtube.com/embed/hYgyQ20TJAs?rel=0" width="440" height="248" scrolling="no" class="iframe-class" frameborder="0"><!-- --></iframe>
+
+<iframe src="http://www.youtube.com/embed/5yR7VB9FpJI?rel=0" width="440" height="330" scrolling="no" class="iframe-class" frameborder="0"><!-- --></iframe>
+
+<iframe src="http://www.youtube.com/embed/vo4rbhR_vsk?rel=0" width="440" height="248" scrolling="no" class="iframe-class" frameborder="0"><!-- --></iframe>
+
+<iframe src="http://www.youtube.com/embed/-pVHC1DXQ7U?rel=0" width="440" height="248" scrolling="no" class="iframe-class" frameborder="0"><!-- --></iframe>
+
+<iframe src="http://www.youtube.com/embed/ZH5XjFJtXUw?rel=0" width="440" height="248" scrolling="no" class="iframe-class" frameborder="0"><!-- --></iframe>
+
+<iframe src="http://www.youtube.com/embed/unrn-wf4cDg?rel=0" width="440" height="248" scrolling="no" class="iframe-class" frameborder="0"><!-- --></iframe>
+
+<iframe src="http://www.youtube.com/embed/vpTprH6jPXE?rel=0" width="440" height="248" scrolling="no" class="iframe-class" frameborder="0"><!-- --></iframe>
+
+<iframe src="http://www.youtube.com/embed/mgWb1d001FI?rel=0" width="440" height="248" scrolling="no" class="iframe-class" frameborder="0"><!-- --></iframe>
+
+<iframe src="http://www.youtube.com/embed/G3F4EcPMvqg?rel=0" width="441" height="248" scrolling="no" frameborder="0"><!-- --></iframe>
 
 Toronto folk, you MUST go see these guys live for the full drunken, sweaty, foot-stomping CATL experience. I promise you’ll like it, unless you have no soul.
