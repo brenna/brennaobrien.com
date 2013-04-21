@@ -3,7 +3,7 @@ title: Torontork
 layout: blog_post
 ---
 
-![Toronto Ork Poster][1]
+![Toronto Ork Poster]({% asset_path blog/torontork.png%})
 
  [1]: http://brennaobrien.com/blog/wp-content/uploads/2011/02/torontork.png "torontork"
 

@@ -3,7 +3,7 @@ title: Dynamic Logos
 layout: blog_post
 ---
 
-![logos](http://brennaobrien.com/blog/wp-content/uploads/2011/05/logos.jpg)
+![OCAD U and MIT Media Lab logos]({% asset_path blog/logos.jpg %})
 
 Toronto art school OCAD University has an innovative new visual identity, courtesy of Bruce Mau Design. The simple black and white logo includes a “window” that will house variable content, including student artwork that is selected each year. Take a look [here][2].
 

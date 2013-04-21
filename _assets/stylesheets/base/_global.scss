@@ -10,8 +10,8 @@
 
 body {
 	font-family: "Lato";
-	font-size: 112.5%;
-	font-weight: 300;
+	font-size: 100%;
+	color: #333;
 }
 
 // ------------------------------------------------------------------
@@ -19,8 +19,29 @@ body {
 // ------------------------------------------------------------------
 p {
 	line-height: 1.6;
-	margin: 0 0 1.5em;
+	margin: 0 0 1.6em;
+
+	@media only screen and (min-width: 47em) {
+		// font-size: 1.1em;
+	}
 }
+
+.punch {
+	font-size: 1.1em;
+	font-weight: 300;
+
+	@media only screen and (min-width: 90em) {
+		font-size: 1.5em;
+		line-height: 1.4;
+		margin-bottom: 1.2em;
+
+		p {
+			line-height: 1.4;
+			margin-bottom: 1.2em;
+		}
+	}
+}
+
 
 // ------------------------------------------------------------------
 // Headings
@@ -30,7 +51,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-	line-height: 1.2;
+	line-height: 1.15;
 	margin: 0 0 0.8em;
 }
 
@@ -41,9 +62,10 @@ h2 {
 h6 {
 	font-size: (16/18*1em);
 	font-weight: 500;
+	margin: 0 0 0.5em;
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 47em) {
 	h1 {
 		font-size: 3em;
 	}
@@ -60,9 +82,18 @@ ol, ul {
 	margin: 0 0 1.5em;
 }
 
+@media only screen and (min-width: 70em) {
+	ol, ul {font-size: 1.1em;}
+}
+
 
 li {
 	margin: 0.5em 0;
+}
+
+.arrow-bullets {
+	list-style-type: none;
+	
 }
 
 // ------------------------------------------------------------------
@@ -71,20 +102,26 @@ li {
 a {
 	text-decoration: none;
 	color: $linkColor;
+	border-bottom: solid 1px transparent;
+	transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;
 
 	&:hover,
 	&:active,
 	&:focus {
-
+		border-bottom: solid 1px $linkColor;
 		//set hoverColor variable to null only if it hasn't been defined yet
 		$hoverColor: null !default; 
 
 		@if $hoverColor {
-			color: $hoverColor;
+			//color: $hoverColor;
 		} @else {
 			// if hoverColour not set, lighten link colour by 10%
-			color: lighten($linkColor, 10);
+			//color: lighten($linkColor, 10);
 		}
+
+		transition: all 0.3s ease-out;
+		-webkit-transition: all 0.3s ease-out;
 	}
 }
 
@@ -92,6 +129,14 @@ a {
 // ==================================================================
 // MEDIA
 // ==================================================================
+figure {
+	margin-bottom: 2em;
+}
+
+	figcaption {
+		margin-top: 1em;
+		font-size: 0.95em;
+	}
 
 img {
 	max-width: 100%;

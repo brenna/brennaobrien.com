@@ -5,7 +5,7 @@ layout: blog_post
 
 \[Originally posted [here][1]\]
 
- [1]: http://www.filamentlab.com/filamablog/2012/07/adventures-in-stylesheeting/
+[1]: http://www.filamentlab.com/filamablog/2012/07/adventures-in-stylesheeting/
 
 I have a bad habit of rearranging things. My old roommate would often come home to the surprise of an alternately configured living room:
 
@@ -92,8 +92,8 @@ I’ve also gotten into the habit of creating [style guides][17] for my larger p
 
 ##### A few snippets from recent style guides:
 
-[Style Guide Samples][19]
+Style Guide Samples
 
- [19]: http://brennaobrien.com/blog/wp-content/uploads/2012/07/styleguides.jpg
+![samples from front-end style guides]({% asset_path blog/styleguides.jpg %})
 
 So that’s about where I’m at now.  My next goal is to develop my own beautiful mini-Frankenstein of a framework encompassing all this. I’m liable to get frustrated and rearrange it all at any moment now, but I wouldn’t be in this game if I didn’t like being kept on my toes.

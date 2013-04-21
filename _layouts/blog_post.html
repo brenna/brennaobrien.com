@@ -1,14 +1,18 @@
----
-layout: default
----
+{% include header.html %}
+
 <section class="main">
 	<article class="blog-post">
 		<header class="blog-title">
-			<h6 class="post-date">{{ page.date | date: "%d<br /> %m<br /> %y"}}</h6>
+			<h6 class="post-date">{{ page.date | date: "%d<span> . </span><br />%m<span> . </span><br />%y"}}</h6>
 			<h1 class="post-title">{{page.title}}</h1>
+			<div class="punch">
+				{{ page.intro }}
+			</div>
 		</header>
 		<div class="blog-content">
 		{{ content }} 
 		</div>
 	</article>
 </section>
+
+{% include footer.html %}

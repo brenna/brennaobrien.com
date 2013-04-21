@@ -2,10 +2,7 @@
 title: 'Epic Reads: Mountain Edition'
 layout: blog_post
 ---
-
-![in the mountains][1]
-
- [1]: http://brennaobrien.com/blog/wp-content/uploads/2011/03/479f6a25a8c3c67c31e5e00b50ab4db7.jpg "479f6a25a8c3c67c31e5e00b50ab4db7"
+![in the mountains]({% asset_path blog/to-the-mountains.jpg%})
 
 I recently finished reading both *Zen and The Art of Motorcycle Maintenance* by Robert Pirsig and *The Dharma Bums* by Jack Kerouac (which is far superior to *On the Road*, by the way).
 

@@ -1,0 +1,37 @@
+header.global, 
+footer.global,
+.blog-teaser > a,
+.blog-post header {
+	@extend %full-width;
+}
+
+.blog-content {
+	@extend %full-width-maxed;
+}
+
+
+// =========================================
+// BLOG
+// =========================================
+$blogWidth: 45em;
+
+// @media only screen and (min-width: 47em) {
+// 	.blog-post,
+// 	.blog-entries {
+// 		margin-left: -webkit-calc(50% - #{$blogWidth}/2);
+// 	}
+// }
+
+// .blog-content {
+// 	max-width: $blogWidth;
+// }
+
+// @media only screen and (min-width: 40em) {
+
+// 	.blog-content {
+// 		padding: 0 2em; //line up with title
+// 	}
+// }
+
+
+ 
