@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> Fear not the command line! |  Brenna O'Brien</title>
+    <meta name="description" content="Brenna O'Brien is a web developer in Toronto, Canada.">
+    <meta name="viewport" content="width=device-width">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/style-40b2c957280733ee8aa39543cd78c823.css">
+    <script type="text/javascript" src="/assets/vendor/modernizr-2.6.2.min-7f9b0bb4ab1406df4e3cd8a3da9c26bf.js"></script>
+
+</head>
+<body>
+    <header class="global">
+
+        <h1 class="brand"><a href="/about/">BrennaOBrien</a></h1>
+        <nav class="global">
+
+            <a  href="/about/">About</a>
+            <a  href="/work/">Work</a>
+            <a class="current"  href="/blog/">Blog</a>
+            <a  href="#contact">Contact</a>
+        </nav>
+    </header>
+
+<section class="main">
+	<article class="blog-post">
+		<header class="blog-title">
+			<h6 class="post-date">23<span> . </span><br />02<span> . </span><br />13</h6>
+			<h1 class="post-title">Fear not the command line!</h1>
+			<div class="punch">
+				<p>Somewhere between digging deep into Windows system files as a child and becoming a professional web developer as an adult, I became intimidated by the command line.</p>
+			</div>
+		</header>
+		<div class="blog-content">
+		<p>Despite its obvious utility to me as a web developer, a little part of me was always certain I’d mistype something and then <em>everything</em> would somehow break.</p>
+<figure>
+    <img alt='&apos;I have no idea what I&apos;m doing&apos; dog' src='/assets/blog/no-idea-c0c6b99ae22fd48c4bce61b6910db64b.jpg' />
+</figure>
+<p>But since I’ve started working regularly with GitHub, logic kicked back in and I’ve realized it’s not such a scary place to be. Here’s a few tips that helped me (or <em>would</em> have helped me) as a beginner. Note that I use OS X.</p>
+
+<h3 id='1_just_start_using_it'>1. Just start using it</h3>
+
+<p>This is probably the toughest one, but as is the case with any new skill, immersion is often the best way to learn. Try moving one of your projects over to GitHub (no cheating with the GUI!), or try compiling your <a href='http://sass-lang.com/'>Sass</a> files though the command line. Some other ideas that I’ve been able to tackle as a beginner are <a href='http://net.tutsplus.com/tutorials/other/building-static-sites-with-jekyll/'>setting up</a> <a href='http://jekyllrb.com/'>Jekyll</a> and rooting my phone using the <a href='http://developer.android.com/sdk/index.html'>Android SDK</a>.</p>
+
+<h3 id='2_learn_the_basic_unix_directory_commands'>2. Learn the basic UNIX directory commands.</h3>
+
+<p>I got away with just cutting and pasting commands for a long time, but <a href='http://www.med.nyu.edu/rcr/rcr/course/unix4.html'>learning the basics</a> of how to move though directories and manage files (move, copy, delete etc.) will help you at least partially understand those lines you’re cutting and pasting. <code>pwd</code> (present working directory) and <code>ls</code> (list the contents of your current directory) will also keep you from feeling lost in your file system. Eventually, all this will become just as intuitive as using Finder.</p>
+
+<h3 id='3_get_a_better_terminal'>3. Get a better terminal</h3>
+
+<p><a href='http://www.iterm2.com'>iTerm</a> is to Terminal as <a href='http://www.sublimetext.com/'>SublimeText</a> is to Dreamweaver. Though you won’t use all of iTerm’s features at first, it’s much more robust and it’s the current gold standard among developers. Autocomplete and paste history will speed things up for you, and the global hot key is great way to help integrate the command line into your workflow.</p>
+
+<h3 id='4_get_to_know_'>4. Get to know <code>.profile</code></h3>
+
+<p>You’re going to need to edit this file sooner or later. It’s a personal config file for your shell and it’s found in your home directory (as a hidden file). <a href='http://www.tech-recipes.com/rx/2621/os_x_change_path_environment_variable/'>Learn how to set a PATH variable</a>. This tripped me up a few times: Anytime you install something that needs to execute commands (like Ruby Gems or the Android SDK), you’ll need to tell your shell where it can find those executables. The <a href='http://www.cs.purdue.edu/homes/cs348/unix_path.html'>PATH variable</a> in <code>.profile</code> is exactly where you do that.</p>
+
+<h3 id='5_use_aliases'>5. Use aliases</h3>
+
+<p>Aliases are like keyboard shortcuts for the command line, custom words that act as abbreviations for longer commands. Personally, I find typing out long directory paths incredibly annoying, so I <a href='http://en.wikipedia.org/wiki/Alias_(command)#Creating_aliases'>set up aliases</a> that cd into frequently used locations. If you’d like your aliases to persist after closing your session, visit your good friend, <code>.profile</code>, and add them there. This made things feel a lot less clunky for me.</p>
+
+<h3 id='6_make_it_pretty'>6. Make it pretty</h3>
+
+<p>Adding a little <a href='http://www.sentia.com.au/2009/06/cool-colours-and-github-branch-in-terminal/'>colour coding</a> and switching to a <a href='http://www.fontsquirrel.com/fonts/Inconsolata'>more readable font</a> help me parse everything a little quicker. That goes a long way in making you feel more comfortable in this text-only environment.</p>
+
+<p>Hopefully this helps someone else on their way and over the intimidation hurdle. Trust me, it’s not that bad!</p>
+
+<p>Now if I could only slay the other monster under my bed, regular expressions…</p>
+
+<p> </p> 
+		</div>
+	</article>
+</section>
+
+    <footer id="contact" class="global">
+        <div class="contact-email">
+            <h3>Get in Touch</h3>
+            <a href="mailto:hi@brennaobrien.com">hi@brennaobrien.com</a>
+        </div>
+        <div class="contact-elsewhere">
+            <h3>Elsewhere</h3>
+            <ul class="social">
+                <li><a href="http://twitter.com/brennaob" target="_blank">Twitter</a></li>
+                <li><a href="http://github.com/brenna" target="_blank">GitHub</a></li>
+                <li><a href="http://gplus.to/brennaobrien" target="_blank">Google Plus</a></li>
+                <li><a href="http://codepen.io/brenna" target="_blank">CodePen</a></li>
+                <li><a href="http://last.fm/user/janiejjones" target="_blank">Last.fm</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+    <script type="text/javascript" src="/assets/plugins-98a6d359f6c565d1514a8cfca374e9cb.js"></script>
+    <script type="text/javascript" src="/assets/main-706ed5f6a6e9f9442ed0fdf4d8bfe370.js"></script>
+
+    <script>
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+</body>
+</html>
+
