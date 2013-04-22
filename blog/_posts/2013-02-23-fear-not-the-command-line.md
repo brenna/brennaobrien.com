@@ -4,11 +4,11 @@ layout: blog_post
 intro: '<p>Somewhere between digging deep into Windows system files as a child and becoming a professional web developer as an adult, I became intimidated by the command line.</p>'
 ---
 
- Despite its obvious utility to me as a web developer, a little part of me was always certain I’d mistype something and then *everything* would somehow break.
-
 <figure>
     <img src="{% asset_path blog/no-idea.jpg%}" alt="'I have no idea what I'm doing' dog"/>
 </figure>
+
+Despite its obvious utility to me as a web developer, a little part of me was always certain I’d mistype something and then *everything* would somehow break.
 
 But since I’ve started working regularly with GitHub, logic kicked back in and I’ve realized it’s not such a scary place to be. Here’s a few tips that helped me (or *would* have helped me) as a beginner. Note that I use OS X.
 

@@ -38,16 +38,23 @@
 	padding-left: 1.5em;
 	padding-right: 1.5em;
 
-
-	// @media only screen and (min-width: 48em) {
-	// 	padding-left: 			calc(50% - 20em);
-	// 	padding-right: 	      	calc(50% - 20em);
-	// 	padding-left: 	-webkit-calc(50% - 20em);
-	// 	padding-right: 	-webkit-calc(50% - 20em);
-	// }
+	@media only screen and (min-width:  60em) {
+		padding-left: 			calc(50% - 17.5em);
+		padding-right: 	      	calc(50% - 17.5em);
+		padding-left: 	-webkit-calc(50% - 17.5em);
+		padding-right: 	-webkit-calc(50% - 17.5em);
+	}
 }
 
-Aliases are like keyboard shortcuts for the command line, custom words that act as 
+// full outdent
+// extend media back out from the half-width columns
+%full-outdent {
+	@media only screen and (min-width: 60em) {
+		margin-left:  -50%;
+		margin-right: -50%;
+	}
+}
+ 
 
 // ------------------------------------------------------------------
 // Media Object

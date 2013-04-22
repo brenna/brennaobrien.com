@@ -19,25 +19,25 @@ body {
 // ------------------------------------------------------------------
 p {
 	line-height: 1.6;
-	margin: 0 0 1.6em;
+	margin: 0 0 2em;
 
-	@media only screen and (min-width: 47em) {
-		// font-size: 1.1em;
+	@media only screen and (min-width: 47em) and (max-width: 60em) {
+		font-size: 1.2em;
 	}
 }
 
 .punch {
-	font-size: 1.1em;
-	font-weight: 300;
+	font-size: 1.2em;
 
-	@media only screen and (min-width: 90em) {
-		font-size: 1.5em;
+	@media only screen and (min-width: 47em) {
+		font-size: 1.6em;
 		line-height: 1.4;
-		margin-bottom: 1.2em;
+		//margin-bottom: 1.2em;
+		font-weight: 300;
 
 		p {
 			line-height: 1.4;
-			margin-bottom: 1.2em;
+			//margin-bottom: 1.2em;
 		}
 	}
 }
@@ -46,17 +46,20 @@ p {
 // ------------------------------------------------------------------
 // Headings
 // ------------------------------------------------------------------
-h1, h2, h3, h4, h5 {
-	font-weight: 300;
-}
-
 h1 {
-	line-height: 1.15;
 	margin: 0 0 0.8em;
+	line-height: 1.15;
+	font-weight: 300;
 }
 
 h2 {
 	margin: 0 0 0.8em;
+	font-weight: 300;
+}
+
+h3 {
+	color: darken($blueDark, 3);
+	font-weight: 500;
 }
 
 h6 {
@@ -73,6 +76,19 @@ h6 {
 	h2 {
 		font-size: 2em;
 	}
+
+	h3 {
+		margin-top: 2em;
+		font-size: 1.5em;
+		font-weight: 300;
+		color: $blueDark
+	}
+}
+
+@media only screen and (min-width: 60em) {
+	h1 {
+		font-size: 3.2em;
+	}
 }
 
 // ------------------------------------------------------------------
@@ -82,8 +98,8 @@ ol, ul {
 	margin: 0 0 1.5em;
 }
 
-@media only screen and (min-width: 70em) {
-	ol, ul {font-size: 1.1em;}
+@media only screen and (min-width: 47em) and (max-width: 60em) {
+	ol, ul {font-size: 1.2em;}
 }
 
 
@@ -135,7 +151,8 @@ figure {
 
 	figcaption {
 		margin-top: 1em;
-		font-size: 0.95em;
+		font-size: 0.8em;
+		line-height: 1.4;
 	}
 
 img {

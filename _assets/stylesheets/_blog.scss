@@ -45,20 +45,33 @@
 		float: left;
 		display: block;
 		width: 2.25em;
+		margin-top: 0.2em;
+		
+		.blog-teaser & {margin-top: -0.1em;}
+
 		br {display: block;}
 		span{display: none;}
 	}
 }
 
+//then make everything even bigger on the list view
+@media only screen and (min-width: 60em) {
+	.blog-teaser .post-title {font-size: 2.5em;}
+	.blog-teaser .post-date {margin-top: 0.5em;}
+}
 
-// .post-date {
-// 	@extend %media-img;
-// 	display: block;
-// 	width: 2em;
-// 	margin: 0.2em 0 1.5em;
-// 	color: $blueDark;
-// }
+// ------------------------------------------------------------------
+// Post Media
+// ------------------------------------------------------------------
 
 .blog-post img {
 	border: solid 1px #666;
 }
+
+
+// figure {
+// 	@media only screen and (min-width: 70em)
+// 		margin-left: -50%:
+// 		margin-right: -50%;
+// 	}
+// }
