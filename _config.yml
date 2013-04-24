@@ -1,3 +1,11 @@
 auto: true
 server_port: 4000
 permalink: /:categories/:year/:month/:title.html
+exclude: ['README.md']
+assets:
+  cachebust: none
+  gzip: false
+  sources:
+    - _assets/js
+    - _assets/css
+    - _assets/img
