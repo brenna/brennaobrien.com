@@ -3,7 +3,7 @@ server_port: 4000
 permalink: /:categories/:year/:month/:title.html
 exclude: ['README.md']
 assets:
-  cachebust: none
+  cachebust: soft
   gzip: false
   sources:
     - _assets/js

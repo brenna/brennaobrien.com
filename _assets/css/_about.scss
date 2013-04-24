@@ -1,20 +1,27 @@
-.nutshell figure {
-	display: inline-block;
-	//width: 49%;
-	vertical-align: top;
-	max-width: 8em;
-	margin-right: 2em;
+.nutshell {
 
-	@media only screen and (min-width: 37em) {
-		width: 16%;
-		margin-right: 3%;
+	figure {
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 1.5em;
+		text-align: center;
+
+		// @media only screen and (min-width: 37em) {
+		// 	width: 16%;
+		// 	margin-right: 3%;
+		// }
+
+		// @media only screen and (min-width: 30em) and (max-width: 50em){
+		// 	width: 32%;
+		// }
+
+		// @media only screen and (min-width: 50em){
+		// 	width: 24%;
+		// }
 	}
 
-	// @media only screen and (min-width: 30em) and (max-width: 50em){
-	// 	width: 32%;
-	// }
-
-	// @media only screen and (min-width: 50em){
-	// 	width: 24%;
-	// }
+	.icon {
+		font-size: 7em;
+		margin-bottom: 0;
+	}
 }

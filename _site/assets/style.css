@@ -1,11 +1,25 @@
-header.global:before, header.global:after {
+header.global:before, footer.global:before, .social:before, header.global:after, footer.global:after, .social:after {
   content: " ";
   display: table; }
-header.global:after {
+header.global:after, footer.global:after, .social:after {
   clear: both; }
+
+.social span {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+.blog-title {
+  overflow: hidden; }
+
+.blog-post .post-title {
+  overflow: hidden; }
 
 header.global,
 footer.global,
+.about-intro,
+.nutshell,
+.resources,
 .blog-teaser > a,
 .blog-post header {
   padding-left: 1.5em;
@@ -13,6 +27,9 @@ footer.global,
   @media only screen and (min-width: 73em) {
     header.global,
     footer.global,
+    .about-intro,
+    .nutshell,
+    .resources,
     .blog-teaser > a,
     .blog-post header {
       padding-left: calc(50% - 35em);
@@ -30,11 +47,15 @@ footer.global,
       padding-left: -webkit-calc(50% - 17.5em);
       padding-right: -webkit-calc(50% - 17.5em); } }
 
-.blog-title {
-  overflow: hidden; }
+@media only screen and (min-width: 47em) {
+  .contact-email {
+    width: 33%;
+    float: left; } }
 
-.blog-post .post-title {
-  overflow: hidden; }
+@media only screen and (min-width: 47em) {
+  .contact-elsewhere {
+    width: 66%;
+    float: left; } }
 
 header.global, footer.global {
   background-color: #101010;
@@ -296,6 +317,70 @@ img {
   max-width: 100%;
   height: auto; }
 
+@font-face {
+  font-family: 'obricons';
+  src: url("../fonts/obricons.eot");
+  src: url("../fonts/obricons.eot?#iefix") format("embedded-opentype"), url("../fonts/obricons.woff") format("woff"), url("../fonts/obricons.ttf") format("truetype"), url("../fonts/obricons.svg#obricons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+  font-family: 'obricons';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased; }
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon, .icon-github, .icon-lastfm, .icon-twitter, .icon-codepen, .icon-bike, .icon-cat, .icon-music, .icon-sci-fi, .icon-function, .icon-googleplus {
+  font-family: 'obricons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased; }
+
+.icon-github:before {
+  content: "\e000"; }
+
+.icon-lastfm:before {
+  content: "\e001"; }
+
+.icon-twitter:before {
+  content: "\e002"; }
+
+.icon-codepen:before {
+  content: "\e004"; }
+
+.icon-bike:before {
+  content: "\e005"; }
+
+.icon-cat:before {
+  content: "\e006"; }
+
+.icon-music:before {
+  content: "\e007"; }
+
+.icon-sci-fi:before {
+  content: "\e008"; }
+
+.icon-function:before {
+  content: "\e009"; }
+
+.icon-googleplus:before {
+  content: "\e00a"; }
+
 header.global {
   padding-top: 1.5em;
   padding-bottom: 1.1em;
@@ -394,15 +479,48 @@ nav.global {
   nav.global a {
     margin-left: 1.5em; } }
 footer.global {
-  color: #fff; }
+  padding-bottom: 3em; }
   footer.global h3 {
-    font-size: 2.5em;
-    color: #f1c59e;
+    font-size: 2em;
+    color: #fff;
     font-weight: 100; }
-  footer.global a {
-    color: #fff; }
-    footer.global a:hover {
-      color: #f1c59e; }
+
+.contact-email a {
+  border: none;
+  font-size: 1.5em;
+  font-weight: 100;
+  color: #eeb888; }
+  .contact-email a:hover {
+    border-bottom-color: #eeb888; }
+
+.social {
+  padding-left: 0;
+  max-width: 16em; }
+  .social li {
+    float: left;
+    width: 20%;
+    height: 20%;
+    margin: 0;
+    list-style-type: none;
+    font-size: 1.5em; }
+    .social li:hover {
+      border-color: #fff; }
+  .social a {
+    display: block;
+    border: none;
+    color: #ebaa71;
+    text-align: center; }
+    .social a:hover {
+      -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+      transform: scale(1.5);
+      -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+      transform-origin: center center; }
+  .social span {
+    display: block;
+    width: 0;
+    height: 0; }
 
 .blog-teaser > a {
   display: block;
@@ -450,9 +568,8 @@ footer.global {
 .nutshell figure {
   display: inline-block;
   vertical-align: top;
-  max-width: 8em;
-  margin-right: 2em; }
-  @media only screen and (min-width: 37em) {
-    .nutshell figure {
-      width: 16%;
-      margin-right: 3%; } }
+  margin-right: 1.5em;
+  text-align: center; }
+.nutshell .icon {
+  font-size: 7em;
+  margin-bottom: 0; }

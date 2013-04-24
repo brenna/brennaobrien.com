@@ -1,15 +1,76 @@
 footer.global {
-	color: #fff;
+	@extend %clearfix;
 	@extend %dark-stripes;
+	padding-bottom: 3em;
 
 	h3 {
-		font-size: 2.5em;
-		color: $peach;
+		font-size: 2em;
+		// color: $peach;
+		color: #fff;
 		font-weight: 100;
+	}
+}
+
+.contact-email a {
+	border: none;
+	font-size: 1.5em;
+	font-weight: 100;
+	color: darken($peach, 5);
+	&:hover {border-bottom-color: darken($peach, 5);}
+}
+
+
+
+.social {
+	@extend %clearfix;
+	padding-left: 0;
+	max-width: 16em;
+
+	li {
+		float: left;
+		width: 20%;
+		height: 20%;
+		margin: 0;
+		list-style-type: none;
+		font-size: 1.5em;
+		// transform: rotate(45deg);
+		// -webkit-transform: rotate(45deg);
+
+		&:hover {
+			border-color: #fff;
+		}
+
 	}
 
 	a {
-		color: #fff;
-		&:hover {color: $peach;}
+		display: block;
+		// height: 2em;
+		// width: 2em;
+		// padding: 0.5em;
+		border: none; //kill default hover 
+		color: darken($peach, 10);
+		text-align: center;
+		
+		// transform: rotate(-45deg);
+		// -webkit-transform: rotate(-45deg);
+		// -ms-transform: rotate(-45deg);
+
+		&:hover {
+			-webkit-transform: scale(1.5);
+			-ms-transform: scale(1.5);
+			transform: scale(1.5);
+
+			-webkit-transform-origin: center center;
+			-ms-transform-origin: center center;
+			transform-origin: center center;
+
+		}
+	}
+
+	span {
+		display: block;
+		width: 0;
+		height: 0;
+		@extend %hide-text;
 	}
 }

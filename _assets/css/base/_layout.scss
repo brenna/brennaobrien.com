@@ -1,5 +1,8 @@
 header.global, 
 footer.global,
+.about-intro,
+.nutshell,
+.resources,
 .blog-teaser > a,
 .blog-post header {
 	@extend %full-width;
@@ -7,6 +10,14 @@ footer.global,
 
 .blog-content {
 	@extend %full-width-maxed;
+}
+
+.contact-email {
+	@extend %third-width;
+}
+
+.contact-elsewhere {
+	@extend %two-thirds-width;
 }
 
 

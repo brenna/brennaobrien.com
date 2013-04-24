@@ -27,6 +27,13 @@ $darkLinkhover: lighten($blueDark, 5);
 @import "base/_global.scss";
 @import "base/_layout.scss";
 
+
+// ===========================================
+// VENDOR STYLES
+// ===========================================
+@import "vendor/_icons.scss";
+
+
 // ===========================================
 // COMPONENT STYLES
 // ===========================================
