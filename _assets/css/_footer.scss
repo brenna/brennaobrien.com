@@ -1,14 +1,18 @@
 footer.global {
 	@extend %clearfix;
 	@extend %dark-stripes;
-	padding-top: 3em;
-	padding-bottom: 1em;
+	padding-top: 4em;
+	padding-bottom: 3em;
 
 	h3 {
 		font-size: 2em;
 		margin-top: 0;
 		color: #fff;
 		font-weight: 100;
+
+		@media only screen and (min-width: 55em) {
+			font-size: 2.5em;
+		}
 	}
 
 	h4 {
@@ -17,11 +21,15 @@ footer.global {
 		@media only screen and (max-width: 24em) {
 			br {display: none;}
 		}
+		@media only screen and (min-width: 55em) and (max-width: 72em) {
+			br {display: none;}
+		}
 	}
 
-	@media only screen and (max-width: 47em) {
+	@media only screen and (max-width: 55em) {
 		text-align: center;
 		padding-top: 2em;
+		padding-bottom: 1em;
 	}
 
 }
@@ -31,6 +39,10 @@ footer.global {
 	font-weight: 300;
 	color: darken($peach, 3);
 	&:hover {border-bottom-color: darken($peach, 5);}
+
+	@media only screen and (min-width: 60em) {
+		font-size: 1.7em;
+	}
 }
 
 
@@ -89,6 +101,13 @@ footer.global {
 		}
 	}
 
+	span {
+		display: block;
+		width: 0;
+		height: 0;
+		@extend %hide-text;
+	}
+
 	@mixin stacked-layout {
 		width: 13.75em;
 		
@@ -106,18 +125,15 @@ footer.global {
 		@include stacked-layout;
 	}
 
-	@media only screen and (max-width: 47em) {
+	@media only screen and (max-width: 55em) {
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-
+	@media only screen and (min-width: 55em) and (max-width: 72em) {
+		@include stacked-layout;
+	}
 
 }
 
-span {
-	display: block;
-	width: 0;
-	height: 0;
-	@extend %hide-text;
-}
+

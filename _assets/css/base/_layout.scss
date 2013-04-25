@@ -12,32 +12,50 @@ footer.global,
 	@extend %full-width-maxed;
 }
 
-@media only screen and (min-width: 47em) and (max-width: 60em) {
-	.contact-email {
-		float: left;
-		width: 50%;
-		padding-right: 0.75em;
-	}
-	.contact-elsewhere {
-		float: left;
-		width: 50%;
-		padding-left: 0.75em;
-	}
-}
+// @media only screen and (min-width: 55em) and (max-width: 60em) {
+// 	.contact-email {
+// 		float: left;
+// 		width: 50%;
+// 		padding-right: 0.75em;
+// 	}
+// 	.contact-elsewhere {
+// 		float: left;
+// 		width: 50%;
+// 		padding-left: 0.75em;
+// 		position: relative;
+// 		top: -3.7em;
+// 	}
+// }
 
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: 55em) and (max-width: 72em) {
 	.contact-intro {
 		float: left;
 		width: 33%;
 	}
 	.contact-email {
 		float: left;
-		padding: 3.9em 3em 0 1.5em;
+		width: 39%;
+		padding-top: 4.7em;
+		text-align: center;
+	}
+	.contact-elsewhere {
+		float: left;
+		padding-top: 3.9em;
+	}
+}
+
+@media only screen and (min-width: 72em) {
+	.contact-intro {
+		float: left;
+		width: 33%;
+	}
+	.contact-email {
+		float: left;
+		padding: 4.7em 3em 0 1.5em;
 	}
 	.contact-elsewhere {
 		float: right;
-		padding-top: 4em;
-		padding-bottom: 1.5em;
+		padding-top: 5em;
 	}
 }
 

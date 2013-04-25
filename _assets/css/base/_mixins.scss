@@ -76,6 +76,19 @@
 	}
 }
 
+%content-width {
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	max-width: 82em;
+
+	@media only screen and (min-width: 73em) {
+		padding-left: 			calc(50% - 35em + 19em);
+		padding-right: 	      	calc(50% - 35em);
+		padding-left: 	-webkit-calc(50% - 35em + 19em);
+		padding-right: 	-webkit-calc(50% - 35em);
+	}
+}
+
 // full outdent
 // extend media back out from the half-width columns
 %full-outdent {

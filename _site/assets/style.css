@@ -4,7 +4,7 @@ header.global:before, footer.global:before, .social:before, header.global:after,
 header.global:after, footer.global:after, .social:after {
   clear: both; }
 
-span {
+.social span {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden; }
@@ -316,29 +316,32 @@ img {
   max-width: 100%;
   height: auto; }
 
-@media only screen and (min-width: 47em) and (max-width: 60em) {
-  .contact-email {
-    float: left;
-    width: 50%;
-    padding-right: 0.75em; }
-
-  .contact-elsewhere {
-    float: left;
-    width: 50%;
-    padding-left: 0.75em; } }
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: 55em) and (max-width: 72em) {
   .contact-intro {
     float: left;
     width: 33%; }
 
   .contact-email {
     float: left;
-    padding: 3.9em 3em 0 1.5em; }
+    width: 39%;
+    padding-top: 4.7em;
+    text-align: center; }
+
+  .contact-elsewhere {
+    float: left;
+    padding-top: 3.9em; } }
+@media only screen and (min-width: 72em) {
+  .contact-intro {
+    float: left;
+    width: 33%; }
+
+  .contact-email {
+    float: left;
+    padding: 4.7em 3em 0 1.5em; }
 
   .contact-elsewhere {
     float: right;
-    padding-top: 4em;
-    padding-bottom: 1.5em; } }
+    padding-top: 5em; } }
 @font-face {
   font-family: 'obricons';
   src: url("../fonts/obricons.eot");
@@ -501,22 +504,29 @@ nav.global {
   nav.global a {
     margin-left: 1.5em; } }
 footer.global {
-  padding-top: 3em;
-  padding-bottom: 1em; }
+  padding-top: 4em;
+  padding-bottom: 3em; }
   footer.global h3 {
     font-size: 2em;
     margin-top: 0;
     color: #fff;
     font-weight: 100; }
+    @media only screen and (min-width: 55em) {
+      footer.global h3 {
+        font-size: 2.5em; } }
   footer.global h4 {
     color: #fff; }
     @media only screen and (max-width: 24em) {
       footer.global h4 br {
         display: none; } }
-  @media only screen and (max-width: 47em) {
+    @media only screen and (min-width: 55em) and (max-width: 72em) {
+      footer.global h4 br {
+        display: none; } }
+  @media only screen and (max-width: 55em) {
     footer.global {
       text-align: center;
-      padding-top: 2em; } }
+      padding-top: 2em;
+      padding-bottom: 1em; } }
 
 .contact-email a {
   font-size: 1.5em;
@@ -524,6 +534,9 @@ footer.global {
   color: #efbd91; }
   .contact-email a:hover {
     border-bottom-color: #eeb888; }
+  @media only screen and (min-width: 60em) {
+    .contact-email a {
+      font-size: 1.7em; } }
 
 .social {
   width: 23.75em;
@@ -562,6 +575,10 @@ footer.global {
     -ms-transform: rotate(-45deg); }
     .social a:hover, .social a:active, .social a:focus {
       color: #222; }
+  .social span {
+    display: block;
+    width: 0;
+    height: 0; }
   @media only screen and (max-width: 29em) {
     .social {
       width: 13.75em; }
@@ -569,15 +586,17 @@ footer.global {
         margin-left: 2.25em; }
       .social li:nth-child(3) {
         margin-right: 0; } }
-  @media only screen and (max-width: 47em) {
+  @media only screen and (max-width: 55em) {
     .social {
       margin-left: auto;
       margin-right: auto; } }
-
-span {
-  display: block;
-  width: 0;
-  height: 0; }
+  @media only screen and (min-width: 55em) and (max-width: 72em) {
+    .social {
+      width: 13.75em; }
+      .social li:nth-child(4) {
+        margin-left: 2.25em; }
+      .social li:nth-child(3) {
+        margin-right: 0; } }
 
 .blog-teaser > a {
   display: block;
