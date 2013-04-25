@@ -1,8 +1,8 @@
 ---
 title: 'Music of 2012, You Weren&#8217;t Half Bad'
 layout: blog_post
-intro: '<p>"<em>I briefly forgot that I can accomplish anything if I’ve got good music playing. Let’s not do that again.</em>”  
-<a href="https://twitter.com/brennaob/status/264131523333197825"> - a couple months ago</a></p>'
+intro: '"<em>I briefly forgot that I can accomplish anything if I’ve got good music playing. Let’s not do that again.</em>”  
+<a href="https://twitter.com/brennaob/status/264131523333197825"> - a couple months ago</a>'
 ---
 
 Though I constantly lamented the lack of new music I’d been listening to this year, and even at times, feared a good-music drought was upon us, it turns out the situation was not so bleak.

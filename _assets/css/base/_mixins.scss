@@ -88,13 +88,16 @@
 
 
 // ------------------------------------------------------------------
-// Responsive 3-up Columns
+// n-up Columns
 // ------------------------------------------------------------------
 %third-width {
-	@media only screen and (min-width: 47em) {
-		width: 33%;
-		float: left;
-	}
+	width: 33%;
+	float: left;
+}
+
+%half-width {
+	width: 50%;
+	float: left;
 }
  
 %two-thirds-width {
@@ -106,12 +109,22 @@
  
 
 
-
-
-
 // ==================================================================
 // THEMES
 // ==================================================================
+// ------------------------------------------------------------------
+// Default Transitions
+// ------------------------------------------------------------------
+// add transition in to you hover state, out to your normal state
+@mixin transition-in {
+	transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+}
+
+@mixin transition-out {
+	transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;
+}
 
 // ------------------------------------------------------------------
 // Striped Background 

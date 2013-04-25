@@ -14,6 +14,17 @@
 
 .blog-post {
 	margin-top: 2em;
+	margin-bottom: 3em;
+
+	@media only screen and (min-width: 47em) and (max-width: 60em){
+		margin-top: 3em;
+		margin-bottom: 4em;
+	}
+
+	@media only screen and (min-width:  60em) {
+		margin-top: 4em;
+		margin-bottom: 6em;
+	}
 }
 
 .blog-title {

@@ -12,37 +12,33 @@ footer.global,
 	@extend %full-width-maxed;
 }
 
-.contact-email {
-	@extend %third-width;
+@media only screen and (min-width: 47em) and (max-width: 60em) {
+	.contact-email {
+		float: left;
+		width: 50%;
+		padding-right: 0.75em;
+	}
+	.contact-elsewhere {
+		float: left;
+		width: 50%;
+		padding-left: 0.75em;
+	}
 }
 
-.contact-elsewhere {
-	@extend %two-thirds-width;
+@media only screen and (min-width: 60em) {
+	.contact-intro {
+		float: left;
+		width: 33%;
+	}
+	.contact-email {
+		float: left;
+		padding: 3.9em 3em 0 1.5em;
+	}
+	.contact-elsewhere {
+		float: right;
+		padding-top: 4em;
+		padding-bottom: 1.5em;
+	}
 }
-
-
-// =========================================
-// BLOG
-// =========================================
-$blogWidth: 45em;
-
-// @media only screen and (min-width: 47em) {
-// 	.blog-post,
-// 	.blog-entries {
-// 		margin-left: -webkit-calc(50% - #{$blogWidth}/2);
-// 	}
-// }
-
-// .blog-content {
-// 	max-width: $blogWidth;
-// }
-
-// @media only screen and (min-width: 40em) {
-
-// 	.blog-content {
-// 		padding: 0 2em; //line up with title
-// 	}
-// }
-
 
  

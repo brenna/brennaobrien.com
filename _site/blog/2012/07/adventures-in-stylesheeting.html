@@ -8,9 +8,10 @@
     <title> Adventures in Stylesheeting |  Brenna O'Brien</title>
     <meta name="description" content="Brenna O'Brien is a web developer in Toronto, Canada.">
     <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/png" href="favicon.ico" />
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/assets/style.css?cb=0181b298a621c852d6ba972468aaf356">
-    <script type="text/javascript" src="/assets/vendor/modernizr-2.6.2.min.js?cb=5fcc99b71a08e0611084b0b2ea218b55"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/style.css">
+    <script type="text/javascript" src="/assets/vendor/modernizr-2.6.2.min.js"></script>
 
 </head>
 <body>
@@ -31,14 +32,12 @@
 		<header class="blog-title">
 			<h6 class="post-date">31<span> . </span><br />07<span> . </span><br />12</h6>
 			<h1 class="post-title">Adventures in Stylesheeting</h1>
-			<div class="punch">
-				
-			</div>
+			<p class="punch">
+				I have a bad habit of rearranging things.
+			</p>
 		</header>
 		<div class="blog-content">
-		<p>[Originally posted <a href='http://www.filamentlab.com/filamablog/2012/07/adventures-in-stylesheeting/'>here</a>]</p>
-
-<p>I have a bad habit of rearranging things. My old roommate would often come home to the surprise of an alternately configured living room:</p>
+		<p>My old roommate would often come home to the surprise of an alternately configured living room:</p>
 
 <p>“Whoa. You just moved all this furniture around by yourself at 11PM on a Wednesday?”<br />“Yeah….”<br />“Okay, cool. Looks good.”</p>
 
@@ -66,7 +65,7 @@
 
 <h3 id='nothing_gold_can_stay_enter_the_preprocessor'>Nothing gold can stay: Enter the Preprocessor</h3>
 
-<p>As I moved on to bigger projects, I began employing several tools to help streamline my development even further. The idealist in me would love so much to create some sort of minimalist Grand Unified Stylesheet (chasing GUS) on every project, but it just ceases to be realistic on a large scale site. There will always be small exceptions to the generalizations you create. And, to style these exceptions, you’ll just end up writing lots of code that overwrites your precious cascade. It felt like I was back where I started; writing things twice (or more) and stuck with an inefficient, hard-to-maintain stylesheet.</p>
+<p>As I moved on to bigger projects, I began employing several tools to help streamline my development even further. The idealist in me would love so much to create some sort of minimalist Grand Unified Stylesheet on every project, but it just ceases to be realistic on a large scale site. There will always be small exceptions to the generalizations you create. And, to style these exceptions, you’ll just end up writing lots of code that overwrites your precious cascade. It felt like I was back where I started; writing things twice (or more) and stuck with an inefficient, hard-to-maintain stylesheet.</p>
 
 <p>Lucky for me, CSS Preprocessors were starting to crop up. Preprocessors essentially extend the capabilities of CSS, allowing us to use all sorts of magical things that every other developer already gets to use (i.e. variables, functions, conditionals). It sounded quite promising, so I gave <a href='http://lesscss.org/'>LESS</a> a go and was instantly impressed with the efficiency it brought to writing CSS.</p>
 
@@ -96,20 +95,24 @@
 
 <p>Style Guide Samples</p>
 
-<p><img alt='samples from front-end style guides' src='/assets/blog/styleguides.jpg?cb=a8ac54300337de87e38aea20f9e0acc9' /></p>
+<p><img alt='samples from front-end style guides' src='/assets/blog/styleguides.jpg' /></p>
 
-<p>So that’s about where I’m at now.  My next goal is to develop my own beautiful mini-Frankenstein of a framework encompassing all this. I’m liable to get frustrated and rearrange it all at any moment now, but I wouldn’t be in this game if I didn’t like being kept on my toes.</p> 
+<p>So that’s about where I’m at now.  My next goal is to develop my own beautiful mini-Frankenstein of a framework encompassing all this. I’m liable to get frustrated and rearrange it all at any moment now, but I wouldn’t be in this game if I didn’t like being kept on my toes.</p>
+
+<p>[Note: originally posted <a href='http://www.filamentlab.com/filamablog/2012/07/adventures-in-stylesheeting/'>here</a>]</p> 
 		</div>
 	</article>
 </section>
 
     <footer id="contact" class="global">
-        <div class="contact-email">
+        <div class="contact-intro">
             <h3>Get in Touch</h3>
-            <a href="mailto:hi@brennaobrien.com">hi@brennaobrien.com</a>
+            <h4>Or find me elsewhere on the Internet.<br /> I come here often.</h4>
+        </div>
+        <div class="contact-email">    
+            <p><a href="mailto:hi@brennaobrien.com">hi@brennaobrien.com</a></p>
         </div>
         <div class="contact-elsewhere">
-            <h3>Elsewhere</h3>
             <ul class="social">
                 <li><a href="http://twitter.com/brennaob" class="icon-twitter"><span>Twitter</span></a></li>
                 <li><a href="http://github.com/brenna" class="icon-github" ><span>GitHub</span></a></li>
@@ -122,8 +125,8 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
-    <script type="text/javascript" src="/assets/plugins.js?cb=f4e6ae74e343f7936ea779c803f4ed12"></script>
-    <script type="text/javascript" src="/assets/main.js?cb=c0384097fa8dbf718fe728b3aefd533d"></script>
+    <script type="text/javascript" src="/assets/plugins.js"></script>
+    <script type="text/javascript" src="/assets/main.js"></script>
 
     <script>
         var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

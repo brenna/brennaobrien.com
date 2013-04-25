@@ -24,21 +24,21 @@ p {
 	@media only screen and (min-width: 47em) and (max-width: 60em) {
 		font-size: 1.2em;
 	}
+
+	@media only screen and (min-width: 60em) {
+		font-size: 1.05em;
+	}
 }
 
 .punch {
 	font-size: 1.2em;
+	margin-bottom: 1.3em;
 
 	@media only screen and (min-width: 47em) {
 		font-size: 1.6em;
 		line-height: 1.4;
 		//margin-bottom: 1.2em;
 		font-weight: 300;
-
-		p {
-			line-height: 1.4;
-			//margin-bottom: 1.2em;
-		}
 	}
 }
 
@@ -50,16 +50,24 @@ h1 {
 	margin: 0 0 0.8em;
 	line-height: 1.15;
 	font-weight: 300;
+	color: #000;
 }
 
 h2 {
 	margin: 0 0 0.8em;
 	font-weight: 300;
+	color: #000;
 }
 
 h3 {
-	color: darken($blueDark, 3);
+	color: #000;
 	font-weight: 500;
+}
+
+h4 {
+	font-size: 1.2em;
+	margin: 0 0 1.3em 0;
+	font-weight: 300;
 }
 
 h6 {
@@ -80,8 +88,7 @@ h6 {
 	h3 {
 		margin-top: 2em;
 		font-size: 1.5em;
-		font-weight: 300;
-		color: $blueDark
+		font-weight: 300; 
 	}
 }
 
@@ -99,7 +106,8 @@ ol, ul {
 }
 
 @media only screen and (min-width: 47em) and (max-width: 60em) {
-	ol, ul {font-size: 1.2em;}
+	.main ol, 
+	.main ul {font-size: 1.2em;}
 }
 
 
@@ -119,8 +127,7 @@ a {
 	text-decoration: none;
 	color: $linkColor;
 	border-bottom: solid 1px transparent;
-	transition: all 0.2s ease-out;
-	-webkit-transition: all 0.2s ease-out;
+	@include transition-out;
 
 	&:hover,
 	&:active,
@@ -136,8 +143,7 @@ a {
 			//color: lighten($linkColor, 10);
 		}
 
-		transition: all 0.3s ease-out;
-		-webkit-transition: all 0.3s ease-out;
+		@include transition-in;
 	}
 }
 

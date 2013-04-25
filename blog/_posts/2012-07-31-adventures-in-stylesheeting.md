@@ -1,13 +1,10 @@
 ---
 title: Adventures in Stylesheeting
 layout: blog_post
+intro: 'I have a bad habit of rearranging things.'
 ---
 
-\[Originally posted [here][1]\]
-
-[1]: http://www.filamentlab.com/filamablog/2012/07/adventures-in-stylesheeting/
-
-I have a bad habit of rearranging things. My old roommate would often come home to the surprise of an alternately configured living room:
+My old roommate would often come home to the surprise of an alternately configured living room:
 
 “Whoa. You just moved all this furniture around by yourself at 11PM on a Wednesday?”  
 “Yeah….”  
@@ -40,7 +37,7 @@ Global styles like this are even necessary in some cases. When working with a CM
 
 ### Nothing gold can stay: Enter the Preprocessor
 
-As I moved on to bigger projects, I began employing several tools to help streamline my development even further. The idealist in me would love so much to create some sort of minimalist Grand Unified Stylesheet (chasing GUS) on every project, but it just ceases to be realistic on a large scale site. There will always be small exceptions to the generalizations you create. And, to style these exceptions, you’ll just end up writing lots of code that overwrites your precious cascade. It felt like I was back where I started; writing things twice (or more) and stuck with an inefficient, hard-to-maintain stylesheet.
+As I moved on to bigger projects, I began employing several tools to help streamline my development even further. The idealist in me would love so much to create some sort of minimalist Grand Unified Stylesheet on every project, but it just ceases to be realistic on a large scale site. There will always be small exceptions to the generalizations you create. And, to style these exceptions, you’ll just end up writing lots of code that overwrites your precious cascade. It felt like I was back where I started; writing things twice (or more) and stuck with an inefficient, hard-to-maintain stylesheet.
 
 Lucky for me, CSS Preprocessors were starting to crop up. Preprocessors essentially extend the capabilities of CSS, allowing us to use all sorts of magical things that every other developer already gets to use (i.e. variables, functions, conditionals). It sounded quite promising, so I gave [LESS][2] a go and was instantly impressed with the efficiency it brought to writing CSS.
 
@@ -97,3 +94,7 @@ Style Guide Samples
 ![samples from front-end style guides]({% asset_path blog/styleguides.jpg %})
 
 So that’s about where I’m at now.  My next goal is to develop my own beautiful mini-Frankenstein of a framework encompassing all this. I’m liable to get frustrated and rearrange it all at any moment now, but I wouldn’t be in this game if I didn’t like being kept on my toes.
+
+\[Note: originally posted [here][1]\]
+
+[1]: http://www.filamentlab.com/filamablog/2012/07/adventures-in-stylesheeting/

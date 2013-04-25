@@ -4,7 +4,7 @@ header.global:before, footer.global:before, .social:before, header.global:after,
 header.global:after, footer.global:after, .social:after {
   clear: both; }
 
-.social span {
+span {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden; }
@@ -46,16 +46,6 @@ footer.global,
       padding-right: calc(50% - 17.5em);
       padding-left: -webkit-calc(50% - 17.5em);
       padding-right: -webkit-calc(50% - 17.5em); } }
-
-@media only screen and (min-width: 47em) {
-  .contact-email {
-    width: 33%;
-    float: left; } }
-
-@media only screen and (min-width: 47em) {
-  .contact-elsewhere {
-    width: 66%;
-    float: left; } }
 
 header.global, footer.global {
   background-color: #101010;
@@ -238,29 +228,38 @@ p {
   @media only screen and (min-width: 47em) and (max-width: 60em) {
     p {
       font-size: 1.2em; } }
+  @media only screen and (min-width: 60em) {
+    p {
+      font-size: 1.05em; } }
 
 .punch {
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  margin-bottom: 1.3em; }
   @media only screen and (min-width: 47em) {
     .punch {
       font-size: 1.6em;
       line-height: 1.4;
-      font-weight: 300; }
-      .punch p {
-        line-height: 1.4; } }
+      font-weight: 300; } }
 
 h1 {
   margin: 0 0 0.8em;
   line-height: 1.15;
-  font-weight: 300; }
+  font-weight: 300;
+  color: #000; }
 
 h2 {
   margin: 0 0 0.8em;
-  font-weight: 300; }
+  font-weight: 300;
+  color: #000; }
 
 h3 {
-  color: #107e8a;
+  color: #000;
   font-weight: 500; }
+
+h4 {
+  font-size: 1.2em;
+  margin: 0 0 1.3em 0;
+  font-weight: 300; }
 
 h6 {
   font-size: 0.88889em;
@@ -277,8 +276,7 @@ h6 {
   h3 {
     margin-top: 2em;
     font-size: 1.5em;
-    font-weight: 300;
-    color: #128b98; } }
+    font-weight: 300; } }
 @media only screen and (min-width: 60em) {
   h1 {
     font-size: 3.2em; } }
@@ -286,7 +284,8 @@ ol, ul {
   margin: 0 0 1.5em; }
 
 @media only screen and (min-width: 47em) and (max-width: 60em) {
-  ol, ul {
+  .main ol,
+  .main ul {
     font-size: 1.2em; } }
 li {
   margin: 0.5em 0; }
@@ -317,6 +316,29 @@ img {
   max-width: 100%;
   height: auto; }
 
+@media only screen and (min-width: 47em) and (max-width: 60em) {
+  .contact-email {
+    float: left;
+    width: 50%;
+    padding-right: 0.75em; }
+
+  .contact-elsewhere {
+    float: left;
+    width: 50%;
+    padding-left: 0.75em; } }
+@media only screen and (min-width: 60em) {
+  .contact-intro {
+    float: left;
+    width: 33%; }
+
+  .contact-email {
+    float: left;
+    padding: 3.9em 3em 0 1.5em; }
+
+  .contact-elsewhere {
+    float: right;
+    padding-top: 4em;
+    padding-bottom: 1.5em; } }
 @font-face {
   font-family: 'obricons';
   src: url("../fonts/obricons.eot");
@@ -479,48 +501,83 @@ nav.global {
   nav.global a {
     margin-left: 1.5em; } }
 footer.global {
-  padding-bottom: 3em; }
+  padding-top: 3em;
+  padding-bottom: 1em; }
   footer.global h3 {
     font-size: 2em;
+    margin-top: 0;
     color: #fff;
     font-weight: 100; }
+  footer.global h4 {
+    color: #fff; }
+    @media only screen and (max-width: 24em) {
+      footer.global h4 br {
+        display: none; } }
+  @media only screen and (max-width: 47em) {
+    footer.global {
+      text-align: center;
+      padding-top: 2em; } }
 
 .contact-email a {
-  border: none;
   font-size: 1.5em;
-  font-weight: 100;
-  color: #eeb888; }
+  font-weight: 300;
+  color: #efbd91; }
   .contact-email a:hover {
     border-bottom-color: #eeb888; }
 
 .social {
-  padding-left: 0;
-  max-width: 16em; }
+  width: 23.75em;
+  padding-left: 0.5em; }
   .social li {
     float: left;
-    width: 20%;
-    height: 20%;
-    margin: 0;
+    width: 2.5em;
+    height: 2.5em;
+    margin: 0 2em 0 0;
+    border: solid 1px #fff;
     list-style-type: none;
-    font-size: 1.5em; }
+    font-size: 1.1em;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out; }
+    .social li:last-child {
+      margin-right: 0; }
     .social li:hover {
-      border-color: #fff; }
+      background: #fff;
+      transition: all 0.3s ease-out;
+      -webkit-transition: all 0.3s ease-out; }
+      .social li:hover a {
+        color: #222; }
   .social a {
     display: block;
+    height: 2.5em;
+    width: 2.5em;
+    padding-top: 0.7em;
     border: none;
-    color: #ebaa71;
-    text-align: center; }
-    .social a:hover {
-      -webkit-transform: scale(1.5);
-      -ms-transform: scale(1.5);
-      transform: scale(1.5);
-      -webkit-transform-origin: center center;
-      -ms-transform-origin: center center;
-      transform-origin: center center; }
-  .social span {
-    display: block;
-    width: 0;
-    height: 0; }
+    text-align: center;
+    color: #fff;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg); }
+    .social a:hover, .social a:active, .social a:focus {
+      color: #222; }
+  @media only screen and (max-width: 29em) {
+    .social {
+      width: 13.75em; }
+      .social li:nth-child(4) {
+        margin-left: 2.25em; }
+      .social li:nth-child(3) {
+        margin-right: 0; } }
+  @media only screen and (max-width: 47em) {
+    .social {
+      margin-left: auto;
+      margin-right: auto; } }
+
+span {
+  display: block;
+  width: 0;
+  height: 0; }
 
 .blog-teaser > a {
   display: block;
@@ -531,7 +588,16 @@ footer.global {
   background: #f0fcfd; }
 
 .blog-post {
-  margin-top: 2em; }
+  margin-top: 2em;
+  margin-bottom: 3em; }
+  @media only screen and (min-width: 47em) and (max-width: 60em) {
+    .blog-post {
+      margin-top: 3em;
+      margin-bottom: 4em; } }
+  @media only screen and (min-width: 60em) {
+    .blog-post {
+      margin-top: 4em;
+      margin-bottom: 6em; } }
 
 .post-title a {
   color: #000; }
@@ -564,6 +630,9 @@ footer.global {
     margin-top: 0.5em; } }
 .blog-post img {
   border: solid 1px #666; }
+
+.about-intro {
+  margin-top: 2em; }
 
 .nutshell figure {
   display: inline-block;
