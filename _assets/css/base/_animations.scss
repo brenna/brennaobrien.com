@@ -1,0 +1,52 @@
+// ==================================================================
+// CSS ANIMATIONS
+// ==================================================================
+
+//pulse animation
+@-webkit-keyframes pulse {
+	from {
+		-webkit-transform: scale(1);
+		-webkit-transform-origin: center center;
+		-webkit-animation-timing-function: ease-out;
+	}
+	25% {
+		-webkit-transform: scale(1.1);
+		-webkit-animation-timing-function: ease-in;
+	}
+	50% {
+		-webkit-transform: scale(1);
+		-webkit-animation-timing-function: ease-out;
+	}
+	74% {
+		-webkit-transform: scale(1.05);
+		-webkit-animation-timing-function: ease-in;
+	}
+	to {
+		-webkit-transform: scale(1);
+		-webkit-animation-timing-function: ease-out;
+	}
+}
+
+@keyframes pulse {
+	from {
+		transform: scale(1);
+		transform-origin: center center;
+		animation-timing-function: ease-out;
+	}
+	25% {
+		transform: scale(1.1);
+		animation-timing-function: ease-in;
+	}
+	50% {
+		transform: scale(1);
+		animation-timing-function: ease-out;
+	}
+	74% {
+		transform: scale(1.05);
+		animation-timing-function: ease-in;
+	}
+	to {
+		transform: scale(1);
+		animation-timing-function: ease-out;
+	}
+}

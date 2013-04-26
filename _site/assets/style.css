@@ -342,6 +342,50 @@ img {
   .contact-elsewhere {
     float: right;
     padding-top: 5em; } }
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale(1);
+    -webkit-transform-origin: center center;
+    -webkit-animation-timing-function: ease-out; }
+
+  25% {
+    -webkit-transform: scale(1.1);
+    -webkit-animation-timing-function: ease-in; }
+
+  50% {
+    -webkit-transform: scale(1);
+    -webkit-animation-timing-function: ease-out; }
+
+  74% {
+    -webkit-transform: scale(1.05);
+    -webkit-animation-timing-function: ease-in; }
+
+  to {
+    -webkit-transform: scale(1);
+    -webkit-animation-timing-function: ease-out; } }
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out; }
+
+  25% {
+    transform: scale(1.1);
+    animation-timing-function: ease-in; }
+
+  50% {
+    transform: scale(1);
+    animation-timing-function: ease-out; }
+
+  74% {
+    transform: scale(1.05);
+    animation-timing-function: ease-in; }
+
+  to {
+    transform: scale(1);
+    animation-timing-function: ease-out; } }
+
 @font-face {
   font-family: 'obricons';
   src: url("../fonts/obricons.eot");
@@ -510,10 +554,13 @@ footer.global {
     font-size: 2em;
     margin-top: 0;
     color: #fff;
-    font-weight: 100; }
+    font-weight: 300; }
     @media only screen and (min-width: 55em) {
       footer.global h3 {
         font-size: 2.5em; } }
+    footer.global h3.animate {
+      -webkit-animation: pulse 0.5s;
+      animation: pulse 0.5s; }
   footer.global h4 {
     color: #fff; }
     @media only screen and (max-width: 24em) {
