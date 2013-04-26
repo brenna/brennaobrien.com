@@ -13,7 +13,6 @@ header.global {
 		margin-bottom: 0.5em;
 		padding: 0 1em;
 		line-height: 2.3em;
-		font-weight: 100;
 		letter-spacing: 0.05em;
 
 		a {
@@ -28,6 +27,7 @@ header.global {
 			margin-top: -0.55em; //vertically centre
 			color: darken($peach, 10);
 			font-size: 2.3em;
+			font-weight: 100;
 		}
 
 		&:before {
@@ -102,7 +102,8 @@ nav.global {
 		}
 
 
-		&:hover:before {
+		&:hover:before,
+		&:active:before {
 			border-color: #fff;
 		}
 

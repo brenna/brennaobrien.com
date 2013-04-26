@@ -462,7 +462,6 @@ header.global {
   margin-bottom: 0.5em;
   padding: 0 1em;
   line-height: 2.3em;
-  font-weight: 100;
   letter-spacing: 0.05em; }
   .brand a {
     color: #fff;
@@ -472,7 +471,8 @@ header.global {
     top: 50%;
     margin-top: -0.55em;
     color: #ebaa71;
-    font-size: 2.3em; }
+    font-size: 2.3em;
+    font-weight: 100; }
   .brand:before {
     content: "{";
     left: -0.05em; }
@@ -525,7 +525,7 @@ nav.global {
           nav.global a:nth-child(2n):before {
             left: auto;
             right: 2%; } }
-    nav.global a:hover:before {
+    nav.global a:hover:before, nav.global a:active:before {
       border-color: #fff; }
     nav.global a.current:before {
       border-color: #ebaa71; }
