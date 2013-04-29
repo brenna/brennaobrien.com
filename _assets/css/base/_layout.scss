@@ -4,7 +4,9 @@ footer.global,
 .nutshell,
 .resources,
 .blog-teaser > a,
-.blog-post header {
+.blog-post header,
+.work-entries,
+.work-post {
 	@extend %full-width;
 }
 
@@ -26,6 +28,35 @@ footer.global,
 // 		top: -3.7em;
 // 	}
 // }
+
+.work-teaser {
+	figure {
+		@extend %clearfix;
+	}
+
+	@media only screen and (min-width: 60em) {
+		float: left;
+		width: 47%;
+
+		&.left {
+			margin-right: 3%;
+		}
+		&.right {
+			margin-left: 3%;
+		}
+	}
+}
+
+img.site-full {
+	float: left;
+	width: 75%;
+	margin-right: 3%;
+}
+
+img.site-mobile {
+	float: left;
+	width: 22%;
+}
 
 @media only screen and (min-width: 55em) and (max-width: 72em) {
 	.contact-intro {

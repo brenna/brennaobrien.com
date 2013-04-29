@@ -27,7 +27,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon, .icon-github, .icon-lastfm, .icon-twitter, .icon-codepen, .icon-bike, .icon-cat, .icon-music, .icon-sci-fi, .icon-function, .icon-googleplus {
+.icon, .icon-github, .icon-lastfm, .icon-twitter, .icon-codepen, .icon-bike, .icon-cat, .icon-music, .icon-sci-fi, .icon-function, .icon-googleplus, .icon-web {
 	font-family: 'obricons';
 	speak: none;
 	font-style: normal;
@@ -66,4 +66,7 @@ you can use the generic selector below, but it's slower:
 }
 .icon-googleplus:before {
 	content: "\e00a";
+}
+.icon-web:before {
+	content: "\e003";
 }

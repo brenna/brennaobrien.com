@@ -1,13 +1,18 @@
-header.global:before, footer.global:before, .social:before, header.global:after, footer.global:after, .social:after {
+.work-teaser figure:before, header.global:before, footer.global:before, .social:before, .about-intro:before, .work-entries:before, .work-teaser figure:after, header.global:after, footer.global:after, .social:after, .about-intro:after, .work-entries:after {
   content: " ";
   display: table; }
-header.global:after, footer.global:after, .social:after {
+.work-teaser figure:after, header.global:after, footer.global:after, .social:after, .about-intro:after, .work-entries:after {
   clear: both; }
 
 .social span {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden; }
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
 
 .blog-title {
   overflow: hidden; }
@@ -21,7 +26,9 @@ footer.global,
 .nutshell,
 .resources,
 .blog-teaser > a,
-.blog-post header {
+.blog-post header,
+.work-entries,
+.work-post {
   padding-left: 1.5em;
   padding-right: 1.5em; }
   @media only screen and (min-width: 73em) {
@@ -31,7 +38,9 @@ footer.global,
     .nutshell,
     .resources,
     .blog-teaser > a,
-    .blog-post header {
+    .blog-post header,
+    .work-entries,
+    .work-post {
       padding-left: calc(50% - 35em);
       padding-right: calc(50% - 35em);
       padding-left: -webkit-calc(50% - 35em);
@@ -233,7 +242,7 @@ p {
       font-size: 1.05em; } }
 
 .punch {
-  font-size: 1.2em;
+  font-size: 1.25em;
   margin-bottom: 1.3em; }
   @media only screen and (min-width: 47em) {
     .punch {
@@ -253,8 +262,10 @@ h2 {
   color: #000; }
 
 h3 {
-  color: #000;
-  font-weight: 500; }
+  color: #111;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em; }
 
 h4 {
   font-size: 1.2em;
@@ -275,8 +286,7 @@ h6 {
 
   h3 {
     margin-top: 2em;
-    font-size: 1.5em;
-    font-weight: 300; } }
+    font-size: 1.3em; } }
 @media only screen and (min-width: 60em) {
   h1 {
     font-size: 3.2em; } }
@@ -315,6 +325,24 @@ figcaption {
 img {
   max-width: 100%;
   height: auto; }
+
+@media only screen and (min-width: 60em) {
+  .work-teaser {
+    float: left;
+    width: 47%; }
+    .work-teaser.left {
+      margin-right: 3%; }
+    .work-teaser.right {
+      margin-left: 3%; } }
+
+img.site-full {
+  float: left;
+  width: 75%;
+  margin-right: 3%; }
+
+img.site-mobile {
+  float: left;
+  width: 22%; }
 
 @media only screen and (min-width: 55em) and (max-width: 72em) {
   .contact-intro {
@@ -410,7 +438,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon, .icon-github, .icon-lastfm, .icon-twitter, .icon-codepen, .icon-bike, .icon-cat, .icon-music, .icon-sci-fi, .icon-function, .icon-googleplus {
+.icon, .icon-github, .icon-lastfm, .icon-twitter, .icon-codepen, .icon-bike, .icon-cat, .icon-music, .icon-sci-fi, .icon-function, .icon-googleplus, .icon-web {
   font-family: 'obricons';
   speak: none;
   font-style: normal;
@@ -449,6 +477,9 @@ you can use the generic selector below, but it's slower:
 
 .icon-googleplus:before {
   content: "\e00a"; }
+
+.icon-web:before {
+  content: "\e003"; }
 
 header.global {
   padding-top: 1.5em;
@@ -554,7 +585,9 @@ footer.global {
     font-size: 2em;
     margin-top: 0;
     color: #fff;
-    font-weight: 300; }
+    font-weight: 300;
+    text-transform: none;
+    letter-spacing: 0; }
     @media only screen and (min-width: 55em) {
       footer.global h3 {
         font-size: 2.5em; } }
@@ -698,13 +731,140 @@ footer.global {
   border: solid 1px #666; }
 
 .about-intro {
-  margin-top: 2em; }
+  padding-top: 2em;
+  padding-bottom: 1em;
+  border-bottom: solid 1px #dedede; }
+  .about-intro .punch {
+    line-height: 1.4; }
+    .about-intro .punch a {
+      color: #128b98; }
+      .about-intro .punch a:hover {
+        border-bottom-color: #128b98; }
+  .about-intro .about-curiosity {
+    margin-bottom: 1.5em; }
+  .about-intro .about-contribute a {
+    white-space: nowrap; }
+  @media only screen and (max-width: 47em) {
+    .about-intro h1 {
+      margin-bottom: 1em; } }
+  @media only screen and (min-width: 35em) {
+    .about-intro {
+      padding-top: 3em; }
+      .about-intro .about-curiosity,
+      .about-intro .about-contribute {
+        width: 48%;
+        float: left;
+        max-width: 21em; }
+      .about-intro .about-curiosity {
+        margin-right: 4%; } }
+  @media only screen and (min-width: 47em) {
+    .about-intro {
+      padding-top: 4em;
+      padding-bottom: 2em; } }
+  @media only screen and (min-width: 60em) {
+    .about-intro .punch {
+      font-size: 1.8em; }
+    .about-intro .about-curiosity,
+    .about-intro .about-contribute {
+      font-size: 1.2em; } }
 
-.nutshell figure {
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 1.5em;
-  text-align: center; }
-.nutshell .icon {
-  font-size: 7em;
-  margin-bottom: 0; }
+.nutshell {
+  padding-top: 0.5em;
+  padding-bottom: 1.5em; }
+  .nutshell .icon-list {
+    margin-left: -1.5em; }
+  @media only screen and (min-width: 47em) {
+    .nutshell {
+      padding-top: 1em;
+      padding-bottom: 3em; }
+      .nutshell h3 {
+        margin-bottom: 1.5em; } }
+  .nutshell figure {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    padding-left: 1.5em;
+    text-align: center;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear; }
+    @media only screen and (min-width: 29em) {
+      .nutshell figure {
+        width: 32%; } }
+    @media only screen and (min-width: 47em) {
+      .nutshell figure {
+        width: 19%; } }
+    .nutshell figure .icon {
+      color: #000;
+      cursor: default;
+      -webkit-transition: inherit;
+      transition: inherit; }
+      @media only screen and (min-width: 60em) {
+        .nutshell figure .icon {
+          font-size: 8.5em; } }
+    .nutshell figure:hover {
+      color: #128b98;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+      .nutshell figure:hover .icon {
+        color: #128b98;
+        -webkit-transform: scale(1.2);
+        transform: scale(1.5); }
+    .nutshell figure figcaption {
+      margin-top: 0; }
+  .nutshell .icon {
+    font-size: 7em;
+    margin-bottom: 0; }
+
+.work-entries {
+  padding-bottom: 2em; }
+  @media only screen and (min-width: 47em) {
+    .work-entries {
+      padding-top: 1.5em; } }
+
+.work-teaser {
+  padding-top: 2em; }
+  .work-teaser header {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2em;
+    border-bottom: solid 1px #ababab; }
+  .work-teaser figure {
+    margin-bottom: 1.5em; }
+  .work-teaser img {
+    border: solid 1px #ababab; }
+
+.work-link {
+  position: absolute;
+  right: 0;
+  bottom: 0.5em;
+  padding-right: 1.3em;
+  line-height: 1.4; }
+  .work-link span {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em; }
+  .work-link:before {
+    position: absolute;
+    top: 0.1em;
+    right: 0; }
+
+.work-title {
+  margin-bottom: 0;
+  font-size: 1.8em;
+  line-height: 1.15; }
+  @media only screen and (min-width: 47em) {
+    .work-title {
+      font-size: 3em; } }
+
+.work-type {
+  margin: 0.5em 0 0.9em 0;
+  padding-right: 25%;
+  color: #128b98;
+  font-size: 0.8em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase; }

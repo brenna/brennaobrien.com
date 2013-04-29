@@ -3,11 +3,14 @@ layout: default
 title: Work
 ---
 
-<section class="blog-entries">
+<section class="work-entries">
 	{% for post in site.categories['work'] %}
-	<article>
-		<a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
-		<img src="{{ post.hero }}" alt="{{page.title}} website" />
+	<article class="work-teaser {%cycle 'left', 'right'%}">
+		<header>
+			<h2 class="work-title">{{post.title}}</h2>
+			<h3 class="work-type">{{post.type}}</h3>
+			{% if post.site_url %}<a class="work-link icon-web" href="{{post.site_url}}"><span>View</span></a>{% endif %}
+		</header>
 		{{post.content}}
 	</article>
 	{% endfor %}

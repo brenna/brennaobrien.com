@@ -1,27 +1,122 @@
 .about-intro {
-	margin-top: 2em;
+	@extend %clearfix;
+	padding-top: 2em;
+	padding-bottom: 1em;
+	border-bottom: solid 1px #dedede;
+
+	.punch {
+		line-height: 1.4;
+		
+		a {
+			color: $blueDark;
+			&:hover {border-bottom-color: $blueDark; }
+		}
+	}
+
+	.about-curiosity {
+		margin-bottom: 1.5em;
+	}
+
+	.about-contribute a {
+		white-space: nowrap;
+	}
+
+
+	@media only screen and (max-width: 47em) {
+		h1 {margin-bottom: 1em;}
+	}
+
+	@media only screen and (min-width: 35em) {
+		padding-top: 3em;
+
+		.about-curiosity,
+		.about-contribute {
+			width: 48%;
+			float: left;
+			max-width: 21em;
+		}
+
+		.about-curiosity {
+			margin-right: 4%;
+		}
+	}
+
+	@media only screen and (min-width: 47em) {
+		padding-top: 4em;
+		padding-bottom: 2em;
+	}
+
+	@media only screen and (min-width: 60em) {
+		.punch {font-size: 1.8em;}
+		.about-curiosity,
+		.about-contribute {
+			font-size: 1.2em;
+		}
+	}
 }
 
 .nutshell {
+	padding-top: 0.5em;
+	padding-bottom: 1.5em;
+
+	.icon-list {
+		margin-left: -1.5em;
+	}
+
+	@media only screen and (min-width: 47em) {
+		padding-top: 1em;
+		padding-bottom: 3em;
+
+		h3 {margin-bottom: 1.5em;}
+	}
 
 	figure {
 		display: inline-block;
 		vertical-align: top;
-		margin-right: 1.5em;
+		width: 49%;
+		padding-left: 1.5em;
 		text-align: center;
+		-webkit-transition: all 0.2s linear;
+		transition: all 0.2s linear;
 
-		// @media only screen and (min-width: 37em) {
-		// 	width: 16%;
-		// 	margin-right: 3%;
-		// }
+		@media only screen and (min-width: 29em) {
+			width: 32%;
+		}
 
-		// @media only screen and (min-width: 30em) and (max-width: 50em){
-		// 	width: 32%;
-		// }
+		@media only screen and (min-width: 47em) {
+			width: 19%;
+		}
 
-		// @media only screen and (min-width: 50em){
-		// 	width: 24%;
-		// }
+		.icon {
+			color: #000;
+			cursor: default;
+			-webkit-transition: inherit;
+			transition: inherit;
+
+			@media only screen and (min-width: 60em) {
+				font-size: 8.5em;
+			}
+		}
+
+		&:hover {
+			color: $blueDark;
+			
+			-webkit-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
+			
+			.icon {
+				color: $blueDark;
+				-webkit-transform: scale(1.2);
+				transform: scale(1.5);
+
+			}
+		}
+
+		figcaption {
+			margin-top: 0;
+		}
+
+		
 	}
 
 	.icon {
