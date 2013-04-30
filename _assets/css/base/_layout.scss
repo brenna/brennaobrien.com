@@ -1,17 +1,27 @@
 header.global, 
 footer.global,
 .about-intro,
-.nutshell,
-.resources,
 .blog-teaser > a,
-.blog-post header,
 .work-entries,
 .work-post {
 	@extend %full-width;
 }
 
+.blog-post header {
+	//@extend %full-width-left-maxed;
+	@extend %full-width;
+}
+
 .blog-content {
 	@extend %full-width-maxed;
+}
+
+
+.nutshell {
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	max-width: 56em;
+	margin: 0 auto;
 }
 
 // @media only screen and (min-width: 55em) and (max-width: 60em) {

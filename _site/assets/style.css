@@ -23,24 +23,18 @@
 header.global,
 footer.global,
 .about-intro,
-.nutshell,
-.resources,
 .blog-teaser > a,
-.blog-post header,
 .work-entries,
-.work-post {
+.work-post, .blog-post header {
   padding-left: 1.5em;
   padding-right: 1.5em; }
   @media only screen and (min-width: 73em) {
     header.global,
     footer.global,
     .about-intro,
-    .nutshell,
-    .resources,
     .blog-teaser > a,
-    .blog-post header,
     .work-entries,
-    .work-post {
+    .work-post, .blog-post header {
       padding-left: calc(50% - 35em);
       padding-right: calc(50% - 35em);
       padding-left: -webkit-calc(50% - 35em);
@@ -248,7 +242,9 @@ p {
     .punch {
       font-size: 1.6em;
       line-height: 1.4;
-      font-weight: 300; } }
+      font-weight: 300; }
+      .punch strong {
+        font-weight: 500; } }
 
 h1 {
   margin: 0 0 0.8em;
@@ -325,6 +321,12 @@ figcaption {
 img {
   max-width: 100%;
   height: auto; }
+
+.nutshell {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  max-width: 56em;
+  margin: 0 auto; }
 
 @media only screen and (min-width: 60em) {
   .work-teaser {
@@ -731,89 +733,65 @@ footer.global {
   border: solid 1px #666; }
 
 .about-intro {
-  padding-top: 2em;
-  padding-bottom: 1em;
-  border-bottom: solid 1px #dedede; }
-  .about-intro .punch {
-    line-height: 1.4; }
-    .about-intro .punch a {
-      color: #128b98; }
-      .about-intro .punch a:hover {
-        border-bottom-color: #128b98; }
+  padding-top: 2.5em;
+  pading-bottom: 1em; }
+  .about-intro .about-skillz a {
+    color: #128b98; }
+    .about-intro .about-skillz a:hover {
+      border-bottom-color: #128b98; }
   .about-intro .about-curiosity {
     margin-bottom: 1.5em; }
-  .about-intro .about-contribute a {
+  .about-intro .about-contribute a,
+  .about-intro .about-intro h1 a {
     white-space: nowrap; }
   @media only screen and (max-width: 47em) {
     .about-intro h1 {
       margin-bottom: 1em; } }
   @media only screen and (min-width: 35em) {
     .about-intro {
-      padding-top: 3em; }
-      .about-intro .about-curiosity,
-      .about-intro .about-contribute {
-        width: 48%;
-        float: left;
-        max-width: 21em; }
-      .about-intro .about-curiosity {
-        margin-right: 4%; } }
+      padding-top: 3em; } }
   @media only screen and (min-width: 47em) {
     .about-intro {
-      padding-top: 4em;
-      padding-bottom: 2em; } }
+      padding-top: 4em; } }
   @media only screen and (min-width: 60em) {
-    .about-intro .punch {
-      font-size: 1.8em; }
-    .about-intro .about-curiosity,
-    .about-intro .about-contribute {
-      font-size: 1.2em; } }
+    .about-intro h1 {
+      font-size: 3.2em; } }
 
 .nutshell {
   padding-top: 0.5em;
-  padding-bottom: 1.5em; }
+  padding-bottom: 2.5em;
+  text-align: center; }
+  .nutshell h3 {
+    margin-bottom: 1.4em; }
   .nutshell .icon-list {
     margin-left: -1.5em; }
-  @media only screen and (min-width: 47em) {
-    .nutshell {
-      padding-top: 1em;
-      padding-bottom: 3em; }
-      .nutshell h3 {
-        margin-bottom: 1.5em; } }
+    @media only screen and (min-width: 36em) and (max-width: 47em) {
+      .nutshell .icon-list {
+        padding: 0 -webkit-calc(50% - 15em);
+        padding: 0 calc(50% - 15em); } }
   .nutshell figure {
     display: inline-block;
     vertical-align: top;
-    width: 49%;
+    margin-bottom: 1em;
     padding-left: 1.5em;
-    text-align: center;
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear; }
-    @media only screen and (min-width: 29em) {
-      .nutshell figure {
-        width: 32%; } }
-    @media only screen and (min-width: 47em) {
-      .nutshell figure {
-        width: 19%; } }
     .nutshell figure .icon {
-      color: #000;
+      margin-bottom: 0;
+      font-size: 7em;
+      color: #222;
       cursor: default;
       -webkit-transition: inherit;
       transition: inherit; }
-      @media only screen and (min-width: 60em) {
-        .nutshell figure .icon {
-          font-size: 8.5em; } }
-    .nutshell figure:hover {
-      color: #128b98;
-      -webkit-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out; }
-      .nutshell figure:hover .icon {
-        color: #128b98;
-        -webkit-transform: scale(1.2);
-        transform: scale(1.5); }
     .nutshell figure figcaption {
       margin-top: 0; }
-  .nutshell .icon {
-    font-size: 7em;
-    margin-bottom: 0; }
+    @media only screen and (min-width: 56em) {
+      .nutshell figure {
+        padding-left: 1.7em;
+        padding-right: 0.2em; } }
+  @media only screen and (min-width: 47em) {
+    .nutshell {
+      padding-bottom: 5em; } }
 
 .work-entries {
   padding-bottom: 2em; }

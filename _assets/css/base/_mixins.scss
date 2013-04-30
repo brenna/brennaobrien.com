@@ -74,6 +74,18 @@
 	}
 }
 
+%full-width-left-maxed {
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+
+	@media only screen and (min-width:  60em) {
+		padding-left: 			calc(50% - 17.5em);
+		padding-right: 	      	calc(50% - 35em);
+		padding-left: 	-webkit-calc(50% - 17.5em);
+		padding-right: 	-webkit-calc(50% - 35em);
+	}	
+}
+
 %content-width {
 	padding-left: 1.5em;
 	padding-right: 1.5em;
