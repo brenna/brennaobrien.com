@@ -48,6 +48,7 @@
 }
 
 .nutshell {
+	@extend %clearfix;
 	padding-top: 0.5em;
 	padding-bottom: 2.5em;
 	text-align: center;
@@ -105,8 +106,32 @@
 		}
 	}
 
-	@media only screen and (min-width: 47em) {
-		padding-bottom: 5em;
+	@media only screen and (max-width: 27em) and (min-width: 23em){
+		figure {
+			width: 45%;
+		}
 	}
 
+	@media only screen and (min-width: 47em) {
+		padding-bottom: 5em;
+
+		h3 {text-align: left;}
+		.icon-list {float: left;}
+	}
+
+}
+
+.resources {
+	ul {
+		padding-left: 0;
+	}
+	
+	li {
+		display: inline-block;
+		vertical-align: top;
+		width: 33%;
+		@extend %arrow-list;
+	}
+
+	a {color: #333;}
 }

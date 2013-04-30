@@ -169,3 +169,26 @@
 	
 	background-size: 8px 8px;
 }
+
+// ------------------------------------------------------------------
+// Fancy Bulleted List  
+// ------------------------------------------------------------------
+%arrow-list {
+	position: relative;
+	list-style-type: none;
+	padding-left: 1em;
+	
+	&:before {
+		content: " ";
+		position: absolute;
+		height: 0;
+		width: 0;
+		left: 0;
+		top: 50%;
+		margin-top: -6px;
+		border: solid transparent;
+		border-color: transparent;
+		border-left-color: $blueDark;
+		border-width: 6px;
+	}
+}

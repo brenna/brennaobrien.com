@@ -1,6 +1,8 @@
 header.global, 
 footer.global,
 .about-intro,
+.nutshell,
+.resources,
 .blog-teaser > a,
 .work-entries,
 .work-post {
@@ -16,13 +18,6 @@ footer.global,
 	@extend %full-width-maxed;
 }
 
-
-.nutshell {
-	padding-left: 1.5em;
-	padding-right: 1.5em;
-	max-width: 56em;
-	margin: 0 auto;
-}
 
 // @media only screen and (min-width: 55em) and (max-width: 60em) {
 // 	.contact-email {
@@ -45,8 +40,9 @@ footer.global,
 	}
 
 	@media only screen and (min-width: 60em) {
-		float: left;
-		width: 47%;
+		display: inline-block;
+		vertical-align: top;
+		width: 46.5%;
 
 		&.left {
 			margin-right: 3%;
