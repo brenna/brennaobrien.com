@@ -1,7 +1,7 @@
-.work-teaser figure:before, header.global:before, footer.global:before, .social:before, .about-intro:before, .nutshell:before, .work-entries:before, .work-teaser figure:after, header.global:after, footer.global:after, .social:after, .about-intro:after, .nutshell:after, .work-entries:after {
+.work-teaser figure:before, header.global:before, footer.global:before, .social:before, .nutshell:before, .work-entries:before, .work-post figure:before, .work-teaser figure:after, header.global:after, footer.global:after, .social:after, .nutshell:after, .work-entries:after, .work-post figure:after {
   content: " ";
   display: table; }
-.work-teaser figure:after, header.global:after, footer.global:after, .social:after, .about-intro:after, .nutshell:after, .work-entries:after {
+.work-teaser figure:after, header.global:after, footer.global:after, .social:after, .nutshell:after, .work-entries:after, .work-post figure:after {
   clear: both; }
 
 .social span {
@@ -27,7 +27,7 @@ footer.global,
 .resources,
 .blog-teaser > a,
 .work-entries,
-.work-post, .blog-post header {
+.work-post, .blog-post header, .main-404 {
   padding-left: 1.5em;
   padding-right: 1.5em; }
   @media only screen and (min-width: 73em) {
@@ -38,7 +38,7 @@ footer.global,
     .resources,
     .blog-teaser > a,
     .work-entries,
-    .work-post, .blog-post header {
+    .work-post, .blog-post header, .main-404 {
       padding-left: calc(50% - 35em);
       padding-right: calc(50% - 35em);
       padding-left: -webkit-calc(50% - 35em);
@@ -72,12 +72,12 @@ header.global, footer.global {
     height: 0;
     width: 0;
     left: 0;
-    top: 50%;
-    margin-top: -6px;
+    top: 0.5em;
+    margin-top: -2px;
     border: solid transparent;
     border-color: transparent;
     border-left-color: #128b98;
-    border-width: 6px; }
+    border-width: 4.5px 0 4.5px 7px; }
 
 article,
 aside,
@@ -287,7 +287,7 @@ h3 {
 h4 {
   font-size: 1.2em;
   margin: 0 0 1.3em 0;
-  font-weight: 300; }
+  font-weight: 500; }
 
 h6 {
   font-size: 0.88889em;
@@ -324,12 +324,12 @@ a {
   text-decoration: none;
   color: #d2774a;
   border-bottom: solid 1px transparent;
-  transition: all 0.2s ease-out;
-  -webkit-transition: all 0.2s ease-out; }
+  transition: border-color 0.2s ease-out;
+  -webkit-transition: border-color 0.2s ease-out; }
   a:hover, a:active, a:focus {
     border-bottom: solid 1px #d2774a;
-    transition: all 0.3s ease-out;
-    -webkit-transition: all 0.3s ease-out; }
+    transition: border-color 0.3s ease-out;
+    -webkit-transition: border-color 0.3s ease-out; }
 
 figure {
   margin-bottom: 2em; }
@@ -342,6 +342,12 @@ figcaption {
 img {
   max-width: 100%;
   height: auto; }
+
+.main-404 {
+  padding-top: 2em;
+  padding-bottom: 4em; }
+  .main-404 img {
+    border: solid 1px #d9d9d9; }
 
 @media only screen and (min-width: 60em) {
   .work-teaser {
@@ -546,7 +552,10 @@ nav.global {
     font-weight: 300;
     line-height: 2.2em;
     font-size: 0.8em;
-    text-align: left; }
+    text-align: left;
+    border-color: transparent; }
+    nav.global a:hover {
+      border-color: #fff; }
     nav.global a:before {
       content: "";
       position: absolute;
@@ -555,7 +564,9 @@ nav.global {
       height: 0.25em;
       width: 0.25em;
       margin-top: -0.18em;
-      border: solid 2px transparent;
+      border-style: solid;
+      border-width: 2px;
+      border-color: inherit;
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       transform: rotate(45deg); }
@@ -574,7 +585,7 @@ nav.global {
           nav.global a:nth-child(2n):before {
             left: auto;
             right: 2%; } }
-    nav.global a:hover:before, nav.global a:active:before {
+    nav.global a:hover:before {
       border-color: #fff; }
     nav.global a.current:before {
       border-color: #ebaa71; }
@@ -650,15 +661,15 @@ footer.global {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-    transition: all 0.2s ease-out;
-    -webkit-transition: all 0.2s ease-out; }
+    transition: "all" 0.2s ease-out;
+    -webkit-transition: "all" 0.2s ease-out; }
     .social li:last-child {
       margin-right: 0; }
-    .social li:hover {
+    .social li:hover, .social li:focus {
       background: #fff;
-      transition: all 0.3s ease-out;
-      -webkit-transition: all 0.3s ease-out; }
-      .social li:hover a {
+      transition: "all" 0.3s ease-out;
+      -webkit-transition: "all" 0.3s ease-out; }
+      .social li:hover a, .social li:focus a {
         color: #222; }
   .social a {
     display: block;
@@ -668,11 +679,15 @@ footer.global {
     border: none;
     text-align: center;
     color: #fff;
+    transition: "all" 0.2s ease-out;
+    -webkit-transition: "all" 0.2s ease-out;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg); }
-    .social a:hover, .social a:active, .social a:focus {
-      color: #222; }
+    .social a:hover, .social a:focus {
+      color: #222;
+      transition: "all" 0.3s ease-out;
+      -webkit-transition: "all" 0.3s ease-out; }
   .social span {
     display: block;
     width: 0;
@@ -705,16 +720,16 @@ footer.global {
   background: #f0fcfd; }
 
 .blog-post {
-  margin-top: 2em;
-  margin-bottom: 3em; }
+  padding-top: 2em;
+  padding-bottom: 3em; }
   @media only screen and (min-width: 47em) and (max-width: 60em) {
     .blog-post {
-      margin-top: 3em;
-      margin-bottom: 4em; } }
+      padding-top: 3em;
+      padding-bottom: 4em; } }
   @media only screen and (min-width: 60em) {
     .blog-post {
-      margin-top: 4em;
-      margin-bottom: 6em; } }
+      padding-top: 4em;
+      padding-bottom: 6em; } }
 
 .post-title a {
   color: #000; }
@@ -749,49 +764,37 @@ footer.global {
   border: solid 1px #666; }
 
 .about-intro {
-  padding-top: 2.5em;
-  pading-bottom: 1em; }
-  .about-intro .about-skillz a {
-    color: #128b98; }
-    .about-intro .about-skillz a:hover {
-      border-bottom-color: #128b98; }
-  .about-intro .about-curiosity {
-    margin-bottom: 1.5em; }
-  .about-intro .about-contribute a,
-  .about-intro .about-intro h1 a {
+  padding-top: 3em; }
+  .about-intro a {
     white-space: nowrap; }
-  @media only screen and (max-width: 47em) {
-    .about-intro h1 {
-      margin-bottom: 1em; } }
-  @media only screen and (min-width: 35em) {
+  @media only screen and (max-width: 27em) {
     .about-intro {
-      padding-top: 3em; } }
+      padding-top: 2.5em; } }
   @media only screen and (min-width: 47em) {
     .about-intro {
-      padding-top: 4em; } }
+      padding-top: 4em; }
+      .about-intro h1 {
+        margin-bottom: 0.4em; }
+      .about-intro .punch {
+        margin-bottom: 0.8em; } }
   @media only screen and (min-width: 60em) {
     .about-intro h1 {
       font-size: 3.2em; } }
 
 .nutshell {
-  padding-top: 0.5em;
-  padding-bottom: 2.5em;
-  text-align: center; }
-  .nutshell h3 {
-    margin-bottom: 1.4em; }
+  padding-top: 2em; }
+  .nutshell h2 {
+    font-size: 1.8em; }
   .nutshell .icon-list {
     margin-left: -1.5em; }
-    @media only screen and (min-width: 36em) and (max-width: 47em) {
-      .nutshell .icon-list {
-        padding: 0 -webkit-calc(50% - 15em);
-        padding: 0 calc(50% - 15em); } }
   .nutshell figure {
     display: inline-block;
     vertical-align: top;
     margin-bottom: 1em;
     padding-left: 1.5em;
     -webkit-transition: all 0.2s linear;
-    transition: all 0.2s linear; }
+    transition: all 0.2s linear;
+    text-align: center; }
     .nutshell figure .icon {
       margin-bottom: 0;
       font-size: 7em;
@@ -800,30 +803,69 @@ footer.global {
       -webkit-transition: inherit;
       transition: inherit; }
     .nutshell figure figcaption {
-      margin-top: 0; }
-    @media only screen and (min-width: 56em) {
-      .nutshell figure {
-        padding-left: 1.7em;
-        padding-right: 0.2em; } }
-  @media only screen and (max-width: 27em) and (min-width: 23em) {
+      margin-top: 0;
+      text-align: center;
+      font-style: italic;
+      font-size: 1em; }
+  @media only screen and (max-width: 29em) and (min-width: 23em) {
     .nutshell figure {
       width: 45%; } }
+  @media only screen and (min-width: 36em) and (max-width: 47em) {
+    .nutshell .icon-list {
+      max-width: 35em; }
+    .nutshell figure {
+      padding: 0 1em 0 2.5em; } }
   @media only screen and (min-width: 47em) {
     .nutshell {
-      padding-bottom: 5em; }
-      .nutshell h3 {
-        text-align: left; }
+      padding-top: 4.5em; }
+      .nutshell h2 {
+        font-size: 2.5em;
+        margin-bottom: 0.5em; }
       .nutshell .icon-list {
         float: left; } }
+  @media only screen and (min-width: 56em) {
+    .nutshell figure {
+      padding-left: 2em;
+      padding-right: 0.5em; } }
 
-.resources ul {
-  padding-left: 0; }
-.resources li {
-  display: inline-block;
-  vertical-align: top;
-  width: 33%; }
-.resources a {
-  color: #333; }
+.resources {
+  padding-top: 3em;
+  padding-bottom: 2em; }
+  .resources h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.3em; }
+  .resources ul {
+    padding-left: 0; }
+  .resources li {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.1em; }
+  .resources a {
+    color: #333;
+    display: inline-block; }
+    .resources a:hover {
+      border-bottom-color: #128b98; }
+  @media only screen and (min-width: 30em) {
+    .resources li {
+      width: 49%; } }
+  @media only screen and (min-width: 47em) {
+    .resources {
+      padding-top: 5.5em;
+      padding-bottom: 5.5em; }
+      .resources h2 {
+        font-size: 2.5em;
+        margin-bottom: 0.2em; }
+      .resources h4 {
+        margin-bottom: 1.8em; }
+      .resources li {
+        width: 32.5%; }
+      .resources a {
+        font-size: 1.2em; } }
+  @media only screen and (min-width: 60em) {
+    .resources li {
+      width: 24%; } }
 
 .work-entries {
   padding-bottom: 2em; }
@@ -833,15 +875,23 @@ footer.global {
 
 .work-teaser {
   padding-top: 2em; }
-  .work-teaser header {
-    position: relative;
-    width: 100%;
-    margin-bottom: 2em;
-    border-bottom: solid 1px #ababab; }
-  .work-teaser figure {
-    margin-bottom: 1.5em; }
-  .work-teaser img {
-    border: solid 1px #ababab; }
+
+.work-post {
+  padding-top: 3.5em;
+  padding-bottom: 4em; }
+
+.work-post header,
+.work-teaser header {
+  position: relative;
+  width: 100%;
+  margin-bottom: 2em;
+  border-bottom: solid 1px #ababab; }
+.work-post figure,
+.work-teaser figure {
+  margin-bottom: 1.5em; }
+.work-post img,
+.work-teaser img {
+  border: solid 1px #ababab; }
 
 .work-link {
   position: absolute;

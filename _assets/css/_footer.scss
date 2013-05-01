@@ -19,9 +19,7 @@ footer.global {
 		//pulse animation for header text
 		&.animate {
 			-webkit-animation: pulse 0.5s;
-			//-webkit-animation-delay: 0.2s;
 			animation: pulse 0.5s;
-			//animation-delay: 0.2s;
 		}
 	}
 
@@ -83,7 +81,8 @@ footer.global {
 		
 		&:last-child { margin-right: 0;}
 		
-		&:hover {
+		&:hover,
+		&:focus {
 			background: #fff;
 			@include transition-in;
 			a {color: #222;}
@@ -98,6 +97,7 @@ footer.global {
 		border: none; //kill default hover
 		text-align: center;
 		color: #fff;
+		@include transition-out;
 		
 		//counter rotate the icons 
 		transform: rotate(-45deg);
@@ -105,9 +105,9 @@ footer.global {
 		-ms-transform: rotate(-45deg);
 
 		&:hover,
-		&:active,
 		&:focus {	
 			color: #222;
+			@include transition-in;
 		}
 	}
 

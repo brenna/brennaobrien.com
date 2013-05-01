@@ -23,4 +23,8 @@ $(document).ready(function() {
 		return false;
 	});
 
+	//min-height on teeny blog posts 
+	var minBlogHeight = $(window).height() - $('header.global').height() - $('footer.global').height() - 160;
+	$('.blog-post').css('min-height', minBlogHeight);
+
 });

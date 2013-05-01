@@ -1,12 +1,13 @@
 {% include header.html %}
 
 <section class="main">
-	<article class="work-post">
-		<h1 class="post-title">{{page.title}}</h1>	
-		{% if site_url %}<a href="{{page.site_url}}">Visit site</a>	{% endif %}
-		<div class="work-content">
-		{{ content }} 
-		</div>
+	<article class="work-post {%cycle 'left', 'right'%}">
+		<header>
+			<h2 class="work-title">{{page.title}}</h2>
+			<h3 class="work-type">{{page.type}}</h3>
+			{% if page.site_url %}<a class="work-link icon-web" href="{{page.site_url}}"><span>View</span></a>{% endif %}
+		</header>
+		{{content}}
 	</article>
 </section>
 

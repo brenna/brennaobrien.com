@@ -9,6 +9,15 @@
 
 .work-teaser {
 	padding-top: 2em;
+}
+
+.work-post {
+	padding-top: 3.5em;
+	padding-bottom: 4em;
+}
+
+.work-post,
+.work-teaser {
 
 	header {
 		position: relative;
@@ -18,6 +27,7 @@
 	}
 
 	figure {
+		@extend %clearfix;
 		margin-bottom: 1.5em;
 	} 
 

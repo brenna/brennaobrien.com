@@ -138,15 +138,15 @@
 // ------------------------------------------------------------------
 // Default Transitions
 // ------------------------------------------------------------------
-// add transition in to you hover state, out to your normal state
-@mixin transition-in {
-	transition: all 0.3s ease-out;
-	-webkit-transition: all 0.3s ease-out;
+// add transition in to your hover state, out to your normal state
+@mixin transition-in($prop: "all") {
+	transition: $prop 0.3s ease-out;
+	-webkit-transition: $prop 0.3s ease-out;
 }
 
-@mixin transition-out {
-	transition: all 0.2s ease-out;
-	-webkit-transition: all 0.2s ease-out;
+@mixin transition-out($prop: "all") {
+	transition: $prop 0.2s ease-out;
+	-webkit-transition: $prop 0.2s ease-out;
 }
 
 // ------------------------------------------------------------------
@@ -184,11 +184,11 @@
 		height: 0;
 		width: 0;
 		left: 0;
-		top: 50%;
-		margin-top: -6px;
+		top: 0.5em;
+		margin-top: -2px;
 		border: solid transparent;
 		border-color: transparent;
 		border-left-color: $blueDark;
-		border-width: 6px;
+		border-width: 4.5px 0 4.5px 7px;
 	}
 }

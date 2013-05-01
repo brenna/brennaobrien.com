@@ -75,7 +75,7 @@ h3 {
 h4 {
 	font-size: 1.2em;
 	margin: 0 0 1.3em 0;
-	font-weight: 300;
+	font-weight: 500;
 }
 
 h6 {
@@ -134,7 +134,7 @@ a {
 	text-decoration: none;
 	color: $linkColor;
 	border-bottom: solid 1px transparent;
-	@include transition-out;
+	@include transition-out(border-color);
 
 	&:hover,
 	&:active,
@@ -150,7 +150,7 @@ a {
 			//color: lighten($linkColor, 10);
 		}
 
-		@include transition-in;
+		@include transition-in(border-color);
 	}
 }
 

@@ -5,7 +5,7 @@ footer.global,
 .resources,
 .blog-teaser > a,
 .work-entries,
-.work-post {
+.work-post{
 	@extend %full-width;
 }
 
@@ -19,20 +19,13 @@ footer.global,
 }
 
 
-// @media only screen and (min-width: 55em) and (max-width: 60em) {
-// 	.contact-email {
-// 		float: left;
-// 		width: 50%;
-// 		padding-right: 0.75em;
-// 	}
-// 	.contact-elsewhere {
-// 		float: left;
-// 		width: 50%;
-// 		padding-left: 0.75em;
-// 		position: relative;
-// 		top: -3.7em;
-// 	}
-// }
+.main-404 {
+	@extend %full-width;
+	padding-top: 2em;
+	padding-bottom: 4em;
+
+	img {border: solid 1px #d9d9d9;}
+}
 
 .work-teaser {
 	figure {
