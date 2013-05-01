@@ -11,6 +11,7 @@ $(document).ready(function() {
 
 	//smooth scroll to contact and activate CSS bouncy text
 	$('#contact-link').click(function() {
+		$(this).blur(); //mobile browsers retain focus state, kill it
 		$('html,body').animate({
 			scrollTop: $('#contact').offset().top
 		}, 500, function() {
