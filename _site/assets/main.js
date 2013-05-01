@@ -11,7 +11,6 @@ $(document).ready(function() {
 
 	//smooth scroll to contact and activate CSS bouncy text
 	$('#contact-link').click(function() {
-
 		$('html,body').animate({
 			scrollTop: $('#contact').offset().top
 		}, 500, function() {
