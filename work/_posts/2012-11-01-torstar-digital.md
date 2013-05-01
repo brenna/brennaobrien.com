@@ -7,7 +7,7 @@ permalink: /work/torstar-digital.html
 ---
 
 <figure class="responsive-site">
-    <img src="{% asset_path work/torstardigital-full.png %}" alt="Torstar Digital website" class="site-full"/>
+    <img src="{% asset_path work/torstardigital-full.jpg %}" alt="Torstar Digital website" class="site-full"/>
     <img src="{% asset_path work/torstardigital-mobile.png %}" alt="Torstar Digital website on a small screen" class="site-mobile"/>
 </figure>
 

@@ -4,8 +4,11 @@ permalink: /:categories/:year/:month/:title.html
 exclude: ['README.md']
 assets:
   cachebust: none
-  gzip: false
+  gzip: true
   sources:
     - _assets/js
     - _assets/css
     - _assets/img
+  compress:
+    css: 'sass'
+    js: 'uglifier'
