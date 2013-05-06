@@ -19,6 +19,7 @@ $linkColor: lighten($orange, 5);
 $hoverColor: lighten($orange, 10);
 $darkLinkhover: lighten($blueDark, 5);
 
+
 // ===========================================
 // BASE STYLES
 // ===========================================
@@ -27,6 +28,7 @@ $darkLinkhover: lighten($blueDark, 5);
 @import "base/_global.scss";
 @import "base/_layout.scss";
 @import "base/_animations.scss";
+
 
 // ===========================================
 // VENDOR STYLES
