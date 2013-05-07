@@ -46,7 +46,7 @@ Once configured, this all happens under the hood on site build. Definitely a big
 
 And while we're on the topic of automation, my Jekyll site is a breeze to deploy and maintain. There are [several options](http://jekyllrb.com/docs/deployment-methods/) for this, but I settled on using [GitHub webhooks](https://help.github.com/articles/post-receive-hooks).
 
-This very detailed [tutorial](http://zacht.me/zacht/site/articles/Deploy-Jekyll-With-A-Github-Webhook/) has all the gritty details of how this works for a Jekyll site, but essentially, we're configuring GitHub to automatically execute a small script (contained in a PHP file on the server) each time a push to the remote repo is made.  
+This [very detailed tutorial](http://zacht.me/zacht/site/articles/Deploy-Jekyll-With-A-Github-Webhook/) has all the gritty details of how this works for a Jekyll site, but essentially, we're configuring GitHub to automatically execute a small script (in a PHP file on the server) each time a push to the remote repo is made.  
 
 In my case, I have a test server and a production server. I've mirrored this in my git repo with a test branch off of my master branch.  On the test server, the script to execute after a push is:
 {%highlight php %}
@@ -57,7 +57,7 @@ And on the production server:
 <?php `git pull origin master` ?>
 {% endhighlight %}
 
-So the test and production servers will always be a reflection of their git branch counterparts, and I'm free to manage the site completely through git, as I would have done for version control anyhow. I don't need to go near an FTP client, and I don't even need to SSH connect.
+So the test and production servers will always be a reflection of their git branch counterparts, and I'm free to manage the site completely through git, as I would have done for version control anyhow.
 
 ### Et Voila!
 
