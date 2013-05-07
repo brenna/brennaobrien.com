@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> On Building a Site with Jekyll |  Brenna O'Brien</title>
+    <meta name="description" content="Brenna O'Brien is a web developer in Toronto, Canada.">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/style.css">
+    <script type="text/javascript" src="/assets/vendor/modernizr-2.6.2.min.js"></script>
+
+</head>
+<body>
+    <header class="global">
+
+        <h1 class="brand"><a href="/">BrennaOBrien</a></h1>
+        <nav class="global">
+
+            <a  href="/">About</a>
+            <a  href="/work/">Work</a>
+            <a class="current"  href="/blog/">Blog</a>
+            <a  href="#contact" id="contact-link">Contact</a>
+        </nav>
+    </header>
+
+<section class="main">
+	<article class="blog-post">
+		<header class="blog-title">
+			<h6 class="post-date">06<span> . </span><br />05<span> . </span><br />13</h6>
+			<h1 class="post-title">On Building a Site with Jekyll</h1>
+			<p class="punch">
+				I said goodbye to my CMS in favour of <a href="http://jekyllrb.com">Jekyll</a> and I couldn't be happier.  A++++ would build again.
+			</p>
+		</header>
+		<div class="blog-content">
+		<p><em>The beauty of working on your own website is the freedom to experiment with new tools and strategies. This is the first in a series of posts about what I tried and how it went.</em></p>
+
+<p>Jekyll is a &#8220;blog aware&#8221; static site generator. For me, that means I&#8217;m writing this post in markdown instead of dealing with some awful WSYWIG editor. I also don&#8217;t have to worry about databases or any server side code, just the clean and easy <a href='https://github.com/Shopify/liquid'>Liquid</a> template markup. For a simple blog and portfolio site like this, it&#8217;s the perfect tool.</p>
+
+<p>To get started, I worked through <a href='http://net.tutsplus.com/tutorials/other/building-static-sites-with-jekyll/'>this tuts+ tutorial</a>, though the freshly updated <a href='http://jekyllrb.com/docs'>official documentation</a> is very comprehensive and easy to understand. While Jekyll did a lot of what I needed out of the box, here&#8217;s what&#8217;s unique in my setup.</p>
+
+<h3 id='blog_posts_and_work_posts'>Blog Posts and Work Posts</h3>
+
+<p>Coming from WordPress, I originally though of my blog posts and portfolio pieces as two separate post types. In Jekyll, all posts are more or less created equal, so I used categories to segregate the content. This is super easy to accomplish by putting blog posts in a folder called &#8220;blog&#8221; and work posts in a folder called &#8220;work. Not only does this automatically assign the right category to the posts, it also creates an appropriate URL structure for the site.</p>
+
+<p>Here&#8217;s the relevant part of my directory structure.</p>
+
+<pre><code>.
+├──work
+│  └──_posts
+│  │  └──2013-01-10-axiomatic-solutions.md
+│  index.html
+├──blog
+│  └──_posts
+│  │  └──2013-05-06-working-with-jeyll.md
+│  index.html</code></pre>
+
+<p>Then in each <code>index.html</code> file, we loop over posts within a single category, instead of all posts.</p>
+<pre><code>&#123;% for post in site.categories['work'] %&#125;
+    &lt;!--single post code--&gt;
+&#123;% endfor %&#125;
+</code></pre>
+<h3 id='managing_assets'>Managing Assets</h3>
+
+<p>While trying to figure out proper paths to images in my blog posts, I stumbled upon <a href='https://github.com/ixti/jekyll-assets'>Jekyll Assets</a>, and now consider it an essential plugin for a Jekyll site. Quick and easy image paths is the boring part. Jekyll Asseets can also:</p>
+
+<ul>
+<li>compile Sass</li>
+
+<li>concatenate, minify, &#38; gzip CSS &#38; JS files</li>
+
+<li>add cache-busting suffixes to all asset files</li>
+</ul>
+
+<p>Once configured, this all happens under the hood on site build. Definitely a big time saver.</p>
+
+<h3 id='automagic_deployment'>Automagic Deployment</h3>
+
+<p>And while we&#8217;re on the topic of automation, my Jekyll site is a breeze to deploy and maintain. There are <a href='http://jekyllrb.com/docs/deployment-methods/'>several options</a> for this, but I settled on using <a href='https://help.github.com/articles/post-receive-hooks'>GitHub webhooks</a>.</p>
+
+<p>This <a href='http://zacht.me/zacht/site/articles/Deploy-Jekyll-With-A-Github-Webhook/'>very detailed tutorial</a> has all the gritty details of how this works for a Jekyll site, but essentially, we&#8217;re configuring GitHub to automatically execute a small script (in a PHP file on the server) each time a push to the remote repo is made.</p>
+
+<p>In my case, I have a test server and a production server. I&#8217;ve mirrored this in my git repo with a test branch off of my master branch. On the test server, the script to execute after a push is: <div>
+  <pre><code class='php'>&lt;?php `git pull origin test`; ?&gt;</code></pre>
+</div></p>
+
+<p>And on the production server: <div>
+  <pre><code class='php'>&lt;?php `git pull`; ?&gt;</code></pre>
+</div></p>
+
+<p>So the test and production servers will always be a reflection of their git branch counterparts, and I&#8217;m free to manage the site completely through git, as I would have done for version control anyhow.</p>
+
+<h3 id='et_voila'>Et Voila!</h3>
+
+<p>So here you have it, my first Jekyll build.</p>
+
+<p>If you&#8217;re curious about any more of the details, take a look at the <a href='https://github.com/brenna/brennaobrien.com'>source files</a> or <a href='mailto:hi@brennaobrien.com'>get in touch.</a></p> 
+		</div>
+	</article>
+</section>
+
+    <footer id="contact" class="global">
+        <div class="contact-intro">
+            <h3>Get in Touch</h3>
+            <h4>Or find me elsewhere on the Internet.<br /> I come here often.</h4>
+        </div>
+        <div class="contact-email">    
+            <p><a href="mailto:hi@brennaobrien.com">hi@brennaobrien.com</a></p>
+        </div>
+        <div class="contact-elsewhere">
+            <ul class="social">
+                <li><a href="http://twitter.com/brennaob" class="icon-twitter"><span>Twitter</span></a></li>
+                <li><a href="http://github.com/brenna" class="icon-github" ><span>GitHub</span></a></li>
+                <li><a href="http://gplus.to/brennaobrien" class="icon-googleplus" ><span>Google Plus</span></a></li>
+                <li><a href="http://codepen.io/brenna" class="icon-codepen" ><span>CodePen</span></a></li>
+                <li><a href="http://last.fm/user/janiejjones" class="icon-lastfm" ><span>Last.fm</span></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+    <script type="text/javascript" src="/assets/plugins.js"></script>
+    <script type="text/javascript" src="/assets/main.js"></script>
+
+    <script>
+        var _gaq=[['_setAccount','UA-19103472-1'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+</body>
+</html>
+
