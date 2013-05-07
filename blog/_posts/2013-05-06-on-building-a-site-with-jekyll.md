@@ -12,7 +12,7 @@ To get started, I worked through [this tuts+ tutorial](http://net.tutsplus.com/t
 
 ###Blog Posts and Work Posts
 
-Coming from WordPress, I originally though of my blog posts and portfolio pieces as two separate post types.  In Jekyll, all posts are more or less created equal, so I used categories to segregate the content. This is super easy to accomplish by putting blog posts in a folder called "blog" and work posts in a folder called "work. Not only does this automatically assign the right category to the posts, it also creates an appropriate URL structure for the site. 
+Coming from WordPress, I originally thought of my blog posts and portfolio pieces as two separate post types.  In Jekyll, all posts are more or less created equal, so I used categories to segregate the content. This is super easy to accomplish by putting blog posts in a folder called "blog" and work posts in a folder called "work. Not only does this automatically assign the right category to the posts, it also creates an appropriate URL structure for the site. 
 
 Here's the relevant part of my directory structure.
 
