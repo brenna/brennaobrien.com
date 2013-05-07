@@ -41,7 +41,7 @@ p {
 	@media only screen and (min-width: 47em) {
 		font-size: 1.6em;
 		line-height: 1.4;
-		//margin-bottom: 1.2em;
+		margin-bottom: 2em;
 		font-weight: 300;
 
 		strong { font-weight: 500; }
@@ -94,8 +94,8 @@ h6 {
 	}
 
 	h3 {
-		margin-top: 2em;
 		font-size: 1.3em;
+		margin: 3.2em 0 1.6em;
 	}
 }
 
@@ -152,6 +152,15 @@ a {
 
 		@include transition-in(border-color);
 	}
+}
+
+// ------------------------------------------------------------------
+// Code Blocks
+// ------------------------------------------------------------------
+pre {
+	margin: 0 0 2em;
+	padding: 1em;
+	border: solid 1px #ccc;
 }
 
 
