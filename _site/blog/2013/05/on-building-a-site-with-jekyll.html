@@ -85,11 +85,11 @@
 <p>This <a href='http://zacht.me/zacht/site/articles/Deploy-Jekyll-With-A-Github-Webhook/'>very detailed tutorial</a> has all the gritty details of how this works for a Jekyll site, but essentially, we&#8217;re configuring GitHub to automatically execute a small script (in a PHP file on the server) each time a push to the remote repo is made.</p>
 
 <p>In my case, I have a test server and a production server. I&#8217;ve mirrored this in my git repo with a test branch off of my master branch. On the test server, the script to execute after a push is: <div>
-  <pre><code class='php'>&lt;?php `git pull origin test` ?&gt;</code></pre>
+  <pre><code class='php'>&lt;?php `git pull origin test`; ?&gt;</code></pre>
 </div></p>
 
 <p>And on the production server: <div>
-  <pre><code class='php'>&lt;?php `git pull origin master` ?&gt;</code></pre>
+  <pre><code class='php'>&lt;?php `git pull`; ?&gt;</code></pre>
 </div></p>
 
 <p>So the test and production servers will always be a reflection of their git branch counterparts, and I&#8217;m free to manage the site completely through git, as I would have done for version control anyhow.</p>

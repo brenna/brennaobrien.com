@@ -50,11 +50,11 @@ This [very detailed tutorial](http://zacht.me/zacht/site/articles/Deploy-Jekyll-
 
 In my case, I have a test server and a production server. I've mirrored this in my git repo with a test branch off of my master branch.  On the test server, the script to execute after a push is:
 {%highlight php %}
-<?php `git pull origin test` ?>
+<?php `git pull origin test`; ?>
 {% endhighlight %}
 And on the production server:
 {%highlight php %}
-<?php `git pull origin master` ?>
+<?php `git pull`; ?>
 {% endhighlight %}
 
 So the test and production servers will always be a reflection of their git branch counterparts, and I'm free to manage the site completely through git, as I would have done for version control anyhow.
