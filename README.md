@@ -10,7 +10,7 @@ CSS written with [Sass](http://sass-lang.com), because it's the bomb.
 
 ##Questions?
 
-Read about the [details](http://brennaobrien.com/blog/2013/05/working-with-jekyll.html) on my blog or [get in touch](mailto:hi@brennaobrien.com).
+Read about the [details](http://brennaobrien.com/blog/2013/05/on-building-a-site-with-jekyll.html) on my blog or [get in touch](mailto:hi@brennaobrien.com).
 
 
 
