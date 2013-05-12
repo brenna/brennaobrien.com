@@ -82,6 +82,10 @@ nav.global {
 			transform: 			rotate(45deg);
 		}
 
+		&:hover:before {
+			//border-color: inherit;
+		}
+
 		&:last-child {
 			padding-right: 0;
 		}

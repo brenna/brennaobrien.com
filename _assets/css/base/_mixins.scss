@@ -140,13 +140,13 @@
 // ------------------------------------------------------------------
 // add transition in to your hover state, out to your normal state
 @mixin transition-in($prop: "all") {
-	transition: $prop 0.3s ease-out;
-	-webkit-transition: $prop 0.3s ease-out;
+	transition: #{$prop} 0.3s ease-out;
+	-webkit-transition: #{$prop} 0.3s ease-out;
 }
 
 @mixin transition-out($prop: "all") {
-	transition: $prop 0.2s ease-out;
-	-webkit-transition: $prop 0.2s ease-out;
+	transition: #{$prop} 0.2s ease-out;
+	-webkit-transition: #{$prop} 0.2s ease-out;
 }
 
 // ------------------------------------------------------------------
