@@ -27,4 +27,7 @@ $(document).ready(function() {
 	var minBlogHeight = $(window).height() - $('header.global').height() - $('footer.global').height() - 160;
 	$('.blog-post').css('min-height', minBlogHeight);
 
+	//init prettyprint for code snippets
+	prettyPrint();
+
 });

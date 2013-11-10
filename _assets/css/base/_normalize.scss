@@ -179,8 +179,13 @@ samp {
 
 pre {
     white-space: pre;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+    overflow: scroll;
+    // white-space: pre-wrap;
+    // word-wrap: break-word;
+}
+
+code {
+    white-space: pre;
 }
 
 
