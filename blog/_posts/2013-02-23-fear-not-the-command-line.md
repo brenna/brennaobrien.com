@@ -57,5 +57,3 @@ Adding a little [colour coding][12] and switching to a [more readable font][13] 
  [13]: http://www.fontsquirrel.com/fonts/Inconsolata
 
 Hopefully this helps someone else on their way and over the intimidation hurdle. Trust me, it’s not that bad!
-
-Now if I could only slay the other monster under my bed, regular expressions&hellip;
