@@ -28,14 +28,10 @@
 }
 
 .blog-title {
-	@extend %media;
+	position: relative;
 }
 
 .post-title {
-	.blog-post & {
-		@extend %media-bd;
-	}
-
 	a {
 		color: #000;
 	}
@@ -52,23 +48,41 @@
 
 //switch to vertical date display
 @media only screen and (min-width: 47em) {
+	.post-title {
+		padding-left: 0.8em;
+
+		.blog-teaser & {max-width: 62rem;}
+	}
 	.post-date {
-		float: left;
-		display: block;
 		width: 2.25em;
-		margin-top: 0.2em;
+		position: absolute;
+		left: 0;
+
+		.blog-teaser & {
+			top: 50%;
+			margin-top: -1.7em;
+		}
+
+		.blog-post & {
+			top: 0.2em;
+		}
 		
-		.blog-teaser & {margin-top: -0.1em;}
 
 		br {display: block;}
 		span{display: none;}
 	}
 }
 
-//then make everything even bigger on the list view
+// then make everything even bigger on the list view
+// and move the post date into the gutter for full posts
 @media only screen and (min-width: 60em) {
 	.blog-teaser .post-title {font-size: 2.5em;}
-	.blog-teaser .post-date {margin-top: 0.5em;}
+	.blog-teaser .post-date {margin-top: -1.5em;}
+	.blog-post .post-date {
+		left: -3em;
+		top: 0.4em;
+	}
+	.blog-post .post-title {padding-left: 0;}
 }
 
 // ------------------------------------------------------------------

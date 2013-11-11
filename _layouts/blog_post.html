@@ -2,9 +2,11 @@
 
 <section class="main">
 	<article class="blog-post">
-		<header class="blog-title">
-			<h6 class="post-date">{{ page.date | date: "%d<span> . </span><br />%m<span> . </span><br />%y"}}</h6>
-			<h1 class="post-title">{{page.title}}</h1>
+		<header>
+			<div class="blog-title">
+				<h6 class="post-date">{{ page.date | date: "%d<span> . </span><br />%m<span> . </span><br />%y"}}</h6>
+				<h1 class="post-title">{{page.title}}</h1>
+			</div>
 			<p class="punch">
 				{{ page.intro }}
 			</p>
