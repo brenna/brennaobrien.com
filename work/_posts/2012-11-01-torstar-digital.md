@@ -2,7 +2,6 @@
 layout: work_post
 title: Torstar Digital
 type: Responsive Site / Custom WordPress Build
-site_url: http://torstardigital.com
 permalink: /work/torstar-digital.html
 ---
 
