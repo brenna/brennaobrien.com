@@ -2,7 +2,7 @@
 layout: work_post
 title: Canada's Land Watch
 type: Interactive Site
-site_url: http://canadaslandwatch.com
+site_url: http://www.toshiba.ca/landwatch/
 permalink: /work/canadas-land-watch.html
 ---
 <figure class="responsive-site">
