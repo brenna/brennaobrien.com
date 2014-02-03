@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> :before and :after are your friends |  Brenna O'Brien</title>
+    <meta name="description" content="Brenna O'Brien is a web developer in Toronto, Canada.">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/style.css">
+    <script type="text/javascript" src="/assets/vendor/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/prettify-tomorrow-theme.css">
+
+</head>
+<body>
+    <header class="global">
+
+        <h1 class="brand"><a href="/">BrennaOBrien</a></h1>
+        <nav class="global">
+
+            <a  href="/">About</a>
+            <a  href="/work/">Work</a>
+            <a class="current"  href="/blog/">Blog</a>
+            <a  href="#contact" id="contact-link">Contact</a>
+        </nav>
+    </header>
+
+<section class="main">
+	<article class="blog-post">
+		<header>
+			<div class="blog-title">
+				<h6 class="post-date">10<span> . </span><br />10<span> . </span><br />12</h6>
+				<h1 class="post-title">:before and :after are your friends</h1>
+			</div>
+			<p class="punch">
+				I can’t remember exactly when I wised up to the versatility of :before and :after, but they’ve been saving my butt in tricky styling situations often enough now to justify some long form praise.
+			</p>
+		</header>
+		<div class="blog-content">
+		<p>[<strong>Side note:</strong> I sent out a <a href='https://twitter.com/brnnbrn/status/235834777532526593'>rhetorical tweet</a> in praise of these guys and got back <a href='http://twitpic.com/ajuiq0/full'>the best answer ever</a>.]</p>
+
+<p>So, what makes :before and :after so useful? Come, take a walk with me through this recent example:</p>
+
+<p>I was working on making this search form come to life. I’d gotten 95% of the way there and all that remained were the keylines on either side of the text.</p>
+<figure class='no-border'>
+    <img alt='&apos;position fixed element working as expected, in line with the main content' src='/assets/blog/keylines-needed.jpg' />
+</figure>
+<p>If this were a fixed width site, I might slice the keylines with the rest of the background image and call it a day, but this site was responsive. I’d already accommodated for a flexible width background by using a CSS gradient and a right positioned image (of just the map overlay), so baking in the keylines wasn’t really an option. That, and my purist ambitions were driving me to avoid using images at all costs. Must. Be. Code. Wizard. I thought about making a zero height wrapper element with top and bottom borders, then relatively positioning the text element within, a technique I’ve employed in the past:</p>
+<figure>
+<div class='codepen' data-default-tab='css' data-height='502' data-slug-hash='CedGa' data-theme-id='4145'><pre><code>.find-parking {
+    background: #fffbf2; 
+    padding: 50px 0;
+}
+
+.headline-wrap {
+    width: 100%;
+    height: 0;
+    border-top: solid 1px #acacac;
+    border-bottom:solid 1px #000;
+    text-align: center;
+}
+
+h2 {
+    display: inline;            
+    position: relative; 
+    top: -15px;       
+    padding: 0 15px; /*gap between keylines and text */                   
+    font-size: 15px;
+    line-height: 30px;
+    background: #fffbf2; /*try removing this. it will break.*/
+}</code></pre>
+<p>See the Pen <a href='http://codepen.io/brenna/pen/CedGa'>Keylines with a Wrapper</a> by Brenna O'Brien (<a href='http://codepen.io/brenna'>@brenna</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div>
+</figure>
+<p>This actually works pretty well, but you do need to set the background on the text element to be the same as the container background, otherwise the keylines would carry on straight through the text. With a gradient lurking in the background in this particular instance, it might be tricky to get right. Plus, the wrapper is extra non-semantic markup.</p>
+
+<p>And then I stopped to think about exactly what I needed here: A little piece to the left of the text, and another little piece to the right, both to hold some embellishment. <a href='http://www.youtube.com/watch?v=gMiA8AIX03Q'>Duh doy.</a> That’s <a href='https://developer.mozilla.org/en-US/docs/CSS/::before'>precisely what :before and :after are for</a>. We can still use the technique of zero height elements with top and bottom borders too. Just apply that to :before and :after instead of a wrapper.</p>
+<p>:before and :after will create child pseudo-elements (first and last), so you’ll typically want to absolutely position them within the parent. Also remember that you need to add some content, but an empty string will work if you’re just decorating. Here’s the full solution, including some trickery to keep it flexible.</p><figure>
+<div class='codepen' data-default-tab='css' data-height='1075' data-slug-hash='rKenB' data-theme-id='4145'><pre><code>.find-parking {
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden; /*clip the keylines outside the container */
+  text-align: center;
+  background: linear-gradient(top, #92b63c 0%, #608c1e 100%);   
+}
+
+h2 {
+  display: inline;
+  position: relative;
+  padding: 0 20px; /*gap between keylines and text */
+  text-align: center;
+    
+  /*font styles - not needed to create the keylines*/
+  color: #fff;
+  font-size: 20px;
+  font-family: &#x27;Lucida Grande&#x27;, &#x27;Lucida Sans Unicode&#x27;, Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+  h2:before,
+  h2:after {
+    content: &quot;&quot;; 
+    position: absolute; 
+    top: 50%;
+    width: 200%; /*can be set larger, but this was the largest it needed to be in my case*/
+    height: 0;
+    
+    /* the actual keylines*/
+    border-top: solid 1px #68832a;
+    border-bottom: solid 1px #a8d244; 
+  }
+  
+  /* 
+   * This little bit of magic ensures the pseudeo-elements start
+   * precisely at the boundaries of the text element, regardless      
+   * of the text element&#x27;s width.  
+   */
+  
+  h2:before {
+    right: 100%; 
+  }
+  
+  h2:after {
+    left: 100%; 
+  }</code></pre>
+<p>See the Pen <a href='http://codepen.io/brenna/pen/rKenB'>Flexible Keylines with :before and :after</a> by Brenna O'Brien (<a href='http://codepen.io/brenna'>@brenna</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div>
+</figure>
+<p>And here’s the finished product, in all its flexible width glory.</p>
+<figure class='no-border'>
+    <img alt='&apos;position fixed element working as expected, in line with the main content' src='/assets/blog/keylines-final.jpg' />
+</figure>
+<p>The real benefit is that this happens purely in your CSS, as it should for something that’s purely stylistic. Give it a try the next time you want to keep your markup minimal but add CSS flourishes.</p>
+<p>:before and :after work in all modern browsers, plus IE8 and above. While they’re not supported in IE7 – and we still officially support that browser in these parts – it’s not a concern if you’re using them for purely cosmetic features as we’ve done here. Progressive enhancement FTW.</p>
+<p>Hug your pseudo-elements, kids!</p>
+
+<p>[<strong>Side note the second:</strong> Thanks to <a href='https://twitter.com/davatron5000'>Dave Rupert</a> for his invaluable inspiration and advice on sharing more with the web community: &#8220;Write about a specific problem and how you solved it.&#8221; Wise words.]</p>
+
+<p>[<strong>And one more thing:</strong> Originally published <a href='http://www.filamentlab.com/filamablog/2012/10/before-and-after-are-your-friends/'>here</a>.]</p> 
+		</div>
+	</article>
+</section>
+
+    <footer id="contact" class="global">
+        <div class="contact-intro">
+            <h3>Get in Touch</h3>
+            <h4>Or find me elsewhere on the Internet.<br /> I come here often.</h4>
+        </div>
+        <div class="contact-email">    
+            <p><a href="mailto:hi@brennaobrien.com">hi@brennaobrien.com</a></p>
+        </div>
+        <div class="contact-elsewhere">
+            <ul class="social">
+                <li><a href="http://twitter.com/brnnbrn" class="icon-twitter" title="Twitter"><span>Twitter</span></a></li>
+                <li><a href="http://github.com/brenna" class="icon-github" title="GitHub"><span>GitHub</span></a></li>
+                <li><a href="http://gplus.to/brennaobrien" class="icon-googleplus" title="Google Plus" ><span>Google Plus</span></a></li>
+                <li><a href="http://codepen.io/brenna" class="icon-codepen" title="CodePen"><span>CodePen</span></a></li>
+                <li><a href="http://www.rdio.com/people/brnnbrn/" class="icon-rdio" title="Rdio"><span>Rdio</span></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+    <script type="text/javascript" src="/assets/plugins.js"></script>
+    <script type="text/javascript" src="/assets/vendor/prettify.js"></script>
+    <script type="text/javascript" src="/assets/main.js"></script>
+    
+    <script async type="text/javascript" src="//codepen.io/assets/embed/ei.js"></script>
+    
+    <script>
+        var _gaq=[['_setAccount','UA-19103472-1'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+</body>
+</html>
+
