@@ -80,6 +80,73 @@ right: calc(50% - 530px);
     right: calc(50% - 530px);
   }
 </code></pre>
+<p>And a more elaborate, responsive CodePen demo. Scroll around and view it <a href='http://cdpn.io/Kewds'>in full</a> to witness the flexibility.</p>
+<div class='codepen' data-default-tab='result' data-height='324' data-slug-hash='Kewds' data-theme-id='4145'><pre><code>.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.content {
+  padding-right: 210px;
+}
+
+.bubble {
+  position: fixed;
+  top: 20px;
+  right: calc(50% - 450px + 30px);
+}
+
+@media all and (max-width: 900px){
+  .bubble {
+    right: 20px;
+  }
+}
+
+
+/* just some pretty stuff below here */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #ecf0f1;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 25px;
+  line-height: 1.4;
+}
+
+a {
+  color: #128b98;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: solid 1px #128b98;
+}
+
+.wrapper {
+  background: #fff;
+}
+
+.bubble {
+  width: 180px;
+  height: 180px;
+  background: #128b98;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  padding: 50px 30px;
+  font-size: 20px;
+}</code></pre>
+<p>See the Pen <a href='http://codepen.io/brenna/pen/Kewds'>Alignment with CSS calc</a> by Brenna O'Brien (<a href='http://codepen.io/brenna'>@brenna</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div>
 <h3 id='futher_reading'>Futher Reading</h3>
 
 <p>This is similar to Lea Verou&#8217;s awesome trick for <a href='http://lea.verou.me/more-css-secrets/#slide14'>single element full-bleed wrappers</a>. Chris Coyier has a great round up of some other use cases <a href='http://css-tricks.com/a-couple-of-use-cases-for-calc/'>over on CSS-Tricks</a> too.</p>
@@ -115,6 +182,8 @@ right: calc(50% - 530px);
     <script type="text/javascript" src="/assets/plugins.js"></script>
     <script type="text/javascript" src="/assets/vendor/prettify.js"></script>
     <script type="text/javascript" src="/assets/main.js"></script>
+    
+    <script async type="text/javascript" src="//codepen.io/assets/embed/ei.js"></script>
     
     <script>
         var _gaq=[['_setAccount','UA-19103472-1'],['_trackPageview']];

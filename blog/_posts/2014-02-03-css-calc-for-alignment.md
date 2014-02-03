@@ -2,6 +2,8 @@
 title: Aligning position:fixed Elements with CSS calc
 layout: blog_post
 intro: CSS calc is aweseome and I found another use case for it.
+customjs: 
+ - //codepen.io/assets/embed/ei.js
 ---
 
 Ever had trouble getting a position:fixed element to line up with something?
@@ -54,6 +56,75 @@ Here's a more complete snippet for your integrating pleasure.
     right: calc(50% - 530px);
   }
 </code></pre>
+
+And a more elaborate, responsive CodePen demo. Scroll around and view it [in full](http://cdpn.io/Kewds) to witness the flexibility.
+
+<div data-height="324" data-theme-id="4145" data-slug-hash="Kewds" data-default-tab="result" class='codepen'><pre><code>.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.content {
+  padding-right: 210px;
+}
+
+.bubble {
+  position: fixed;
+  top: 20px;
+  right: calc(50% - 450px + 30px);
+}
+
+@media all and (max-width: 900px){
+  .bubble {
+    right: 20px;
+  }
+}
+
+
+/* just some pretty stuff below here */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #ecf0f1;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 25px;
+  line-height: 1.4;
+}
+
+a {
+  color: #128b98;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: solid 1px #128b98;
+}
+
+.wrapper {
+  background: #fff;
+}
+
+.bubble {
+  width: 180px;
+  height: 180px;
+  background: #128b98;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  padding: 50px 30px;
+  font-size: 20px;
+}</code></pre>
+<p>See the Pen <a href='http://codepen.io/brenna/pen/Kewds'>Alignment with CSS calc</a> by Brenna O'Brien (<a href='http://codepen.io/brenna'>@brenna</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div>
 
 
 ###Futher Reading
