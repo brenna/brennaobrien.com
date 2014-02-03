@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> Aligning position:fixed Elements with CSS calc |  Brenna O'Brien</title>
+    <meta name="description" content="Brenna O'Brien is a web developer in Toronto, Canada.">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/style.css">
+    <script type="text/javascript" src="/assets/vendor/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/prettify-tomorrow-theme.css">
+
+</head>
+<body>
+    <header class="global">
+
+        <h1 class="brand"><a href="/">BrennaOBrien</a></h1>
+        <nav class="global">
+
+            <a  href="/">About</a>
+            <a  href="/work/">Work</a>
+            <a class="current"  href="/blog/">Blog</a>
+            <a  href="#contact" id="contact-link">Contact</a>
+        </nav>
+    </header>
+
+<section class="main">
+	<article class="blog-post">
+		<header>
+			<div class="blog-title">
+				<h6 class="post-date">03<span> . </span><br />02<span> . </span><br />14</h6>
+				<h1 class="post-title">Aligning position:fixed Elements with CSS calc</h1>
+			</div>
+			<p class="punch">
+				CSS calc is aweseome and I found another use case for it.
+			</p>
+		</header>
+		<div class="blog-content">
+		<p>Ever had trouble getting a position:fixed element to line up with something?</p>
+<figure>
+    <img alt='&apos;position fixed element working as expected, in line with the main content' src='/assets/blog/position-fixed-uh-oh.png' />
+</figure>
+<p>I wanted this floating bubble to sit aligned with my content wrapper, but the fluid distance between the wrapper and the edge of the screen made it hard to find the right <code>right</code> value.</p>
+
+<p><strong>Pixels</strong> are no good here since the distance is completely fluid.</p>
+
+<p><strong>Percentages</strong> sounded more promissing, since they&#8217;re calculated relative to the screen width, but I still couldn&#8217;t get a consistent alignment out of that. This is probably because the wrapper width is set in px.</p>
+
+<h3 id='some_crazy_combination_of_the_twocalc_to_the_resuce'>Some crazy combination of the two?<br />Calc to the resuce!</h3>
+
+<p>Turns out you can combine what you know in pixels and percentages and let the browser figure out the rest with calc.</p>
+
+<p>To position the bubble precisely inside the wrapper, we can use:</p>
+<pre><code>right: -webkit-calc(50% - 530px);
+right: calc(50% - 530px);
+</code></pre>
+<p>Here&#8217;s a breakdown of how to get that mysterious formula:</p>
+<figure>
+    <img alt='&apos;position fixed element working as expected, in line with the main content' src='/assets/blog/position-fixed-calc.png' />
+</figure>
+<p><em>total space outside the wrapper</em> = 100% - 1060px<br /> <em>half of that (for the right side only)</em> = (100% - 1060px)/2<br /> <em>simplify that a bit</em> = 50% - 530px</p>
+
+<p>Pretty aweseome, right?</p>
+
+<p>Here&#8217;s a more complete snippet for your integrating pleasure.</p>
+<pre><code>
+  .wrapper {
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+
+  .floating-bubble {
+    position: fixed;
+    top: 100px; /*accounts for fixed header*/
+    right: -webkit-calc(50% - 530px); /*50% - half your wrapper width*/
+    right: calc(50% - 530px);
+  }
+</code></pre>
+<h3 id='futher_reading'>Futher Reading</h3>
+
+<p>This is similar to Lea Verou&#8217;s awesome trick for <a href='http://lea.verou.me/more-css-secrets/#slide14'>single element full-bleed wrappers</a>. Chris Coyier has a great round up of some other use cases <a href='http://css-tricks.com/a-couple-of-use-cases-for-calc/'>over on CSS-Tricks</a> too.</p>
+
+<p>Browser support for calcl is pretty great. IE8 and a couple mobile browsers are the outliers. In this case, mobile browsers aren&#8217;t really an issue since screen width = wrapper width there, and I don&#8217;t consider it a deal breaker if that bubble isn&#8217;t perfectly aligned in IE8.</p>
+
+<p>Give it a try next time you&#8217;ve got a tricky value to set!</p> 
+		</div>
+	</article>
+</section>
+
+    <footer id="contact" class="global">
+        <div class="contact-intro">
+            <h3>Get in Touch</h3>
+            <h4>Or find me elsewhere on the Internet.<br /> I come here often.</h4>
+        </div>
+        <div class="contact-email">    
+            <p><a href="mailto:hi@brennaobrien.com">hi@brennaobrien.com</a></p>
+        </div>
+        <div class="contact-elsewhere">
+            <ul class="social">
+                <li><a href="http://twitter.com/brnnbrn" class="icon-twitter" title="Twitter"><span>Twitter</span></a></li>
+                <li><a href="http://github.com/brenna" class="icon-github" title="GitHub"><span>GitHub</span></a></li>
+                <li><a href="http://gplus.to/brennaobrien" class="icon-googleplus" title="Google Plus" ><span>Google Plus</span></a></li>
+                <li><a href="http://codepen.io/brenna" class="icon-codepen" title="CodePen"><span>CodePen</span></a></li>
+                <li><a href="http://www.rdio.com/people/brnnbrn/" class="icon-rdio" title="Rdio"><span>Rdio</span></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+    <script type="text/javascript" src="/assets/plugins.js"></script>
+    <script type="text/javascript" src="/assets/vendor/prettify.js"></script>
+    <script type="text/javascript" src="/assets/main.js"></script>
+    
+    <script>
+        var _gaq=[['_setAccount','UA-19103472-1'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+</body>
+</html>
+

@@ -26,7 +26,7 @@ p {
 	}
 
 	@media only screen and (min-width: 60em) {
-		font-size: 1.05em;
+		font-size: 1.1em;
 	}
 
 	// @media only screen and (min-width: 47em) {
@@ -161,6 +161,10 @@ pre {
 	margin: 0 0 2em;
 	padding: 1em;
 	border: solid 1px #ccc;
+}
+
+code, pre {
+	font-family: monospace, Courier, "Courier New", serif;
 }
 
 
