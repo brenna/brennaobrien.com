@@ -1,2 +1,5 @@
 .DS_STORE
 .sass_cache/
+*.sublime-project
+*.sublime-workspace
+SRC/
