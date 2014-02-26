@@ -1,7 +1,7 @@
 ---
 title: CSS animations for usability
 layout: blog_post
-intro: How to couple your CSS animations with JavaScript for interaction effects
+intro: How to couple your CSS animations with JavaScript for interactive effects
 customjs: 
  - //codepen.io/assets/embed/ei.js
 ---
