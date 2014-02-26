@@ -157,15 +157,27 @@ a {
 // ------------------------------------------------------------------
 // Code Blocks
 // ------------------------------------------------------------------
+code {
+	background: #f3f3f3;
+	font-size: 0.9em;
+	padding: 0.1em;
+	margin: 0 0.1em;
+}
+
 pre {
 	margin: 0 0 2em;
 	padding: 1em;
 	border: solid 1px #ccc;
+
+	code {font-size: 1em; padding: 0; margin: 0; background: none;}
 }
 
 code, pre {
 	font-family: monospace, Courier, "Courier New", serif;
 }
+
+//some fixes for misbehaving prettyprint
+.language-css .kwd {color: inherit;}
 
 
 // ==================================================================

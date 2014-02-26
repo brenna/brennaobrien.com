@@ -3,7 +3,7 @@ title: Inspiration
 layout: blog_post
 ---
 
-![website version1]({% asset_path blog/site-v1.jpg %})
+![old website]({% asset_path blog/site-v1.jpg %})
 
 
 I’ve been enamoured with jazz label Blue Note’s album artwork for quite some time now, so I decided to bring the Blue Note motif into my latest site design \[ed. this was posted on a previous version of my site, pictured above\]. I love the simple but bright colour schemes and clean geometric elements.

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> CSS animations for usability |  Brenna O'Brien</title>
+    <meta name="description" content="Brenna O'Brien is a web developer in Toronto, Canada.">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="/assets/vendor/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="/assets/prettify-tomorrow-theme.css">
+
+</head>
+<body>
+    <header class="global">
+
+        <h1 class="brand"><a href="/">BrennaOBrien</a></h1>
+        <nav class="global">
+
+            <a  href="/">About</a>
+            <a  href="/work/">Work</a>
+            <a class="current"  href="/blog/">Blog</a>
+            <a  href="#contact" id="contact-link">Contact</a>
+        </nav>
+    </header>
+
+<section class="main">
+	<article class="blog-post">
+		<header>
+			<div class="blog-title">
+				<h6 class="post-date">15<span> . </span><br />02<span> . </span><br />14</h6>
+				<h1 class="post-title">CSS animations for usability</h1>
+			</div>
+			<p class="punch">
+				How to couple your CSS animations with JavaScript for interaction effects
+			</p>
+		</header>
+		<div class="blog-content">
+		<p>One of the most loved features on my site is the pulsing &quot;Get in Touch&quot; text in the footer. It ended up on my site after I ran into a little usability issue. On short pages, clicking the in-page &quot;contact&quot; link doesn&#39;t scroll you very far down the page. It barely looks like anything has changed and the user is left wondering why nothing happened.  </p>
+
+<p><strong>My solution: draw attention to the footer somehow!</strong>  More specifically, let&#39;s make the &quot;Get in Touch&quot; heading jump out at you when that in-page link is clicked.</p>
+
+<h3>Step 1. Create a catchy CSS animation</h3>
+
+<p>The pulsing effect I came up with uses several scale transforms to make the element grow and shrink. I modelled it roughly after a <a href="http://www.sccs.swarthmore.edu/users/07/pazunre1/Engineering/E26/lab2/bball.png">bouncing ball&#39;s trajectory,</a> then fine tuned until it looked right.</p>
+
+<pre class="prettyprint language-css"><code>@keyframes pulse {
+    from {
+        transform: scale(1);
+        transform-origin: center center;
+        animation-timing-function: ease-out;
+    }
+    25% {
+        transform: scale(1.1);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+    74% {
+        transform: scale(1.05);
+        animation-timing-function: ease-in;
+    }
+    to {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+}
+</code></pre>
+
+<p><small><strong>Note:</strong> For simplicity, I&#39;ve used un-prefixed CSS in the animation definiting. For full compatibilty, you&#39;ll also need a <code>@-webkit-keyframes</code> animation that uses <code>-webkit-tranform</code>.</small> </p>
+
+<h3>Step 2: Apply the animation, but only when we have a class of &#39;animated&#39;</h3>
+
+<p>For an animation that runs once on page load, our code would be something like:</p>
+
+<pre class="prettyprint language-css"><code>.get-in-touch {
+   animation: pulse 0.5s; 
+}
+</code></pre>
+
+<p>But we only want the animation to show at certain times, so let&#39;s have it run only when the element has a class of animated. We&#39;ll add that class dynamically in the next step.</p>
+
+<pre class="prettyprint language-css"><code>.get-in-touch.animated {
+    animation: pulse 0.5s;
+}
+</code></pre>
+
+<p><small><strong>Note:</strong> Again, you&#39;ll need to call these with <code>-webkit-animation</code> too for full browser-support.</small> </p>
+
+<h3>Step 3: Trigger the animation based on user action</h3>
+
+<p>Remember, we want this text to pulse when a user clicks on the contact link, so let&#39;s listen for a click with a little jQuery, then trigger the animation by giving the text the <code>.animated</code> class we set up above. </p>
+
+<pre class="prettyprint"><code class="language-js">$('#contact-link').on('click', function(){
+    $('.get-in-touch').addClass('animated');
+});
+</code></pre>
+
+<h3>Step 4: Reset the animation when it&#39;s done</h3>
+
+<p>This works perfectly on the first go, but if I click the contact link again, I don&#39;t get the animation. Why? Because the text <em>already has a class</em> of <code>animated</code>. It can&#39;t be re-added if it&#39;s already there.</p>
+
+<p>We need to reset our system by removing the <code>animated</code> class once the initial animation is complete. Thankfully, CSS fires a little magic &quot;I&#39;m done!&quot; event called <code>animationend</code> when an animation completes.</p>
+
+<p>You can listen for that event in jQuery like this:</p>
+
+<pre class="prettyprint"><code class="language-js">$('my-animating-thing').on('animationend', function(){
+    //it's over, do stuff
+});
+</code></pre>
+
+<p>So in our case, we listen for the animation to finish, then remove the <code>animated</code> class to reset the system.</p>
+
+<pre class="prettyprint"><code class="language-js">$('#contact-link').on('click', function(){
+    $('.get-in-touch').addClass('animated').on('animationend', function(){
+        $(this).removeClass('animated');
+    });
+});
+</code></pre>
+
+<p>Unfortunately, <code>animationend</code> isn&#39;t standardized across browsers yet, so we also need to listen for it&#39;s cross-browser variation, <code>webkitAnimationEnd</code><sup>[1]</sup>. We pass them all in to jQuery&#39;s <code>.on()</code>, so your final snippet looks like:</p>
+
+<pre class="prettyprint"><code class="language-js">$('#contact-link').on('click', function(){
+    $('.get-in-touch').addClass('animated').on('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(){
+        $(this).removeClass('animated');
+    });
+});
+</code></pre>
+
+<p>Now your animation will run for a second time, and a third time, and as many times as you like.</p>
+
+<h3>The Final Code</h3>
+
+<h4>CSS</h4>
+
+<pre class="prettyprint language-css"><code>@keyframes pulse {
+    from {
+        transform: scale(1);
+        transform-origin: center center;
+        animation-timing-function: ease-out;
+    }
+    25% {
+        transform: scale(1.1);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+    74% {
+        transform: scale(1.05);
+        animation-timing-function: ease-in;
+    }
+    to {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+}
+
+.get-in-touch.animated {
+    animation: pulse 0.5s;
+}
+</code></pre>
+
+<h4>JS</h4>
+
+<pre class="prettyprint"><code class="language-js">$('#contact-link').on('click', function(){
+    $('.get-in-touch').addClass('animated').on('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(){
+        $(this).removeClass('animated');
+    });
+});
+</code></pre>
+
+<p>Animations and transitions are broadening the scope of what CSS can do for interactivity. We still need JS for event binding, so having your interactions states live inside CSS and then toggling them off and on with JS is a great strategy. It&#39;s one I&#39;ve been employing more often lately, and I&#39;d encourage you to give it a try too!</p>
+
+<hr>
+
+<p><small>
+[1] When searching around for info on cross-browser support for the <code>animationend</code> event, I kept seeing exhaustive lists like <code>animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd</code>, but no conclusive data on which browser versions needed the prefixed variants. A little testing revealed that IE &gt; 10 supports the unprefixed <code>animationend</code>, and the latest version of Opera (19) has moved over to using <code>webkitAnimationEnd</code>, so we only need those two for full support.  If you&#39;d like to test this in other browsers, you can use <a href="http://jsfiddle.net/U853f/3/">this fiddle</a>, and check to see if the animation runs after the first click. Send your results to <a href="http://twitter.com/brnnbrn">@brnnbrn</a> or <a href="mailto:hi@brennaobrien.com">hi@brennaobrien.com</a>!</small></p>
+ 
+		</div>
+	</article>
+</section>
+
+    <footer id="contact" class="global">
+        <div class="contact-intro">
+            <h3>Get in Touch</h3>
+            <h4>Or find me elsewhere on the Internet.<br /> I come here often.</h4>
+        </div>
+        <div class="contact-email">    
+            <p><a href="mailto:hi@brennaobrien.com">hi@brennaobrien.com</a></p>
+        </div>
+        <div class="contact-elsewhere">
+            <ul class="social">
+                <li><a href="http://twitter.com/brnnbrn" class="icon-twitter" title="Twitter"><span>Twitter</span></a></li>
+                <li><a href="http://brnnbrn.tumblr.com/" class="icon-tumblr" title="everything else"><span>Tumblr</span></a></li>
+                <li><a href="http://www.rdio.com/people/brnnbrn/" class="icon-rdio" title="Rdio"><span>Rdio</span></a></li>
+                <li><a href="http://codepen.io/brenna" class="icon-codepen" title="CodePen"><span>CodePen</span></a></li>
+                <li><a href="http://github.com/brenna" class="icon-github" title="GitHub"><span>GitHub</span></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+    <script src="/assets/plugins.js"></script>
+    <script src="/assets/vendor/prettify.js"></script>
+    <script src="/assets/main.js"></script>
+    
+    <script async type="text/javascript" src="//codepen.io/assets/embed/ei.js"></script>
+    
+    <script>
+        var _gaq=[['_setAccount','UA-19103472-1'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+</body>
+</html>
+

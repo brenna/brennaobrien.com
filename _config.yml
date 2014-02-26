@@ -1,7 +1,7 @@
-auto: true
-server_port: 4000
+port: 4000
 permalink: /:categories/:year/:month/:title.html
 exclude: ['README.md']
+markdown: redcarpet
 assets:
   cachebust: none
   gzip: true
