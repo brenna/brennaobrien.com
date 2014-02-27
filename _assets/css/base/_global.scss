@@ -162,6 +162,7 @@ code {
 	font-size: 0.9em;
 	padding: 0.1em;
 	margin: 0 0.1em;
+	white-space: pre-wrap;
 }
 
 pre {
@@ -169,7 +170,13 @@ pre {
 	padding: 1em;
 	border: solid 1px #ccc;
 
-	code {font-size: 1em; padding: 0; margin: 0; background: none;}
+	code {
+		font-size: 1em; 
+		padding: 0; 
+		margin: 0; 
+		background: none;
+		white-space: pre;
+	}
 }
 
 code, pre {
