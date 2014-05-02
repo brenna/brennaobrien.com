@@ -106,7 +106,7 @@ input[type=range]:focus::-moz-range-track {
 
 ### Internet Explorer 10 +
 
-Input type range is supported in IE10 and above.  We can thumb with the `::-ms-thumb` pseudo, and use a combination of `::-ms-track`. 
+Input type range is supported in IE10 and above.  We can style the thumb with the `::-ms-thumb` pseudo, and the track with `::-ms-track`. 
 
 
 ####**Gotchas**
