@@ -51,7 +51,7 @@
 	.post-title {
 		padding-left: 0.8em;
 
-		.blog-teaser & {max-width: 62rem;}
+		.blog-teaser & {max-width: 63rem;}
 	}
 	.post-date {
 		width: 2.25em;
@@ -93,6 +93,7 @@
 	border: solid 1px #666;
 }
 
-.blog-post .no-border img {
+.blog-post .no-border img,
+.blog-post img.no-border {
 	border: none;
 }

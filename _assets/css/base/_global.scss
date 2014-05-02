@@ -141,14 +141,14 @@ a {
 	&:focus {
 		border-bottom: solid 1px $linkColor;
 		//set hoverColor variable to null only if it hasn't been defined yet
-		$hoverColor: null !default; 
+		// $hoverColor: null !default; 
 
-		@if $hoverColor {
-			//color: $hoverColor;
-		} @else {
-			// if hoverColour not set, lighten link colour by 10%
-			//color: lighten($linkColor, 10);
-		}
+		// @if $hoverColor {
+		// 	//color: $hoverColor;
+		// } @else {
+		// 	// if hoverColour not set, lighten link colour by 10%
+		// 	//color: lighten($linkColor, 10);
+		// }
 
 		@include transition-in(border-color);
 	}
