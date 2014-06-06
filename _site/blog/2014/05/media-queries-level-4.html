@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> What's new in Media Queries Level 4 |  Brenna O'Brien</title>
+    <meta name="description" content="Brenna O'Brien is a web developer in Toronto, Canada.">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="/assets/vendor/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="/assets/prettify-tomorrow-theme.css">
+
+</head>
+<body>
+    <header class="global">
+
+        <h1 class="brand"><a href="/">BrennaOBrien</a></h1>
+        <nav class="global">
+
+            <a  href="/">About</a>
+            <a  href="/work/">Work</a>
+            <a class="current"  href="/blog/">Blog</a>
+            <a  href="#contact" id="contact-link">Contact</a>
+        </nav>
+    </header>
+
+<section class="main">
+	<article class="blog-post">
+		<header>
+			<div class="blog-title">
+				<h6 class="post-date">06<span> . </span><br />05<span> . </span><br />14</h6>
+				<h1 class="post-title">What's new in Media Queries Level 4</h1>
+			</div>
+			<p class="punch">
+				
+			</p>
+		</header>
+		<div class="blog-content">
+		<p>Hot off the W3 presses, the <a href="http://www.w3.org/TR/mediaqueries-4/">Media Queries Level 4 spec</a> was released yesterday. My eyes usually glaze over when I see super technical spec docs, but I decided to have a read this time.  And I found some goodies!</p>
+
+<h3>Using ranges for numeric values</h3>
+
+<p>If we need to select a finite range of screen sizes, we&#39;re currently stuck with the clunky <code>@media (max-width: 600px) and (min-width: 1000px)</code>. It&#39;s a lot to type and can be confusing to keep track of how max/min and the values all work in conjunction.</p>
+
+<p>The new spec allows an easy reading single range instead.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">@media (600px &lt; width &lt; 1000px) {} 
+</code></pre></div>
+<p><a href="http://www.w3.org/TR/mediaqueries-4/#mq-range-context">http://www.w3.org/TR/mediaqueries-4/#mq-range-context</a></p>
+
+<h3>The hover media query</h3>
+
+<p>I&#39;ve long been using <a href="http://modernizr.com">Modernizr</a> to test for touch support and accommodate the lack of a hover state on touch devices, but a native CSS solution is great step forward.</p>
+
+<p>For example, use <code>@media(hover)</code> to display a caption as an overlay <em>only</em> when hover is available:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">@media (hover){
+
+    .cat {
+        position: relative;
+    }
+
+    .cat .caption {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+    }
+
+    .cat:hover .caption {
+        opacity: 1;
+    }
+}
+</code></pre></div>
+<figure>
+    <img src="https://i.cloudup.com/tyM99Myzka.png" alt="">
+    <figcaption>
+        Result for non-hover devices (left) and hover devices (right).
+    </figcaption>
+</figure>
+
+<p>Friendly reminder: Small screen != touch device all the time, so don&#39;t bank on it!</p>
+
+<p><a href="http://www.w3.org/TR/mediaqueries-4/#hover">http://www.w3.org/TR/mediaqueries-4/#hover</a></p>
+
+<h3>Lots more</h3>
+
+<p>Hover and range values are my favourites, but there are a lots of other minor improvements. Read up on them all <a href="http://www.w3.org/TR/mediaqueries-4/#changes-2012">here.</a></p>
+ 
+		</div>
+	</article>
+</section>
+
+    <footer id="contact" class="global">
+        <div class="contact-intro">
+            <h3>Get in Touch</h3>
+            <h4>Or find me elsewhere on the Internet.<br /> I come here often.</h4>
+        </div>
+        <div class="contact-email">    
+            <p><a href="mailto:hi@brennaobrien.com">hi@brennaobrien.com</a></p>
+        </div>
+        <div class="contact-elsewhere">
+            <ul class="social">
+                <li><a href="http://twitter.com/brnnbrn" class="icon-twitter" title="Twitter"><span>Twitter</span></a></li>
+                <li><a href="http://brnnbrn.tumblr.com/" class="icon-tumblr" title="everything else"><span>Tumblr</span></a></li>
+                <li><a href="http://www.rdio.com/people/brnnbrn/" class="icon-rdio" title="Rdio"><span>Rdio</span></a></li>
+                <li><a href="http://codepen.io/brenna" class="icon-codepen" title="CodePen"><span>CodePen</span></a></li>
+                <li><a href="http://github.com/brenna" class="icon-github" title="GitHub"><span>GitHub</span></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+    <script src="/assets/plugins.js"></script>
+    <script src="/assets/vendor/prettify.js"></script>
+    <script src="/assets/main.js"></script>
+    
+    <script>
+        var _gaq=[['_setAccount','UA-19103472-1'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+</body>
+</html>
+
