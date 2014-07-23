@@ -2,4 +2,5 @@
 .sass_cache/
 *.sublime-project
 *.sublime-workspace
+robots.txt
 SRC/
