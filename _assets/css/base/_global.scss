@@ -113,7 +113,7 @@ ol, ul {
 }
 
 @media only screen and (min-width: 47em) and (max-width: 60em) {
-	.main ol, 
+	.main ol,
 	.main ul {font-size: 1.2em;}
 }
 
@@ -124,7 +124,7 @@ li {
 
 .arrow-bullets {
 	list-style-type: none;
-	
+
 }
 
 // ------------------------------------------------------------------
@@ -141,7 +141,7 @@ a {
 	&:focus {
 		border-bottom: solid 1px $linkColor;
 		//set hoverColor variable to null only if it hasn't been defined yet
-		// $hoverColor: null !default; 
+		// $hoverColor: null !default;
 
 		// @if $hoverColor {
 		// 	//color: $hoverColor;
@@ -171,9 +171,9 @@ pre {
 	border: solid 1px #ccc;
 
 	code {
-		font-size: 1em; 
-		padding: 0; 
-		margin: 0; 
+		font-size: 1em;
+		padding: 0;
+		margin: 0;
 		background: none;
 		white-space: pre;
 	}
