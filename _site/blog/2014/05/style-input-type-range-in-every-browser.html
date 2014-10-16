@@ -140,7 +140,9 @@ input[type=range]:focus::-moz-range-track {
 
 <h4><strong>Gotchas</strong></h4>
 
-<p>IE won&#39;t let the thumb overflow the track, so you&#39;ll have to settle for a taller track that&#39;s at least as big as the thumb.</p>
+<p>IE won&#39;t let the thumb overflow the track, <del>so you&#39;ll have to settle for a taller track that&#39;s at least as big as the thumb.</del>  </p>
+
+<p><strong>Update, 15.10.2014</strong>: The thumb still can&#39;t overflow the track, but Graham Fowler pointed out a clever workaround. We can fake a wide enough track by adding a thick transparent border on the top and bottom of the track. We&#39;ll also move most of our styles to <code>::-ms-fill-lower</code> and <code>::-ms-fill-upper</code> instead of <code>::ms-track</code> to make sure things like <code>border-radius</code> render correctly.</p>
 
 <p>To remove the default tick marks, you&#39;ll need to set <code>colour: transparent</code> on the track.</p>
 
@@ -148,22 +150,29 @@ input[type=range]:focus::-moz-range-track {
 
 <p>You can also use <code>::-ms-fill-lower</code> and <code>::-ms-fill-upper</code> to further customize the look of the track on either size of the thumb. Here, we&#39;ve enhanced the UI by styling the lower part with a darker grey.</p>
 
-<p><img class="no-border" src="/assets/blog/custom-slider-ie.png" alt="'components of input type range"/></p>
+<p><img class="no-border" src="/assets/blog/custom-slider-ie-updated.png" alt="'components of input type range"/></p>
 
 <pre class="prettyprint language-css"><code>input[type=range]::-ms-track {
     width: 300px;
-    height: 16px;
-    background: #ddd;
-    border: none;
-    border-radius: 10px;
+    height: 5px;
+    
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
 
-    /* remove default tick marks */
+    /*remove default tick marks*/
     color: transparent;
 }
 input[type=range]::-ms-fill-lower {
-    outline: none;
     background: #777;
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px;
+}
+input[type=range]::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 10px;
 }
 input[type=range]::-ms-thumb {
     border: none;
@@ -172,17 +181,17 @@ input[type=range]::-ms-thumb {
     border-radius: 50%;
     background: goldenrod;
 }
-input[type=range]:focus::-ms-track {
-    background: #ccc;
-}
 input[type=range]:focus::-ms-fill-lower {
     background: #888;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #ccc;
 }
 </code></pre>
 
 <p>Here&#39;s the full cross-browser code snippet and result.</p>
 
-<iframe width="100%" height="300" src="http://jsfiddle.net/Yh2N4/embedded/result,css,html/" allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
+<iframe width="100%" height="300" src="http://jsfiddle.net/brenna/f4uq9edL/embedded/result,css,html/" allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
  
 		</div>
 	</article>

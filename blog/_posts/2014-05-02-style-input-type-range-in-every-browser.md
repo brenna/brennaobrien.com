@@ -111,7 +111,9 @@ Input type range is supported in IE10 and above.  We can style the thumb with th
 
 ####**Gotchas**
 
-IE won't let the thumb overflow the track, so you'll have to settle for a taller track that's at least as big as the thumb.
+IE won't let the thumb overflow the track, <del>so you'll have to settle for a taller track that's at least as big as the thumb.</del>  
+
+**Update, 15.10.2014**: The thumb still can't overflow the track, but Graham Fowler pointed out a clever workaround. We can fake a wide enough track by adding a thick transparent border on the top and bottom of the track. We'll also move most of our styles to `::-ms-fill-lower` and `::-ms-fill-upper` instead of `::ms-track` to make sure things like `border-radius` render correctly.
 
 To remove the default tick marks, you'll need to set `colour: transparent` on the track.
 
@@ -119,22 +121,29 @@ To remove the default tick marks, you'll need to set `colour: transparent` on th
 
 You can also use `::-ms-fill-lower` and `::-ms-fill-upper` to further customize the look of the track on either size of the thumb. Here, we've enhanced the UI by styling the lower part with a darker grey.
 
-<img class="no-border" src="{% asset_path blog/custom-slider-ie.png%}" alt="'components of input type range"/>
+<img class="no-border" src="{% asset_path blog/custom-slider-ie-updated.png%}" alt="'components of input type range"/>
 
 <pre class="prettyprint language-css"><code>input[type=range]::-ms-track {
     width: 300px;
-    height: 16px;
-    background: #ddd;
-    border: none;
-    border-radius: 10px;
+    height: 5px;
+    
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
 
-    /* remove default tick marks */
+    /*remove default tick marks*/
     color: transparent;
 }
 input[type=range]::-ms-fill-lower {
-    outline: none;
     background: #777;
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px;
+}
+input[type=range]::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 10px;
 }
 input[type=range]::-ms-thumb {
     border: none;
@@ -143,15 +152,15 @@ input[type=range]::-ms-thumb {
     border-radius: 50%;
     background: goldenrod;
 }
-input[type=range]:focus::-ms-track {
-    background: #ccc;
-}
 input[type=range]:focus::-ms-fill-lower {
     background: #888;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #ccc;
 }
 </code></pre>
 
 
 Here's the full cross-browser code snippet and result.
 
-<iframe width="100%" height="300" src="http://jsfiddle.net/Yh2N4/embedded/result,css,html/" allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
+<iframe width="100%" height="300" src="http://jsfiddle.net/brenna/f4uq9edL/embedded/result,css,html/" allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
