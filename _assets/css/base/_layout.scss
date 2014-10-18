@@ -1,11 +1,13 @@
-header.global, 
+header.global,
 footer.global,
 .about-intro,
 .nutshell,
 .resources,
 .blog-teaser > a,
 .work-entries,
-.work-post{
+.talk-entries,
+.work-post,
+.talk-teaser{
 	@extend %full-width;
 }
 
@@ -36,10 +38,10 @@ footer.global,
 		vertical-align: top;
 		width: 46.5%;
 
-		&.left {
+		&:nth-of-type(odd) {
 			margin-right: 3%;
 		}
-		&.right {
+		&:nth-of-type(even) {
 			margin-left: 3%;
 		}
 	}
@@ -88,4 +90,3 @@ img.site-mobile {
 	}
 }
 
- 

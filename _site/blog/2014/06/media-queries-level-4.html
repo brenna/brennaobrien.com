@@ -21,8 +21,9 @@
         <h1 class="brand"><a href="/">BrennaOBrien</a></h1>
         <nav class="global">
 
-            <a  href="/">About</a>
+            <!-- <a  href="/">About</a> -->
             <a  href="/work/">Work</a>
+            <a  href="/speaking/">Speaking</a>
             <a class="current"  href="/blog/">Blog</a>
             <a  href="#contact" id="contact-link">Contact</a>
         </nav>
@@ -47,7 +48,7 @@
 <p>If we need to select a finite range of screen sizes, we&#39;re currently stuck with the clunky <code>@media (max-width: 600px) and (min-width: 1000px)</code>. It&#39;s a lot to type and can be confusing to keep track of how max/min and the values all work in conjunction.</p>
 
 <p>The new spec allows an easy reading single range instead.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">@media (600px &lt; width &lt; 1000px) {} 
+<div class="highlight"><pre><code class="language-text" data-lang="text">@media (600px &lt; width &lt; 1000px) {} 
 </code></pre></div>
 <p><a href="http://www.w3.org/TR/mediaqueries-4/#mq-range-context">http://www.w3.org/TR/mediaqueries-4/#mq-range-context</a></p>
 
@@ -56,7 +57,7 @@
 <p>I&#39;ve long been using <a href="http://modernizr.com">Modernizr</a> to test for touch support and accommodate the lack of a hover state on touch devices, but a native CSS solution is great step forward.</p>
 
 <p>For example, use <code>@media(hover)</code> to display a caption as an overlay <em>only</em> when hover is available:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">@media (hover){
+<div class="highlight"><pre><code class="language-text" data-lang="text">@media (hover){
 
     .cat {
         position: relative;
@@ -100,8 +101,8 @@
             <h3>Get in Touch</h3>
             <h4>Or find me elsewhere on the Internet.<br /> I come here often.</h4>
         </div>
-        <div class="contact-email">    
-            <p><a href="mailto:hi@brennaobrien.com">hi@brennaobrien.com</a></p>
+        <div class="contact-email">
+            <p><a href="mailto:brenna@bren.zone">brenna@bren.zone</a></p>
         </div>
         <div class="contact-elsewhere">
             <ul class="social">

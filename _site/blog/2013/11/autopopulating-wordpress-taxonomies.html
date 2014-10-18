@@ -21,8 +21,9 @@
         <h1 class="brand"><a href="/">BrennaOBrien</a></h1>
         <nav class="global">
 
-            <a  href="/">About</a>
+            <!-- <a  href="/">About</a> -->
             <a  href="/work/">Work</a>
+            <a  href="/speaking/">Speaking</a>
             <a class="current"  href="/blog/">Blog</a>
             <a  href="#contact" id="contact-link">Contact</a>
         </nav>
@@ -45,7 +46,7 @@
 <p>For example, when I wanted a count of all <code>post-type-A</code> entries that had a relationship to a particular <code>post-type-B</code> entry, I eneded up having to write a beast of a custom SQL query. Not exactly harnessing the power of WordPress, amirite? </p>
 
 <p>Compare that to the way taxonomies natively work. If I want to know how many <code>post-type-A</code> entries have been tagged with taxonomy term <code>category-1</code> it&#39;s a simple matter of:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">$term = get_term_by(&#39;slug&#39;, &#39;category-1&#39;, &#39;my-taxonomy&#39;);
+<div class="highlight"><pre><code class="language-text" data-lang="text">$term = get_term_by(&#39;slug&#39;, &#39;category-1&#39;, &#39;my-taxonomy&#39;);
 $count = $term-&gt;count;
 </code></pre></div>
 <p>Wouldn&#39;t it be great to have a custom taxonomy on <code>post-type-A</code> auto-populate with the entries from <code>post-type-B</code>?  Turns out that&#39;s pretty easy. </p>
@@ -201,8 +202,8 @@ add_action('save_post', 'update_custom_terms');
             <h3>Get in Touch</h3>
             <h4>Or find me elsewhere on the Internet.<br /> I come here often.</h4>
         </div>
-        <div class="contact-email">    
-            <p><a href="mailto:hi@brennaobrien.com">hi@brennaobrien.com</a></p>
+        <div class="contact-email">
+            <p><a href="mailto:brenna@bren.zone">brenna@bren.zone</a></p>
         </div>
         <div class="contact-elsewhere">
             <ul class="social">

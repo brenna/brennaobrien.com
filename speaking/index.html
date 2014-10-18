@@ -1,0 +1,44 @@
+---
+layout: default
+title: Speaking
+---
+
+{%assign upcomingTalks = site.categories['speaking'] | where: "upcoming", true %}
+{%assign pastTalks = site.categories['speaking'] | where: "upcoming", false %}
+
+<section class="talk-entries">
+  <div class="talks upcoming">
+    {% for post in upcomingTalks %}
+    <article class="work-teaser {%cycle 'left', 'right'%}">
+      <header>
+        <h2 class="work-title"><a href="{{post.link}}">{{ post.title }}</a></h2>
+        <h3 class="work-type">{{post.location}} / {{post.date | date: "%m.%y"}}</h3>
+        {%if post.ticket_url %}
+          <a class="work-link icon-ticket" href="{{post.ticket_url}}"><span>Buy Ticket</span></a>
+        {% endif %}
+      </header>
+
+      {{post.content}}
+
+    </article>
+    {% endfor %}
+  </div>
+
+  <h3 class="work-sub-cat">past</h3>
+  <div class="talks">
+  {% for post in pastTalks %}
+    <article class="work-teaser {%cycle 'left', 'right'%}">
+      <header>
+        <h2 class="work-title"><a href="{{post.link}}">{{ post.title }}</a></h2>
+        <h3 class="work-type">{{post.location}} / {{post.date | date: "%m.%y"}}</h3>
+        {% if post.slides_url %}
+          <a class="work-link icon-slides" href="{{post.slides_url}}"><span>Slides</span></a>
+        {% endif %}
+      </header>
+
+      {{post.content}}
+
+    </article>
+  {% endfor %}
+  </div>
+</section>

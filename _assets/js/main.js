@@ -1,12 +1,13 @@
 $(document).ready(function() {
-	
+
 	// outside links open in new tab
 	$(document.links).filter(function() {
 		return this.hostname != window.location.hostname;
     }).attr('target', '_blank');
 
-	//activate fitvids.js for blog posts
+	//activate fitvids.js for blog posts and talks
 	$('.blog-content').fitVids();
+	$('.talk-entries').fitVids();
 
 
 	//smooth scroll to contact and activate CSS bouncy text
@@ -23,7 +24,7 @@ $(document).ready(function() {
 		return false;
 	});
 
-	//min-height on teeny blog posts 
+	//min-height on teeny blog posts
 	var minBlogHeight = $(window).height() - $('header.global').height() - $('footer.global').height() - 160;
 	$('.blog-post').css('min-height', minBlogHeight);
 
