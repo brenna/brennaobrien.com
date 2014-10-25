@@ -143,7 +143,7 @@ input[type=range]:focus::-moz-range-track {
 
 <p>IE won&#39;t let the thumb overflow the track, <del>so you&#39;ll have to settle for a taller track that&#39;s at least as big as the thumb.</del>  </p>
 
-<p><strong>Update, 15.10.2014</strong>: The thumb still can&#39;t overflow the track, but Graham Fowler pointed out a clever workaround. We can fake a wide enough track by adding a thick transparent border on the top and bottom of the track. We&#39;ll also move most of our styles to <code>::-ms-fill-lower</code> and <code>::-ms-fill-upper</code> instead of <code>::ms-track</code> to make sure things like <code>border-radius</code> render correctly.</p>
+<p><strong>Update, 15.10.2014</strong>: The thumb still can&#39;t overflow the track, but <a href="https://github.com/Gramcito">Graham Fowler</a> pointed out a clever workaround. We can fake a wide enough track by adding a thick transparent border on the top and bottom of the track. We&#39;ll also move most of our styles to <code>::-ms-fill-lower</code> and <code>::-ms-fill-upper</code> instead of <code>::ms-track</code> to make sure things like <code>border-radius</code> render correctly.</p>
 
 <p>To remove the default tick marks, you&#39;ll need to set <code>colour: transparent</code> on the track.</p>
 

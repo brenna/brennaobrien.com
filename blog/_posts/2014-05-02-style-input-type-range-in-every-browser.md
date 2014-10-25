@@ -113,7 +113,7 @@ Input type range is supported in IE10 and above.  We can style the thumb with th
 
 IE won't let the thumb overflow the track, <del>so you'll have to settle for a taller track that's at least as big as the thumb.</del>  
 
-**Update, 15.10.2014**: The thumb still can't overflow the track, but Graham Fowler pointed out a clever workaround. We can fake a wide enough track by adding a thick transparent border on the top and bottom of the track. We'll also move most of our styles to `::-ms-fill-lower` and `::-ms-fill-upper` instead of `::ms-track` to make sure things like `border-radius` render correctly.
+**Update, 15.10.2014**: The thumb still can't overflow the track, but [Graham Fowler](https://github.com/Gramcito) pointed out a clever workaround. We can fake a wide enough track by adding a thick transparent border on the top and bottom of the track. We'll also move most of our styles to `::-ms-fill-lower` and `::-ms-fill-upper` instead of `::ms-track` to make sure things like `border-radius` render correctly.
 
 To remove the default tick marks, you'll need to set `colour: transparent` on the track.
 
