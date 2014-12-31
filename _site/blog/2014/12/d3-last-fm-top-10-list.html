@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> Building a Top 10 List with D3 and the last.fm API |  Brenna O'Brien</title>
+    <meta name="description" content="Brenna O'Brien is a web developer in Toronto, Canada.">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="/assets/vendor/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="/assets/prettify-tomorrow-theme.css">
+
+</head>
+<body>
+    <header class="global">
+
+        <h1 class="brand"><a href="/">BrennaOBrien</a></h1>
+        <nav class="global">
+
+            <!-- <a  href="/">About</a> -->
+            <a  href="/work/">Work</a>
+            <a  href="/speaking/">Speaking</a>
+            <a class="current"  href="/blog/">Blog</a>
+            <a  href="#contact" id="contact-link">Contact</a>
+        </nav>
+    </header>
+
+<section class="main">
+	<article class="blog-post">
+		<header>
+			<div class="blog-title">
+				<h6 class="post-date">31<span> . </span><br />12<span> . </span><br />14</h6>
+				<h1 class="post-title">Building a Top 10 List with D3 and the last.fm API</h1>
+			</div>
+			<p class="punch">
+				
+			</p>
+		</header>
+		<div class="blog-content">
+		<p>My annual top 10 albums list got a little fancier this year.</p>
+
+<p>I&#39;d been playing with <a href="http://d3js.org/">D3</a> recently and thought it would be interesting to visualize my <a href="http://last.fm/user/janiejjones">last.fm</a> play count data for the year, and then I though it would be even more interesting to visualize how that compared with my ranking of personal favourites of the year. </p>
+
+<p><a href="http://bren.zone/top10">Here are the results</a> and my musings on data&#39;s ability to represent complex systems like my music taste. Below you&#39;ll find some more technical details on the build.</p>
+
+<p><img class="no-border" src="/assets/blog/top10chart.gif" alt="top 10 albums d3 chart"/></p>
+
+<h3>Step 1: Get set up</h3>
+
+<p>It&#39;s been a while since I started a new project from scratch, so I used this as an opportunity to revise my tooling a bit. Working with Node recently had me a bit infatuated with CommonJS and npm as dependency management tools, so I decided to give <a href="http://browserify.org/">Browserify</a> and <a href="http://gulpjs.com/">Gulp</a> a try. I am in dev love. </p>
+
+<blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p>using Browserify &amp; Gulp and it feels so goooood <a href="https://t.co/Fy6wrDZXCA">https://t.co/Fy6wrDZXCA</a></p>&mdash; Brenna O&#39;Brien (@brnnbrn) <a href="https://twitter.com/brnnbrn/status/548963143104606209">December 27, 2014</a></blockquote>
+
+<p>It&#39;s easily the cleanest workflow I&#39;ve had to date. I built a small Gulp and Browserify starter scaffolding, <a href="https://github.com/brenna/gulp-app-starter">available on github</a>, so I can use it ON EVERY PROJECT FOREVER (or until the next cool build tool comes along). It also includes some common build tasks (like Sass compilation and JSHint) and another new favourite, <a href="http://www.browsersync.io/">BrowserSync</a> for live browser reloading.</p>
+
+<h3>Step 2: Get the data.</h3>
+
+<p>Back to the task at hand. In an ideal world, the API you&#39;re using gives you exactly the info you want, but unless you&#39;re building it yourself, that often isn&#39;t the case. </p>
+
+<p>It was easy enough to pull a listing of my <a href="http://www.last.fm/api/show/user.getTopAlbums">top albums by play count over the past 12 months</a>, but that original list included albums released any year, not just 2014, and there was no way to limit the query further. If I could put Kendrick Lamar&#39;s <em>good kid, m.A.A.d city</em>(2012) at the top of my list three years in a row, believe me I would, but that&#39;s not how this works.</p>
+
+<p>The solution was to get my top albums and then filter out only 2014 releases. Of course, the top albums list didn&#39;t include info on release date, so this involved a second call to an <a href="http://www.last.fm/api/show/album.getInfo">album info endpoint</a> to get the release year for each album in the list. That quickly landed me in async hell, but hey, let&#39;s learn another new thing! Promise library, <a href="https://github.com/kriskowal/q">Q</a> was super helpful in untangling my mess of AJAX requests, allowing me to return a big heap o&#39; promises with all the right data from my <a href="https://github.com/brenna/top-10-albums/blob/master/app/js/topAlbums.js">top albums data getting module.</a></p>
+
+<p>I then filtered my albums by release year, keeping only 2014 releases. If you&#39;re working in modern browsers (IE9+), I highly recommend using badass array methods like <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"><code>.filter()</code></a>, <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/map"><code>.map()</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce"><code>.reduce()</code></a>. I&#39;ve been relying more heavily on them lately and find they&#39;re often much more intuitive and clearer to read than a standard <code>for</code> loop if you don&#39;t need an index. Bonus points for chain-abiliy and saying you&#39;re a &quot;cool functional programmer&quot; too.</p>
+
+<h3>Step 3: Chart it with D3</h3>
+
+<p>So D3 can have a bit of a steep learning curve, but it&#39;s soooo much fun once you get into it. The docs can be a bit sparse sometimes, so if you&#39;re looking to get started, <a href="http://bost.ocks.org/mike/bar/">tutorials</a> and examples are your best friends. Also, make sure you&#39;re very comfortable with SVG. D3 charts are typically rendered in SVG, so you&#39;ll need to have a good grasp of the nuances of SVG element creation and positioning. Lucky for you, SVG is a hot topic lately, so go devour all the SVG info you can. It&#39;s <a href="http://talks.brennaobrien.com/svg">fun</a> anyways.</p>
+
+<p><a href="https://github.com/brenna/top-10-albums/blob/master/app/js/barChart.js">My top albums chart</a> was a pretty straightforward bar chart and I used Mike Bostock&#39;s <a href="http://bost.ocks.org/mike/chart/">reusable chart pattern</a> as a guideline for building it out.</p>
+
+<p>One notable exception is that I made my chart responsive by using the <code>viewBox</code> attribute instead of a fixed width and height. See, knowing SVG gets you places. This eliminates the need for a complete redraw on window resize. I&#39;d say it works pretty well considering how much easier it it to implement. Just know that everything will shrink completely proportionately (including text sizing), so I&#39;d go back to width/height/redraw if I needed a really customized soultion that was tailored for small viewports.</p>
+
+<h3>Step 4: Merge in my personal ranking</h3>
+
+<p>To integrate my personal ranking, I created an array of my top albums:</p>
+
+<pre class="prettyprint"><code class="language-js">var favouriteAlbums = [
+  "Our Love", //Caribou
+  "You're Dead!", //Flying Lotus
+  "St. Vincent", //St. Vincent
+  "Oxymoron", //ScHoolboy Q
+  "They Want My Soul", //Spoon
+  "Do It Again", //Röyksopp & Robyn
+  "Wonder Where We Land", //SBTRKT
+  "Salad Days", //Mac DeMarco
+  "Here and Nowhere Else", //Cloud Nothings
+  "LP1" //FKA Twigs
+];
+</code></pre>
+
+<p>then did a quick comparison with my last.fm data to add a <code>rank</code> property to each album object. </p>
+
+<p>The chart now gets drawn with the master albums array that contains both play count and rank data. From here, the power of D3&#39;s data binding reveals it&#39;s magic. Since all the data (not just what you&#39;re visibly seeing) is attached to the chart elements, we ask D3 to re-calculate the y position of each bar based on either <code>rank</code> or play count (the natural array order).</p>
+
+<pre class="prettyprint"><code class="language-js">chart.orderByRank = function() {
+  d3.selectAll('.album')
+  .transition(700)
+  .attr('fill', 'url(#warmGradient)')
+  .attr('transform', function(d){
+    return 'translate(0,' + (d.rank - 1) * (barHeight + barMargin) + ')';
+  });
+
+  return chart;
+};
+
+chart.orderByPlayCount = function() {
+  d3.selectAll('.album')
+  .transition(700)
+  .attr('fill', 'url(#coolGradient)')
+  .attr('transform', function(d, i){
+    return 'translate(0,' + i * (barHeight + barMargin) + ')';
+  });
+
+  return chart;
+};
+</code></pre>
+
+<p>I then added some UI buttons that trigger these redraw methods on click. The <code>.transition()</code> method magically takes care of smoothly animating the bars&#39; positions and the fill colour gets updated as a visual indicator of the chart state. If you&#39;d like a deep dive into how the D3 magic works, <a href="http://bost.ocks.org/mike/selection/">this is a great read.</a></p>
+
+<h3>Want to learn something new? Build a thing.</h3>
+
+<p>I think there are a few specific technical takeaways from this post and this project but the biggest one I want to emphasize is that <strong>the best way to learn is to dive in and build something</strong>. Sure, you need a little bit of knowledge, like reading the docs or a getting started tutorial, before you can start writing code in a new language/framework/whatever, but there&#39;s no replacement for encountering a problem you don&#39;t know how to solve and being forced to tackle it.  Plus, you have something cool to show for it in the end.</p>
+
+<p>I can&#39;t tell you how many programming books I&#39;ve started and abandoned before finishing. It just doesn&#39;t stick until you get your hands dirty and try it yourself. It may be frustrating but you have a community of other self-taught, self-learning developers (especially when it comes to front-end) that have gone through the same thing and are hopefully sharing their experiences online in some form. If you run into a snag with any of these tools, please <a href="http://twitter.com/brnnbrn">get in touch</a>! </p>
+ 
+		</div>
+	</article>
+</section>
+
+    <footer id="contact" class="global">
+        <div class="contact-intro">
+            <h3>Get in Touch</h3>
+            <h4>Or find me elsewhere on the Internet.<br /> I come here often.</h4>
+        </div>
+        <div class="contact-email">
+            <p><a href="mailto:brenna@bren.zone">brenna@bren.zone</a></p>
+        </div>
+        <div class="contact-elsewhere">
+            <ul class="social">
+                <li><a href="http://twitter.com/brnnbrn" class="icon-twitter" title="Twitter"><span>Twitter</span></a></li>
+                <li><a href="http://brnnbrn.tumblr.com/" class="icon-tumblr" title="everything else"><span>Tumblr</span></a></li>
+                <li><a href="http://www.rdio.com/people/brnnbrn/" class="icon-rdio" title="Rdio"><span>Rdio</span></a></li>
+                <li><a href="http://codepen.io/brenna" class="icon-codepen" title="CodePen"><span>CodePen</span></a></li>
+                <li><a href="http://github.com/brenna" class="icon-github" title="GitHub"><span>GitHub</span></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+    <script src="/assets/plugins.js"></script>
+    <script src="/assets/vendor/prettify.js"></script>
+    <script src="/assets/main.js"></script>
+    
+    <script async type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    
+    <script>
+        var _gaq=[['_setAccount','UA-19103472-1'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+</body>
+</html>
+
