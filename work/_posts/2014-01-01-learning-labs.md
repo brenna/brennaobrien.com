@@ -2,7 +2,6 @@
 layout: work_post
 title: Learning Labs   
 type: Responsive Site / Custom WordPress Build
-site_url: http://learninglabs.org
 permalink: /work/learning-labs.html
 ---
 <figure class="responsive-site">
