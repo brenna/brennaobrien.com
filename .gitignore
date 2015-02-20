@@ -1,5 +1,5 @@
 .DS_STORE
-.sass_cache/
+.sass-cache/
 *.sublime-project
 *.sublime-workspace
 robots.txt

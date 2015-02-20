@@ -180,7 +180,7 @@
 
 <p>Animations and transitions are broadening the scope of what CSS can do for interactivity. We still need JS for event binding, so having your interactions states live inside CSS and then toggling them off and on with JS is a great strategy. It&#39;s one I&#39;ve been employing more often lately, and I&#39;d encourage you to give it a try too!</p>
 
-<hr>
+<p><hr></p>
 
 <p><small>
 [1] When searching around for info on cross-browser support for the <code>animationend</code> event, I kept seeing exhaustive lists like <code>animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd</code>, but no conclusive data on which browser versions needed the prefixed variants. A little testing revealed that IE &gt; 10 supports the unprefixed <code>animationend</code>, and the latest version of Opera (19) has moved over to using <code>webkitAnimationEnd</code>, so we only need those two for full support.  If you&#39;d like to test this in other browsers, you can use <a href="http://jsfiddle.net/U853f/3/">this fiddle</a>, and check to see if the animation runs after the first click. Send your results to <a href="http://twitter.com/brnnbrn">@brnnbrn</a> or <a href="mailto:hi@brennaobrien.com">hi@brennaobrien.com</a>!</small></p>
