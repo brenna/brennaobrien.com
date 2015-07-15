@@ -28,7 +28,7 @@ footer.global {
 	h4 {
 		color: #fff;
 		font-weight: 300;
-		
+
 		@media only screen and (max-width: 24em) {
 			br {display: none;}
 		}
@@ -81,9 +81,9 @@ footer.global {
 		transform: rotate(45deg);
 
 		@include transition-out;
-		
+
 		&:last-child { margin-right: 0;}
-		
+
 		&:hover,
 		&:focus {
 			background: #fff;
@@ -101,14 +101,13 @@ footer.global {
 		text-align: center;
 		color: #fff;
 		@include transition-out;
-		
-		//counter rotate the icons 
+
+		//counter rotate the icons
 		transform: rotate(-45deg);
 		-webkit-transform: rotate(-45deg);
 		-ms-transform: rotate(-45deg);
 
-		&:hover,
-		&:focus {	
+		&:hover {
 			color: #222;
 			@include transition-in;
 		}
@@ -123,7 +122,7 @@ footer.global {
 
 	@mixin stacked-layout {
 		width: 13.75em;
-		
+
 		li:nth-child(4) {
 			margin-left: 2.25em;
 		}
