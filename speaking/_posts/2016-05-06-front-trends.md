@@ -3,12 +3,12 @@ title: Front-Trends
 layout: blog_post
 location: 'Warsaw, Poland'
 link: 'https://2016.front-trends.com/'
-ticket_url: 'https://2016.front-trends.com/register'
-upcoming: true
+slides_url: 'http://talks.brennaobrien.com/real-developer'
+upcoming: false
 ---
 <figure>
     <img src="{% asset_path talks/front-trends.png %}">
     <figcaption>
-        <h3>[TBD]</h3>
+        <h3>The Myth of the "Real JavaScript Developer"</h3>
     </figcaption>
 </figure> 
