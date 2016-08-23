@@ -2,7 +2,6 @@
 layout: work_post
 title: Axiomatic Solutions
 type: Responsive Site
-site_url: http://axiomaticsolutions.ca
 permalink: /work/axiomatic.html
 ---
 <figure class="responsive-site">

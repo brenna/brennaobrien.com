@@ -6,7 +6,13 @@ title: Speaking
 {%assign upcomingTalks = site.categories['speaking'] | where: "upcoming", true %}
 {%assign pastTalks = site.categories['speaking'] | where: "upcoming", false %}
 
+<section class="talks-intro">
+  <p class="punch talk-intro">I speak professionally about developer culture, JavaScript, SVG and more. <strong>I'm currently booking speaking engagements for early 2017.</strong> <a href="mailto:brenna@bren.zone?subject=speaking%20at%a%20super%20cool%20conference">Let's talk!</a>
+  </p>
+</section>
+
 <section class="talk-entries">
+
   <div class="talks upcoming">
     {% for post in upcomingTalks %}
     <article class="work-teaser {%cycle 'left', 'right'%}">

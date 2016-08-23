@@ -13,12 +13,20 @@
 		padding-top: 4em;
 		h1 {margin-bottom: 0.7em;}
 		.punch {margin-bottom: 0.8em;}
+
+		.profile-img {
+			float: right;
+			width: 37.5%;
+			margin-left: 50px;
+		}
 	}
 
 	@media only screen and (min-width: 60em) {
 		h1 {font-size: 3.2em;}
+
 	}
 }
+
 
 		.img-diamond {
 			width: 68%;
@@ -60,6 +68,7 @@
 .nutshell {
 	@extend %clearfix;
 	padding-top: 2em;
+	padding-bottom: 4em;
 	//text-align: center;
 
 	h2 { font-size: 1.8em;}
