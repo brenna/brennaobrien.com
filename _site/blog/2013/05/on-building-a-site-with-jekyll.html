@@ -52,7 +52,7 @@
 <p>Coming from WordPress, I originally thought of my blog posts and portfolio pieces as two separate post types.  In Jekyll, all posts are more or less created equal, so I used categories to segregate the content. This is super easy to accomplish by putting blog posts in a folder called &quot;blog&quot; and work posts in a folder called &quot;work. Not only does this automatically assign the right category to the posts, it also creates an appropriate URL structure for the site. </p>
 
 <p>Here&#39;s the relevant part of my directory structure.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">.
+<div class="highlight"><pre><code class="language-" data-lang="">.
 ├──work
 │  └──_posts
 │  │  └──2013-01-10-axiomatic-solutions.md
@@ -86,11 +86,11 @@
 
 <p>In my case, I have a test server and a production server. I&#39;ve mirrored this in my git repo with a test branch off of my master branch.  On the test server, the script to execute after a push is:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="sb">`git pull origin test`</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="sb">`git pull origin test`</span><span class="p">;</span> <span class="cp">?&gt;</span></code></pre></figure>
 
 <p>And on the production server:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="sb">`git pull`</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="sb">`git pull`</span><span class="p">;</span> <span class="cp">?&gt;</span></code></pre></figure>
 
 <p>So the test and production servers will always be a reflection of their git branch counterparts, and I&#39;m free to manage the site completely through git, as I would have done for version control anyhow.</p>
 

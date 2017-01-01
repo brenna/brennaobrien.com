@@ -7,7 +7,7 @@ slides_url: 'http://talks.brennaobrien.com/svg-typography'
 upcoming: false
 ---
 <figure>
-    <img src="{% asset_path talks/css-dev-conf.png %}">
+    <img src="{% asset_path talks/css-dev-conf.jpg %}">
     <figcaption>
         <h3>Creative Typography With SVG</h3>
     </figcaption>

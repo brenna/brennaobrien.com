@@ -5,11 +5,12 @@
 // ------------------------------------------------------------------
 // Clearfix
 // ------------------------------------------------------------------
-%clearfix {
+%clearfix,
+.clearfix {
 	&:before,
  	&:after {
-    	content: " "; 
-    	display: table; 
+    	content: " ";
+    	display: table;
 	}
 	&:after {
 		clear: both;
@@ -32,7 +33,7 @@
 // ------------------------------------------------------------------
 
 %media {
-	overflow: hidden; 
+	overflow: hidden;
 }
 
 %media-bd {
@@ -83,7 +84,7 @@
 		padding-right: 	      	calc(50% - 35em);
 		margin-left: 	-webkit-calc(50% - 17.5em);
 		padding-right: 	-webkit-calc(50% - 35em);
-	}	
+	}
 }
 
 %content-width {
@@ -96,6 +97,19 @@
 		padding-right: 	      	calc(50% - 35em);
 		padding-left: 	-webkit-calc(50% - 35em + 19em);
 		padding-right: 	-webkit-calc(50% - 35em);
+	}
+}
+
+%content-width-left-align {
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	max-width: 82em;
+
+	@media only screen and (min-width: 73em) {
+		padding-right: 			calc(50% - 35em + 19em);
+		padding-left: 	      	calc(50% - 35em);
+		padding-right: 	-webkit-calc(50% - 35em + 19em);
+		padding-left: 	-webkit-calc(50% - 35em);
 	}
 }
 
@@ -122,14 +136,14 @@
 	width: 50%;
 	float: left;
 }
- 
+
 %two-thirds-width {
 	@media only screen and (min-width: 47em) {
 		width: 66%;
 		float: left;
 	}
 }
- 
+
 
 
 // ==================================================================
@@ -150,34 +164,34 @@
 }
 
 // ------------------------------------------------------------------
-// Striped Background 
+// Striped Background
 // ------------------------------------------------------------------
-	
+
 %dark-stripes {
 	$bgColor: #111;
 	$stripeColor: #191919;
 
 	$bgColor: #101010;
 	$stripeColor: #242424;
-	
+
 	background-color: $bgColor; //fallback
 
 	background-image: -webkit-linear-gradient(45deg, $bgColor 25%, $stripeColor 25%, $stripeColor 50%, $bgColor 50%, $bgColor 75%, $stripeColor 75%, $stripeColor);
 	background-image:    -moz-linear-gradient(45deg, $bgColor 25%, $stripeColor 25%, $stripeColor 50%, $bgColor 50%, $bgColor 75%, $stripeColor 75%, $stripeColor);
 	background-image:      -o-linear-gradient(45deg, $bgColor 25%, $stripeColor 25%, $stripeColor 50%, $bgColor 50%, $bgColor 75%, $stripeColor 75%, $stripeColor);
 	background-image:         linear-gradient(45deg, $bgColor 25%, $stripeColor 25%, $stripeColor 50%, $bgColor 50%, $bgColor 75%, $stripeColor 75%, $stripeColor);
-	
+
 	background-size: 8px 8px;
 }
 
 // ------------------------------------------------------------------
-// Fancy Bulleted List  
+// Fancy Bulleted List
 // ------------------------------------------------------------------
 %arrow-list {
 	position: relative;
 	list-style-type: none;
 	padding-left: 1em;
-	
+
 	&:before {
 		content: " ";
 		position: absolute;

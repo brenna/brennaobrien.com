@@ -12,12 +12,21 @@ footer.global,
 	@extend %full-width;
 }
 
+.container {
+	@extend %full-width;
+	padding-top: 3em;
+}
+
 .blog-post header {
 	@extend %full-width-left-maxed;
 }
 
 .blog-content {
 	@extend %full-width-maxed;
+}
+
+.text-content {
+	max-width: 45em;
 }
 
 

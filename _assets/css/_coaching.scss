@@ -1,0 +1,32 @@
+@media all and (min-width: 50em) {
+  .topics {
+    display: flex;
+    align-items: flex-end;
+
+    &__text {
+      width: 50%;
+    }
+
+    &__pic {
+      margin-bottom: 1.5em;
+      padding-left: 3em;
+    }
+  }
+  .coaching-deets {
+    display: flex;
+
+    &__booking {
+      width: 50%;
+    }
+
+    &__pricing {
+      padding-left: 3em;
+    }
+  }
+}
+
+.topics__list {
+  font-size: 1.2em;
+}
+
+

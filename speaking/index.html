@@ -7,8 +7,12 @@ title: Speaking
 {%assign pastTalks = site.categories['speaking'] | where: "upcoming", false %}
 
 <section class="talks-intro">
-  <p class="punch talk-intro">I speak professionally about developer culture, JavaScript, SVG and more. <strong>I'm currently booking speaking engagements for early 2017.</strong> <a href="mailto:brenna@bren.zone?subject=speaking%20at%a%20super%20cool%20conference">Let's talk!</a>
-  </p>
+  <div class="talk-intro">
+
+    <p class="punch m-b-1">I speak professionally about developer culture, JavaScript, SVG and more. <strong>I'm currently booking speaking engagements for 2017. <a href="mailto:brenna@bren.zone?subject=speaking%20at%a%20super%20cool%20conference">Let's talk!</a></strong></p>
+
+    <p class="punch m-b-0"><strong>I also provide <a href="/coaching">professional coaching services</a></strong> to those getting started with or seeking to improve their public speaking skills.</p>
+  </div>
 </section>
 
 <section class="talk-entries">
@@ -30,7 +34,7 @@ title: Speaking
     {% endfor %}
   </div>
 
-  <h3 class="work-sub-cat">past</h3>
+  <h3 class="work-sub-cat">past talks</h3>
   <div class="talks">
   {% for post in pastTalks %}
     <article class="work-teaser {%cycle 'left', 'right'%}">

@@ -46,6 +46,8 @@ You can also try contacting conference organizers directly via twitter or email 
 
 Hopefully this convinced some of you fence sitters to go for it and speak at a conference. But if you've got any other questions or just want an encouraging "Yeah! You got this!" send me an [email](mailto:hi@brennaobrien.com) or [tweet](http://twitter.com/brnnbrn). 
 
+I also provide <a href="/coaching">professional coaching services</a></strong> on public speaking if you're looking for even more encouragement and pro-tips.
+
 Sometimes a [little nudge](https://twitter.com/brnnbrn/status/496997284144742400) goes a long way.
 
 
