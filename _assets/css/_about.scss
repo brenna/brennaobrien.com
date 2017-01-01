@@ -93,6 +93,11 @@
 			cursor: default;
 			-webkit-transition: inherit;
 			transition: inherit;
+
+			a:hover {
+				border-bottom: none;
+				opacity: 0.8;
+			}
 		}
 
 		// &:hover {
