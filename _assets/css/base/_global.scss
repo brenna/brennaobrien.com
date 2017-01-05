@@ -135,6 +135,7 @@ a {
 	color: $linkColor;
 	border-bottom: solid 1px transparent;
 	@include transition-out(border-color);
+	cursor: pointer;
 
 	&:hover,
 	&:active,

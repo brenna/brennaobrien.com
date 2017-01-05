@@ -25,6 +25,34 @@
   }
 }
 
+.coaching-donors {
+  &__list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    text-align: center;
+    font-size: 14px;
+
+    li {
+      margin-right: 10px;
+      width: 120px;
+    }
+    img {
+      display: block;
+      margin-bottom: 5px;
+      width: 120px;
+    }
+  }
+
+  &__your-face-here {
+    color: #757575;
+    padding: 30px 10px 0;
+    border: solid 1px #989898;
+    height: 120px;
+    font-size: 13px;
+  }
+}
+
 .topics__list {
   font-size: 1.2em;
 }
