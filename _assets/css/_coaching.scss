@@ -30,12 +30,16 @@
     list-style: none;
     padding-left: 0;
     display: flex;
+    flex-wrap: wrap;
     text-align: center;
     font-size: 14px;
+    width: 80%;
 
     li {
       margin-right: 10px;
       width: 120px;
+      margin-top: 0;
+      margin-bottom: 20px;
     }
     img {
       display: block;
@@ -47,8 +51,9 @@
   &__your-face-here {
     color: #757575;
     padding: 30px 10px 0;
-    border: solid 1px #989898;
+    border: solid 1px #dedede;
     height: 120px;
+    width: 120px;
     font-size: 13px;
   }
 }
