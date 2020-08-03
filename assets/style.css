@@ -341,10 +341,25 @@ table {
 	box-sizing: border-box
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 	font-family: "Lato";
 	font-size: 100%;
-	color: #333
+	color: #333;
+}
+
+.work-entries,
+.blog-entries,
+.main,
+.main-404,
+.main-about {
+  flex: 1; /* push content down to ensure footer stays at bottom of page
 }
 
 p {
