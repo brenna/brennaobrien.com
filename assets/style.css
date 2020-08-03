@@ -359,7 +359,7 @@ body {
 .main,
 .main-404,
 .main-about {
-  flex: 1; /* push content down to ensure footer stays at bottom of page
+  flex: 1; /* push content down to ensure footer stays at bottom of page */
 }
 
 p {
