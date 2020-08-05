@@ -1,0 +1,79 @@
+==================================================================
+https://keybase.io/brenna
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://brennaobrien.com
+  * I am brenna (https://keybase.io/brenna) on keybase.
+  * I have a public key with fingerprint 01BC 878A 89EC 834E B9D0  268E F1C0 957B 872A C12F
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "01bc878a89ec834eb9d0268ef1c0957b872ac12f",
+            "host": "keybase.io",
+            "key_id": "f1c0957b872ac12f",
+            "kid": "0101a405beafd01446fdd969ae6a01169513ca5ea11e5f72b15e28ca421c47476df60a",
+            "uid": "b8910cd86d69cc32c5d8b65318b40119",
+            "username": "brenna"
+        },
+        "revoke": {
+            "sig_ids": [
+                "03e6c172fa1719a046c53f6c172e420b360ee74fd87377bf1534b5bc8fcca4b60f"
+            ]
+        },
+        "service": {
+            "hostname": "brennaobrien.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1429055004,
+    "expire_in": 157680000,
+    "prev": "fe4b723f2a78d598d16bb45f47c1a9f1d14dd3fa3b116a9d25d2bf85555fea51",
+    "seqno": 15,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.8
+Comment: https://keybase.io/crypto
+
+yMN1AnicbZJtUFRVGMcXBCFMXqaGQXQEryIEiPfc97tBI9IULjlNJCNvudxz77m7
+t112t7svuENMQ9rUoNDUpMSE5oSAhFu8SC8UGaGTI0l8aDQGQpiURg0YpMkFNLuX
+qQ/NdL6cOc/5n9/zf57nXFi/xhAVsvDtseo30wd3hgwPfug1FO1o21SNQafkx4zV
+mA2tbrLisCDVpSoOD2bEcABFjuUEjkciR1II8hJOMBySgYjzNAs5lhBEQMhYJmZ1
+uvUXGgYKbpSlOLWYdjArkhb9H71t9QIHOBAonIZIkCUcUBQjSxLP8AJiBBwAhqcB
+KQo0EgBAtMwSENCI4ESBIoBIsRTLSDKDCxrOu4qDHA9wUeIYieFFkSREWuIgQ5OA
+g5SG43WhG6kOoRLpahU5HAJWk4mpyOe0Ib1+t2LRLLsxYxmGk4gRAUvIAmABL+AU
+I9KkvBpCFIFDksERYilZ4liSZaEMaJKCtNYwWdQMQgaXsZc0tpbPp4ircL1H/8nt
+hKqCHFmis1Jz5lKdHqfotGu3Vo/HZdSNefwuXV2FoPkfjhkqDkkbkvbAh1S34nRg
+RqApRY+igwFF8DhN4ziViaGDLkVFZkVX0CzD4drS0yCfPhJEQZYgZUJgOYnmOQkw
+EFK0TLEiEHgZSICSJFIWSKiNQeAlgpYIKHO0tmQk0ADTK3vF4dTZmk/BojG15jkE
+j1dFWM13g+VhhpAow9rwUP2fGaIeif339w2CWMPJc+Nn8pMnnvP66+dn+8/+ELLS
+vd4ysnwpr7kmMSzYzty880v0J8n2tzu/hA+MZ4ve8acdPV8cbXk+4mGATWlJPc4s
+Vf2ZZrL3Xp8rbomrTbNWmLrzKcQ1Thz64tGk0h3pSy3lb20vHEtIvdhkGtzy0+kT
+/a8t3k/MsLhss8GMIy9wo63r6hs9C5+33avtYGGpfX/PhleXt2aXXp3+7a41tqDg
+V0tDVM83m19O3dv3RFxOSkRu+oONodHjGx5nKlNnTrXuL6rIeDF7beTtXF+Xf3NM
+/JGFyM+SDrdMdNzF9pjqR7ZUz7d2XaT8981TE/dyVm7MnXjGvW044ns60juUyNoS
+dgYbT5ao4Snm9qlWfmbdgfn5vXTeQlxRXfK+w+NP10+VybH5x98bM6m5XRPsxr6P
+GnLsPz/WviRcWyyIWbkQmBabLn88uU0kwwMzduvA7d6/MkqebR74NCxxzvxj85rE
+O9NXKjYNbaX2EHVpnvQ3zk+W9AdLL/FVSe6HNzydTfG+r5ebLBn8u6/3Se7tC1fb
+R+Lj82ID7FzOQPGBsqxR/JT3TAyWGgwdNWbHhGbn3+xM+P0Dk/ta7fChvv6vjl6Z
+fIoNFPZEyyNWaXHX5C5DeR+hcNWBXsPuoe59dYyNPP2kYXw42DH7/lhhcKqm9I/K
+W4WX6eu3dh87GAKX2pobzkUZ/gYVHL/+
+=CnMb
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/brenna
+
+==================================================================
